@@ -1,0 +1,74 @@
+﻿<Window x:Class="Braces.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Braces.UI"
+        xmlns:userControls="clr-namespace:Braces.UI.UserControls"
+        mc:Ignorable="d"
+        x:Name="Window" Title="Braces" MinHeight="100" MinWidth="50" Height="550" Width="900" WindowStartupLocation="CenterScreen">
+    
+    <Window.CommandBindings>
+        <CommandBinding 
+            Command="Save"
+            Executed="BtnSave_Click" 
+            CanExecute="SaveCanExecute" />
+    </Window.CommandBindings>
+    
+    <!--#region KEY BINDINGS -->
+    <Window.InputBindings>
+        <KeyBinding x:Name="SaveKeyBinding" Command="Save" Key="{Binding Path=configuration.SaveKey}" Modifiers="{Binding Path=configuration.SaveKey}"></KeyBinding>
+    </Window.InputBindings>
+    
+    <!--#endregion -->
+    
+    <!--#region SIDENAV ANIMATIONS -->
+    <Window.Resources>
+        <Storyboard x:Key="sbShowSideNav">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="-150,0,0,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+        <Storyboard x:Key="sbHideSideNav">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="-150,0,0,0" AccelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
+    <!--#endregion -->
+
+    <!-- TODO: Implement a responsive grid. -->
+    <Grid>
+        <DockPanel>
+            <!--#region TOPBAR MENU -->
+            <Menu x:Name="TopMenuBar" DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open" Click="BtnOpen_Click" />
+                    <!-- TODO: Generate the input gesture with C#. -->
+                    <MenuItem Header="_Save" Command="Save" InputGestureText="Ctrl+S"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+            </Menu>
+            <!--#endregion-->
+            
+            <!--#region SIDENAV-->
+            <StackPanel Panel.ZIndex="5" Name="pnlSideNav" Height="auto" Width="48" Orientation="vertical" HorizontalAlignment="Left" Background="Gray">
+                <Button Height="25" x:Name="BtnSideNavExplorer" Visibility="Visible" Panel.ZIndex="2" Content="Explorer" Click="BtnSideNavExplorer_Click"></Button>
+                <Button Height="25" x:Name="BtnSideNavSearch" Visibility="Visible" Panel.ZIndex="2" Content="Search" Click="BtnSideNavSearch_Click"/>
+            </StackPanel>
+
+            <Canvas Panel.ZIndex="2">
+                <Grid x:Name="explorerPanel" Canvas.ZIndex="3" Canvas.Left="0" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
+                    <userControls:ExplorerUserControl />
+                </Grid>
+
+                <Grid x:Name="searchPanel" Canvas.ZIndex="3" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
+                    <userControls:SearchUserControl />
+                </Grid>
+            </Canvas>
+            <!--#endregion-->
+
+            <RichTextBox x:Name="RichTextBox" Block.LineHeight="3" AcceptsTab="True" AutomationProperties.HelpText="gffggggg">
+            </RichTextBox>
+
+        </DockPanel>
+    </Grid>
+</Window>
