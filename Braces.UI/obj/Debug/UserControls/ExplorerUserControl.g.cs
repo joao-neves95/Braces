@@ -52,7 +52,7 @@ namespace Braces.UI.UserControls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Braces.UI;component/usercontrols/explorerusercontrol.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Braces;component/usercontrols/explorerusercontrol.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UserControls\ExplorerUserControl.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

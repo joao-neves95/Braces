@@ -9,6 +9,12 @@ namespace Braces.Core.FileSystem
 {
     public class FileStorage
     {
+        public static async Task<string> ReadFileAsStringAsync(string filePath)
+        {
+            byte[] buffer = await ReadFileAsync(filePath);
+            return Encoding.UTF8.GetString(buffer);
+        }
+
         public static async Task<byte[]> ReadFileAsync(string filePath)
         {
             try

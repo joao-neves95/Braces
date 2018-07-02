@@ -84,17 +84,16 @@ namespace Braces.UI
 
         private async void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
-            // TEST PATH.
-            string filePath = "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\test\\Braces\\Braces.Core\\FileSystem\\TestSaves\\testfile.txt";
-
+            // TODO: Configure file dialog.
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             // Fired when the use clicks on "open".
             if (openFileDialog.ShowDialog() == true)
             {
-                byte[] fileContent = await FileStorage.ReadFileAsync(filePath);
+                string filePath = openFileDialog.FileName;
+                string fileContent = await FileStorage.ReadFileAsStringAsync(filePath);
                 RichTextBox.Document.Blocks.Clear();
-                RichTextBox.Document.Blocks.Add(new Paragraph(new Run(new UnicodeEncoding().GetString(fileContent))));
+                RichTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
             }
         }
 
