@@ -11,8 +11,8 @@
     <Window.CommandBindings>
         <CommandBinding 
             Command="Save"
-            Executed="BtnSave_Click" 
-            CanExecute="SaveCanExecute" />
+            CanExecute="SaveCanExecute"
+            Executed="BtnSave_Click" />
     </Window.CommandBindings>
     
     <!--#region KEY BINDINGS -->
@@ -42,7 +42,7 @@
                     <MenuItem Header="_New" />
                     <MenuItem Header="_Open" Click="BtnOpen_Click" />
                     <!-- TODO: Generate the input gesture with C#. -->
-                    <MenuItem Header="_Save" Command="Save" InputGestureText="Ctrl+S"/>
+                    <MenuItem  x:Name="SaveBtn" Header="_Save" Command="Save"/>
                     <Separator />
                     <MenuItem Header="_Exit" />
                 </MenuItem>

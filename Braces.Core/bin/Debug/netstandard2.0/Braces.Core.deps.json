@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "2468f8819b4e290b1a8667020137de51bd83af19"
+    "signature": "1cf99809fa58e87644d3fc0259d7de7570a54937"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,10 +9,16 @@
     ".NETStandard,Version=v2.0/": {
       "Braces.Core/0.1.0": {
         "dependencies": {
-          "NETStandard.Library": "2.0.1"
+          "NETStandard.Library": "2.0.1",
+          "ini-parser": "2.5.2"
         },
         "runtime": {
           "Braces.Core.dll": {}
+        }
+      },
+      "ini-parser/2.5.2": {
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -29,10 +35,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "ini-parser/2.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hp3gKmC/14+6eKLgv7Jd1Z7OV86lO+tNfOXr/stQbwmRhdQuXVSvrRAuAe7G5+lwhkov0XkqZ8/bn1PYWMx6eg==",
+      "path": "ini-parser/2.5.2",
+      "hashPath": "ini-parser.2.5.2.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pyrxGo3EnWArAQ39uIDcx8/gBUglP+TmrFFWasuoxE2KI3N2vwfcHFSm1SCGsvv5PhvY13Ljloz0MJByM5PRPw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },

@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Braces.Core;
 
 namespace Braces.UI
 {
@@ -13,5 +14,12 @@ namespace Braces.UI
     /// </summary>
     public partial class App : Application
     {
+        protected override async void OnStartup(StartupEventArgs e)
+        {
+            UserConfig userConfig = new UserConfig();
+            await userConfig.InitAsync();
+            MainWindow = new MainWindow(userConfig.Config);
+            MainWindow.Show();
+        }
     }
 }

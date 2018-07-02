@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,9 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using Microsoft.Win32;
 using System.IO;
-using Braces.Core.FileSystem;
+using Braces.Core;
 using Braces.Core.Models;
+using IniParser.Model;
 
 namespace Braces.UI
 {
@@ -25,19 +27,22 @@ namespace Braces.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        // TODO: Refactor the configuration.
-        ConfigurationModel configuration = new ConfigurationModel { Modifier = "Control", SaveKey = "S" };
-
-        public MainWindow()
+        public MainWindow(IniData userConfig)
         {
             InitializeComponent();
+            // UserConfig userConfig = new UserConfig();
             this.DataContext = this;
             this.ExplorerIsVisible = false;
             this.SearchIsVisible = false;
+
+            // TODO: Implement the editor configurator.
             SaveKeyBinding.Key = Key.S;
             SaveKeyBinding.Modifiers = ModifierKeys.Control;
-        }
+            SaveBtn.InputGestureText = "Ctrl+S";
 
+            // Testing:
+            Console.WriteLine($"Save Key: {userConfig["key_bindings"]["save_key"]}");
+        }
 
         #region SIDENAV
 
@@ -85,6 +90,7 @@ namespace Braces.UI
         private async void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Configure file dialog.
+            // TODO: Break the path to test and improve exception handling.
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             // Fired when the use clicks on "open".
@@ -97,16 +103,16 @@ namespace Braces.UI
             }
         }
 
-
         private void SaveCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
             e.Handled = true;
         }
 
+        // TODO: Prompt the user where to save. Store as property.
         private async void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            // See TextRange Class
+            // About the TextRange Class:
             // https://docs.microsoft.com/en-us/dotnet/api/system.windows.documents.textrange?view=netframework-4.7.2
 
             TextRange userInput = new TextRange(

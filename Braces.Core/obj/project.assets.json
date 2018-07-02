@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {}
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -198,8 +207,38 @@
         }
       }
     },
-    ".NETFramework,Version=v4.7.1": {},
+    ".NETFramework,Version=v4.6.1": {
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {}
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1": {
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {}
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {}
+        }
+      }
+    },
     ".NETStandard,Version=v2.0": {
+      "ini-parser/2.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net20/INIFileParser.dll": {}
+        },
+        "runtime": {
+          "lib/net20/INIFileParser.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -227,6 +266,18 @@
     }
   },
   "libraries": {
+    "ini-parser/2.5.2": {
+      "sha512": "hp3gKmC/14+6eKLgv7Jd1Z7OV86lO+tNfOXr/stQbwmRhdQuXVSvrRAuAe7G5+lwhkov0XkqZ8/bn1PYWMx6eg==",
+      "type": "package",
+      "path": "ini-parser/2.5.2",
+      "files": [
+        "ini-parser.2.5.2.nupkg.sha512",
+        "ini-parser.nuspec",
+        "lib/net20/INIFileParser.dll",
+        "lib/net20/INIFileParser.dll.mdb",
+        "lib/net20/INIFileParser.xml"
+      ]
+    },
     "Microsoft.NETCore.App/2.0.0": {
       "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
       "type": "package",
@@ -542,7 +593,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "pyrxGo3EnWArAQ39uIDcx8/gBUglP+TmrFFWasuoxE2KI3N2vwfcHFSm1SCGsvv5PhvY13Ljloz0MJByM5PRPw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -828,46 +879,56 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "ini-parser >= 2.5.2"
     ],
-    ".NETFramework,Version=v4.7.1": [],
+    ".NETFramework,Version=v4.6.1": [
+      "ini-parser >= 2.5.2"
+    ],
+    ".NETFramework,Version=v4.7.1": [
+      "ini-parser >= 2.5.2"
+    ],
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.1"
+      "NETStandard.Library >= 2.0.1",
+      "ini-parser >= 2.5.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Utilizador\\.nuget\\packages\\": {},
+    "C:\\Users\\Utilizador1\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\Braces.Core.csproj",
       "projectName": "Braces.Core",
-      "projectPath": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
-      "packagesPath": "C:\\Users\\Utilizador\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\obj\\",
+      "projectPath": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "packagesPath": "C:\\Users\\Utilizador1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Utilizador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Utilizador1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
+        "net461",
         "net471",
         "netcoreapp2.0",
         "netstandard2.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\nuget\\LocalPackages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
+          "projectReferences": {}
+        },
+        "net461": {
           "projectReferences": {}
         },
         "net471": {
@@ -891,6 +952,10 @@
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "ini-parser": {
+            "target": "Package",
+            "version": "[2.5.2, )"
           }
         },
         "imports": [
@@ -899,7 +964,22 @@
         "assetTargetFallback": true,
         "warn": true
       },
-      "net471": {},
+      "net461": {
+        "dependencies": {
+          "ini-parser": {
+            "target": "Package",
+            "version": "[2.5.2, )"
+          }
+        }
+      },
+      "net471": {
+        "dependencies": {
+          "ini-parser": {
+            "target": "Package",
+            "version": "[2.5.2, )"
+          }
+        }
+      },
       "netstandard2.0": {
         "dependencies": {
           "NETStandard.Library": {
@@ -907,6 +987,10 @@
             "target": "Package",
             "version": "[2.0.1, )",
             "autoReferenced": true
+          },
+          "ini-parser": {
+            "target": "Package",
+            "version": "[2.5.2, )"
           }
         },
         "imports": [
@@ -916,5 +1000,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ini-parser 2.5.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ini-parser",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

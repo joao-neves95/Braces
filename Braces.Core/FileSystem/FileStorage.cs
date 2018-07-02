@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Braces.Core.FileSystem
+namespace Braces.Core
 {
     public class FileStorage
     {
@@ -25,13 +25,16 @@ namespace Braces.Core.FileSystem
                 {
                     buffer = new byte[fileStream.Length];
                     await fileStream.ReadAsync(buffer, 0, (int)fileStream.Length);
+                    fileStream.Close();
+                    fileStream.Dispose();
                     return buffer;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"An error has occured: {e}");
-                throw new ApplicationException($"An error has occured: {e}");
+                // throw new ApplicationException($"An error has occured: {e}");
+                return new byte[0];
             }
         }
 
@@ -48,8 +51,13 @@ namespace Braces.Core.FileSystem
             catch (Exception e)
             {
                 Console.WriteLine($"An error has occured: {e}");
-                throw new ApplicationException($"An error has occured: {e}");
+                // throw new ApplicationException($"An error has occured: {e}");
             }
+        }
+
+        public static string GetHOMEPATH()
+        {
+            return Environment.GetEnvironmentVariable("HOMEPATH");
         }
     }
 }
