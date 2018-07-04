@@ -20,12 +20,12 @@ namespace Braces.UI
         {
             this.That = mainWindow;
             this.UserConfig = userConfig;
-            this.Configurator();
+            this.Configurator(userConfig);
         }
 
-        private void Configurator()
+        private void Configurator(IniData userConfig)
         {
-            That.SaveKeyBinding.Key = Key.S;
+            That.SaveKeyBinding.Key = Utils.StringToKeyEnum(userConfig["key_bindings"]["save_key"]);
             That.SaveKeyBinding.Modifiers = ModifierKeys.Control;
             That.SaveBtn.InputGestureText = "Ctrl+S";
             That.RichTextBox.FontSize = 12;
