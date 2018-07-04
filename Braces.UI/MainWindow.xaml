@@ -17,6 +17,7 @@
     
     <!--#region KEY BINDINGS -->
     <Window.InputBindings>
+        <!-- TODO: Fix property bindings. -->
         <KeyBinding x:Name="SaveKeyBinding" Command="Save" Key="{Binding Path=configuration.SaveKey}" Modifiers="{Binding Path=configuration.SaveKey}"></KeyBinding>
     </Window.InputBindings>
     
@@ -48,6 +49,7 @@
                 </MenuItem>
             </Menu>
             <!--#endregion-->
+            <!-- TODO: Add a toolbar. -->
             
             <!--#region SIDENAV-->
             <StackPanel Panel.ZIndex="5" Name="pnlSideNav" Height="auto" Width="48" Orientation="vertical" HorizontalAlignment="Left" Background="Gray">

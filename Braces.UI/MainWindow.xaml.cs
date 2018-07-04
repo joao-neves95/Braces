@@ -36,14 +36,19 @@ namespace Braces.UI
             this.SearchIsVisible = false;
 
             // TODO: Implement the editor configurator.
-            // TODO: Implement an error handling strategy.
             new UIConfigurator(userConfig, this);
 
-            // Testing:
-            Console.WriteLine($"Save Key: {userConfig["key_bindings"]["save_key"]}");
         }
 
+        #region PROPERTIES
+
+        // TODO: Use the FileModel instead.
         public string CurrentFilePath { get; private set; }
+
+        #endregion
+
+        #region PROPERTY BINDINGS
+        #endregion
 
         #region SIDENAV
 

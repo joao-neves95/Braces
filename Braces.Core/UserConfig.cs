@@ -9,7 +9,7 @@ using IniParser.Parser;
 using IniParser.Model;
 using IniParser.Model.Configuration;
 
-// TODO: Consifer changing this public configuration file to JSON for more organization.
+// TODO: Consifer changing this public configuration file to JSON for more organization. Use the ini for the system config.
 namespace Braces.Core
 {
     public class UserConfig
@@ -70,6 +70,7 @@ namespace Braces.Core
             catch (Exception e)
             {
                 Console.WriteLine($"An error has occured: {e}");
+                // Handle exception.
                 throw new ApplicationException($"An error has occured: {e}");
             }
         }
@@ -92,12 +93,15 @@ namespace Braces.Core
         {
            IniData defaultIni = new IniData();
 
+            // TODO: Pass "env" to the system config. Add paths also.
             defaultIni.Sections.AddSection("env");
             defaultIni["env"].AddKey("os", "windows");
 
             defaultIni.Sections.AddSection("key_bindings");
-            defaultIni["key_bindings"].AddKey("modifier", "Control");
-            defaultIni["key_bindings"].AddKey("save_key", "S");
+            defaultIni["key_bindings"].AddKey("default_modifier", "Control");
+            defaultIni["key_bindings"].AddKey("save", "S");
+            // TODO: Change to "default_modifier" and implement that feature.
+            defaultIni["key_bindings"].AddKey("save_modifiers", "Control");
             // defaultIni["key_bindings"]["save_as_key"] = defaultUserConfig.SaveAsKey;
 
             return defaultIni; 

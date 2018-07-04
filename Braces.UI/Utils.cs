@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using Braces.Core.Enums;
 
 namespace Braces.UI
 {
@@ -11,33 +13,46 @@ namespace Braces.UI
     {
         public static void HandleException(Exception e)
         {
-            // TODO: Implement HandleException().
+            Console.WriteLine("AN ERROR OCCURED:");
+            Console.WriteLine(e);
         }
 
-        public static void HandleExceptionWithDialog()
+        public static void HandleExceptionWithDialog(Exception e, string errorMessage, string title = "ERROR:", MessageBoxImage icon = MessageBoxImage.Warning)
         {
-            // TODO: HandleExceptionWithDialog() with a MessageBox. Pass to Braces.UI.
+            HandleException(e);
+            MessageBox.Show(errorMessage, title, MessageBoxButton.OK, icon);
         }
 
-        public static Key StringToKeyEnum(string key)
+        /// <summary>
+        /// Converts a string to its enum type. To use it you must specify the enum type T. Can, potentialy, be use for multiple enum types.
+        /// <para />
+        /// Example:
+        /// StringToKeyEnum<Key>("S", KeyType.Save)
+        /// <para />
+        /// Generic method type. Use with caution.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="keyType"></param>
+        /// <returns></returns>
+        public static T StringToKeyEnum<T>(string key) where T : Enum
         {
             try
             {
-                Key keyEnum = (Key)Enum.Parse(typeof(Key), key);
-                return keyEnum;
+                T keyEnum = (T)Enum.Parse(typeof(T), key);
+                return (T)Convert.ChangeType(keyEnum, typeof(T));
             }
             // Invalid key.
             catch (ArgumentException e)
             {
-                // Handle exception.
-                Console.WriteLine(e);
-                return Key.None;
+                HandleExceptionWithDialog(e, $"Invalid key configuration \"{ key }\"");
+                return default(T);
             }
             catch (Exception e)
             {
                 // Handle unknown exception.
-                Console.WriteLine(e);
-                return Key.None;
+                HandleExceptionWithDialog(e, $"Invalid key configuration \"{ key }\"");
+                return default(T);
             }
         }
     }
