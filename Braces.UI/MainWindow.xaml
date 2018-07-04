@@ -66,8 +66,7 @@
             </Canvas>
             <!--#endregion-->
 
-            <RichTextBox x:Name="RichTextBox" Block.LineHeight="3" AcceptsTab="True" AutomationProperties.HelpText="gffggggg">
-            </RichTextBox>
+            <RichTextBox x:Name="RichTextBox" Block.LineHeight="3" AcceptsTab="True" />
 
         </DockPanel>
     </Grid>

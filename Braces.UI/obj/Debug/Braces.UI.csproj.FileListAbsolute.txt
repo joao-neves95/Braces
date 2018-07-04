@@ -73,3 +73,5 @@ C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.UI\obj\Debug\Braces.exe
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.UI\obj\Debug\Braces.pdb
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.UI\bin\Debug\INIFileParser.dll
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.UI\bin\Debug\INIFileParser.xml
+C:\Users\Utilizador\odrive\ISTEC\DEV\Braces\Braces.UI\bin\Debug\INIFileParser.dll
+C:\Users\Utilizador\odrive\ISTEC\DEV\Braces\Braces.UI\bin\Debug\INIFileParser.xml

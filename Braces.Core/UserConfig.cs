@@ -9,6 +9,7 @@ using IniParser.Parser;
 using IniParser.Model;
 using IniParser.Model.Configuration;
 
+// TODO: Consifer changing this public configuration file to JSON for more organization.
 namespace Braces.Core
 {
     public class UserConfig

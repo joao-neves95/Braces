@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using Microsoft.Win32;
-using System.IO;
 using Braces.Core;
 using Braces.Core.Models;
 using IniParser.Model;
@@ -30,19 +30,20 @@ namespace Braces.UI
         public MainWindow(IniData userConfig)
         {
             InitializeComponent();
-            // UserConfig userConfig = new UserConfig();
             this.DataContext = this;
+            this.CurrentFilePath = "";
             this.ExplorerIsVisible = false;
             this.SearchIsVisible = false;
 
             // TODO: Implement the editor configurator.
-            SaveKeyBinding.Key = Key.S;
-            SaveKeyBinding.Modifiers = ModifierKeys.Control;
-            SaveBtn.InputGestureText = "Ctrl+S";
+            // TODO: Implement an error handling strategy.
+            new UIConfigurator(userConfig, this);
 
             // Testing:
             Console.WriteLine($"Save Key: {userConfig["key_bindings"]["save_key"]}");
         }
+
+        public string CurrentFilePath { get; private set; }
 
         #region SIDENAV
 
@@ -89,17 +90,18 @@ namespace Braces.UI
 
         private async void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Configure file dialog.
             // TODO: Break the path to test and improve exception handling.
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            // Fired when the use clicks on "open".
+            // Fired when the user clicks on "open".
             if (openFileDialog.ShowDialog() == true)
             {
                 string filePath = openFileDialog.FileName;
                 string fileContent = await FileStorage.ReadFileAsStringAsync(filePath);
                 RichTextBox.Document.Blocks.Clear();
                 RichTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
+                
+                this.CurrentFilePath = filePath;
             }
         }
 
@@ -122,10 +124,18 @@ namespace Braces.UI
 
             byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);
 
-            // TEST PATH.
-            string filePath = "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\test\\Braces\\Braces.Core\\FileSystem\\TestSaves\\testfile.txt";
+            if (CurrentFilePath == "")
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "All Files|*.* |C|*.c |C#|*.cs |CSS|*.css |gitignore|.gitignore |HTML|*.html |JavaScript|*.js |Markdown|*.md |No Extension|*. |PHP|.php |SQL|*.sql |Text Files|*.txt";
+                // Fired when the user clicks save.
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    this.CurrentFilePath = saveFileDialog.FileName;
+                }
+            }
 
-            await FileStorage.SaveFileAsync(filePath, encodedInput);
+            await FileStorage.SaveFileAsync(this.CurrentFilePath, encodedInput);
         }
         #endregion
     }

@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UIConfigurator.cs" />
     <Compile Include="UserControls\ExplorerUserControl.xaml.cs">
       <DependentUpon>ExplorerUserControl.xaml</DependentUpon>
     </Compile>
