@@ -2,6 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using Braces.Core.Models;
 using System.Threading.Tasks;
 using IniParser;
@@ -37,7 +38,7 @@ namespace Braces.Core
             if (!File.Exists(INI_PATH))
                 this.InitIniFile();
             else
-                await this.ParseIniFile();
+                await this.ParseIniFileAsync();
         }
         #endregion
 
@@ -52,19 +53,18 @@ namespace Braces.Core
             this.Config = defaultIni;
         }
 
-        private async Task ParseIniFile()
+        private async Task ParseIniFileAsync()
         {
             try
             {
                 byte[] userConfigBuffer = await FileStorage.ReadFileAsync(INI_PATH);
                 // http://www.fileformat.info/info/unicode/char/feff/index.htm
-                // Replace the the bytes Unicode Character 'ZERO WIDTH NO-BREAK SPACE' with 'SPACE'.
+                // Replace the the bytes Unicode Character 'ZERO WIDTH NO-BREAK SPACE' with 'SPACE's.
                 userConfigBuffer[0] = 32;
                 userConfigBuffer[1] = 32;
                 userConfigBuffer[2] = 32;
 
-                IniDataParser dataParser = GetIniParserConfiguration();
-                IniData userIni = dataParser.Parse( Encoding.UTF8.GetString(userConfigBuffer) );
+                IniData userIni = GetIniParserConfiguration().Parse( Encoding.UTF8.GetString( userConfigBuffer ) );
                 this.Config = userIni;
             }
             catch (Exception e)
@@ -100,8 +100,7 @@ namespace Braces.Core
             defaultIni.Sections.AddSection("key_bindings");
             defaultIni["key_bindings"].AddKey("default_modifier", "Control");
             defaultIni["key_bindings"].AddKey("save", "S");
-            // TODO: Change to "default_modifier" and implement that feature.
-            defaultIni["key_bindings"].AddKey("save_modifiers", "Control");
+            // defaultIni["key_bindings"].AddKey("save_modifiers", "Control");
             // defaultIni["key_bindings"]["save_as_key"] = defaultUserConfig.SaveAsKey;
 
             return defaultIni; 

@@ -13,23 +13,38 @@ namespace Braces.UI
 {
     public partial class UIConfigurator
     {
+        #region PROPERTIES
         public IniData UserConfig { get; private set; }
 
         public MainWindow That { get; private set; }
+        #endregion
 
         public UIConfigurator(IniData userConfig, MainWindow mainWindow)
         {
             this.That = mainWindow;
             this.UserConfig = userConfig;
-            this.Configurator(userConfig);
+            this.ConfigureUI(userConfig);
         }
 
-        private void Configurator(IniData userConfig)
+        private void ConfigureUI(IniData userConfig)
         {
-            // Instead of configurating with code, use property bindings on the XAML.
-            That.SaveKeyBinding.Key = Utils.StringToKeyEnum<Key>( userConfig["key_bindings"]["save"] );
-            That.SaveKeyBinding.Modifiers = Utils.StringToKeyEnum<ModifierKeys>( userConfig["key_bindings"]["save_modifiers"] );
-            That.SaveBtn.InputGestureText = "Ctrl+S";
+            ModifierKeys defaultModifier = Utils.StringToKeyEnum<ModifierKeys>( userConfig["key_bindings"]["default_modifier"] );
+
+            if (userConfig["key_bindings"].ContainsKey("save_modifiers"))
+            {
+                ModifierKeys saveModifier = Utils.StringToKeyEnum<ModifierKeys>(userConfig["key_bindings"]["save_modifiers"]);
+                That.SaveKeyBinding.Modifiers = saveModifier;
+                That.SaveBtn.InputGestureText += saveModifier.ToString();
+            }
+            else
+            {
+                That.SaveKeyBinding.Modifiers = defaultModifier;
+                That.SaveBtn.InputGestureText = defaultModifier.ToString();
+            }
+            Key saveKey = Utils.StringToKeyEnum<Key>(userConfig["key_bindings"]["save"]);
+            That.SaveKeyBinding.Key = saveKey;
+            That.SaveBtn.InputGestureText += $"+{ saveKey.ToString() }";
+
             That.RichTextBox.FontSize = 12;
             That.RichTextBox.FontFamily = new FontFamily("Segoe UI");
         }
