@@ -102,6 +102,9 @@ namespace Braces.Core
             defaultIni["key_bindings"].AddKey("save", "S");
             // defaultIni["key_bindings"].AddKey("save_modifiers", "Control");
             // defaultIni["key_bindings"]["save_as_key"] = defaultUserConfig.SaveAsKey;
+            defaultIni["key_bindings"].AddKey("save_as", "S");
+            defaultIni["key_bindings"].AddKey("save_as_modifier", "Control+Shift");
+            defaultIni["key_bindings"].AddKey("open", "O");
 
             return defaultIni; 
         }

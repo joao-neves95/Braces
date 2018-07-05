@@ -8,45 +8,54 @@ using System.Windows.Input;
 using System.Windows.Media;
 using IniParser.Model;
 using Braces.Core.Enums;
+using System.Windows.Controls;
 
 namespace Braces.UI
 {
     public partial class UIConfigurator
     {
         #region PROPERTIES
+        public MainWindow That { get; private set; }
+
         public IniData UserConfig { get; private set; }
 
-        public MainWindow That { get; private set; }
+        public ModifierKeys DefaultModifier { get; set; }
         #endregion
 
         public UIConfigurator(IniData userConfig, MainWindow mainWindow)
         {
             this.That = mainWindow;
             this.UserConfig = userConfig;
-            this.ConfigureUI(userConfig);
+            this.ConfigureUI();
         }
 
-        private void ConfigureUI(IniData userConfig)
+        private void ConfigureUI()
         {
-            ModifierKeys defaultModifier = Utils.StringToKeyEnum<ModifierKeys>( userConfig["key_bindings"]["default_modifier"] );
+            this.DefaultModifier = Utils.StringToKeyEnum<ModifierKeys>( this.UserConfig["key_bindings"]["default_modifier"] );
+            ConfigureKey("save", That.SaveKeyBinding, That.SaveBtn);
+            ConfigureKey("open", That.OpenKeyBinding, That.OpenBtn);
 
-            if (userConfig["key_bindings"].ContainsKey("save_modifiers"))
+            That.richTextBox.FontSize = 12;
+            That.richTextBox.FontFamily = new FontFamily("Segoe UI");
+        }
+
+        private void ConfigureKey(string inputKey, KeyBinding keyBinding, MenuItem menuItem)
+        {
+            if (this.UserConfig["key_bindings"].ContainsKey(inputKey + "_modifiers"))
             {
-                ModifierKeys saveModifier = Utils.StringToKeyEnum<ModifierKeys>(userConfig["key_bindings"]["save_modifiers"]);
-                That.SaveKeyBinding.Modifiers = saveModifier;
-                That.SaveBtn.InputGestureText += saveModifier.ToString();
+                ModifierKeys modifierKeys = Utils.StringToKeyEnum<ModifierKeys>(this.UserConfig["key_bindings"][inputKey + "_modifiers"]);
+                keyBinding.Modifiers = modifierKeys;
+                That.SaveBtn.InputGestureText += modifierKeys.ToString();
             }
             else
             {
-                That.SaveKeyBinding.Modifiers = defaultModifier;
-                That.SaveBtn.InputGestureText = defaultModifier.ToString();
+                keyBinding.Modifiers = this.DefaultModifier;
+                menuItem.InputGestureText = this.DefaultModifier.ToString();
             }
-            Key saveKey = Utils.StringToKeyEnum<Key>(userConfig["key_bindings"]["save"]);
-            That.SaveKeyBinding.Key = saveKey;
-            That.SaveBtn.InputGestureText += $"+{ saveKey.ToString() }";
 
-            That.RichTextBox.FontSize = 12;
-            That.RichTextBox.FontFamily = new FontFamily("Segoe UI");
+            Key key = Utils.StringToKeyEnum<Key>( this.UserConfig["key_bindings"][inputKey] );
+            keyBinding.Key = key;
+            menuItem.InputGestureText += $"+{ key.ToString() }";
         }
     }
 }

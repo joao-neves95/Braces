@@ -593,7 +593,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "pyrxGo3EnWArAQ39uIDcx8/gBUglP+TmrFFWasuoxE2KI3N2vwfcHFSm1SCGsvv5PhvY13Ljloz0MJByM5PRPw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -894,24 +894,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Utilizador1\\.nuget\\packages\\": {},
+    "C:\\Users\\Utilizador\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
       "projectName": "Braces.Core",
-      "projectPath": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\Braces.Core.csproj",
-      "packagesPath": "C:\\Users\\Utilizador1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Utilizador1\\Documents\\DEV\\REPO\\Braces\\Braces.Core\\obj\\",
+      "projectPath": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "packagesPath": "C:\\Users\\Utilizador\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Utilizador\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Utilizador1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Utilizador\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -922,6 +922,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\nuget\\LocalPackages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

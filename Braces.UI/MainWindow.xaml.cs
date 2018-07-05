@@ -103,8 +103,8 @@ namespace Braces.UI
             {
                 string filePath = openFileDialog.FileName;
                 string fileContent = await FileStorage.ReadFileAsStringAsync(filePath);
-                RichTextBox.Document.Blocks.Clear();
-                RichTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
+                richTextBox.Document.Blocks.Clear();
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
                 
                 this.CurrentFilePath = filePath;
             }
@@ -123,8 +123,8 @@ namespace Braces.UI
             // https://docs.microsoft.com/en-us/dotnet/api/system.windows.documents.textrange?view=netframework-4.7.2
 
             TextRange userInput = new TextRange(
-                RichTextBox.Document.ContentStart,
-                RichTextBox.Document.ContentEnd
+                richTextBox.Document.ContentStart,
+                richTextBox.Document.ContentEnd
             );
 
             byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);

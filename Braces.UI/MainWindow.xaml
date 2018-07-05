@@ -12,13 +12,19 @@
         <CommandBinding 
             Command="Save"
             CanExecute="SaveCanExecute"
-            Executed="BtnSave_Click" />
+            Executed="BtnSave_Click" 
+        />
+        <CommandBinding
+            Command="Open"
+            Executed="BtnOpen_Click"
+        />
     </Window.CommandBindings>
     
     <!--#region KEY BINDINGS -->
     <Window.InputBindings>
         <!-- TODO: Fix property bindings. -->
-        <KeyBinding x:Name="SaveKeyBinding" Command="Save" Key="{Binding Path=configuration.SaveKey}" Modifiers="{Binding Path=configuration.SaveKey}"></KeyBinding>
+        <KeyBinding x:Name="SaveKeyBinding" Command="Save" Key="" Modifiers=""></KeyBinding>
+        <KeyBinding x:Name="OpenKeyBinding" Command="Open" Key="" Modifiers=""></KeyBinding>
     </Window.InputBindings>
     
     <!--#endregion -->
@@ -41,11 +47,15 @@
             <Menu x:Name="TopMenuBar" DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_New" />
-                    <MenuItem Header="_Open" Click="BtnOpen_Click" />
-                    <!-- TODO: Generate the input gesture with C#. -->
-                    <MenuItem  x:Name="SaveBtn" Header="_Save" Command="Save"/>
+                    <MenuItem x:Name="OpenBtn" Header="_Open" Command="Open" />
+                    <MenuItem  x:Name="SaveBtn" Header="_Save" Command="Save" />
                     <Separator />
                     <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="Undo" />
+                    <MenuItem Header="Redo" />
+                    <Separator />
                 </MenuItem>
             </Menu>
             <!--#endregion-->
@@ -68,7 +78,7 @@
             </Canvas>
             <!--#endregion-->
 
-            <RichTextBox x:Name="RichTextBox" Block.LineHeight="3" AcceptsTab="True" />
+            <RichTextBox x:Name="richTextBox" Block.LineHeight="3" AcceptsTab="True" />
 
         </DockPanel>
     </Grid>
