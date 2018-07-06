@@ -75,11 +75,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="UIConfigurator.cs" />
-    <Compile Include="UserControls\ExplorerUserControl.xaml.cs">
-      <DependentUpon>ExplorerUserControl.xaml</DependentUpon>
+    <Compile Include="UserControls\ExplorerControl.xaml.cs">
+      <DependentUpon>ExplorerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SearchUserControl.xaml.cs">
-      <DependentUpon>SearchUserControl.xaml</DependentUpon>
+    <Compile Include="UserControls\SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TextEditorControl.xaml.cs">
+      <DependentUpon>TextEditorControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
     <Page Include="MainWindow.xaml">
@@ -94,11 +97,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\ExplorerUserControl.xaml">
+    <Page Include="UserControls\ExplorerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\SearchUserControl.xaml">
+    <Page Include="UserControls\SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TextEditorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

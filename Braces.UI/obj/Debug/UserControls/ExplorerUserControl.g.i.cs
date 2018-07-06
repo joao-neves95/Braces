@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Braces.UI;
 using Braces.UI.UserControls;
 using System;
 using System.Diagnostics;

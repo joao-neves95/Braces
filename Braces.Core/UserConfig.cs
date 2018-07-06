@@ -96,6 +96,8 @@ namespace Braces.Core
             // TODO: Pass "env" to the system config. Add paths also.
             defaultIni.Sections.AddSection("env");
             defaultIni["env"].AddKey("os", "windows");
+            defaultIni["env"].AddKey("open_path", FileStorage.GetUserProfilePath());
+            
 
             defaultIni.Sections.AddSection("key_bindings");
             defaultIni["key_bindings"].AddKey("default_modifier", "Control");

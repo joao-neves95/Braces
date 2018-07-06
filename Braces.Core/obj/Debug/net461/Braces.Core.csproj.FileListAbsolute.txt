@@ -1,4 +1,3 @@
-C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\net461\Braces.Core.csprojAssemblyReference.cache
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\net461\Braces.Core.csproj.CoreCompileInputs.cache
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\net461\Braces.Core.AssemblyInfoInputs.cache
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\net461\Braces.Core.AssemblyInfo.cs

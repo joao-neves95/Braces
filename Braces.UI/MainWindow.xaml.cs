@@ -18,6 +18,7 @@ using System.Windows.Media.Animation;
 using Microsoft.Win32;
 using Braces.Core;
 using Braces.Core.Models;
+using Braces.UI.UserControls;
 using IniParser.Model;
 
 namespace Braces.UI
@@ -31,19 +32,37 @@ namespace Braces.UI
         {
             InitializeComponent();
             this.DataContext = this;
-            this.CurrentFilePath = "";
             this.ExplorerIsVisible = false;
             this.SearchIsVisible = false;
+            this.CurrentFile = null;
 
             // TODO: Implement the editor configurator.
-            new UIConfigurator(userConfig, this);
+            this.UIConfiguraton = new UIConfigurator(userConfig, this);
 
+            // Change after tab system.
+            this.CurrentTextEditor = textEditor1;
         }
 
         #region PROPERTIES
 
         // TODO: Use the FileModel instead.
-        public string CurrentFilePath { get; private set; }
+        public UIConfigurator UIConfiguraton { get; set; }
+
+        public FileModel CurrentFile { get; set; }
+
+        private TextEditorControl currentTextEditor;
+        public TextEditorControl CurrentTextEditor
+        {
+            get
+            {
+                return this.currentTextEditor;
+            }
+            set
+            {
+                this.currentTextEditor = value;
+                UIConfiguraton.UpdateTextEditorConfig();
+            }
+        }
 
         #endregion
 
@@ -97,16 +116,18 @@ namespace Braces.UI
         {
             // TODO: Break the path to test and improve exception handling.
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = this.UIConfiguraton.OpenPath;
+            bool? userSelectedFile = openFileDialog.ShowDialog();
 
             // Fired when the user clicks on "open".
-            if (openFileDialog.ShowDialog() == true)
+            if (userSelectedFile == true)
             {
                 string filePath = openFileDialog.FileName;
                 string fileContent = await FileStorage.ReadFileAsStringAsync(filePath);
-                richTextBox.Document.Blocks.Clear();
-                richTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
-                
-                this.CurrentFilePath = filePath;
+                this.CurrentTextEditor.richTextBox.Document.Blocks.Clear();
+                this.CurrentTextEditor.richTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
+
+                this.CurrentFile = new FileModel(filePath);
             }
         }
 
@@ -123,24 +144,24 @@ namespace Braces.UI
             // https://docs.microsoft.com/en-us/dotnet/api/system.windows.documents.textrange?view=netframework-4.7.2
 
             TextRange userInput = new TextRange(
-                richTextBox.Document.ContentStart,
-                richTextBox.Document.ContentEnd
+                this.CurrentTextEditor.richTextBox.Document.ContentStart,
+                this.CurrentTextEditor.richTextBox.Document.ContentEnd
             );
 
             byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);
 
-            if (CurrentFilePath == "")
+            if (this.CurrentFile == null)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "All Files|*.* |C|*.c |C#|*.cs |CSS|*.css |gitignore|.gitignore |HTML|*.html |JavaScript|*.js |Markdown|*.md |No Extension|*. |PHP|.php |SQL|*.sql |Text Files|*.txt";
                 // Fired when the user clicks save.
                 if (saveFileDialog.ShowDialog() == true)
                 {
-                    this.CurrentFilePath = saveFileDialog.FileName;
+                    this.CurrentFile = new FileModel(saveFileDialog.FileName);
                 }
             }
 
-            await FileStorage.SaveFileAsync(this.CurrentFilePath, encodedInput);
+            await FileStorage.SaveFileAsync(this.CurrentFile.CompletePath, encodedInput);
         }
         #endregion
     }

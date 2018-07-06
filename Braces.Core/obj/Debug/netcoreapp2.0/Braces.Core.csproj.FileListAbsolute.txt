@@ -24,4 +24,3 @@ C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\netcoreapp2
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.AssemblyInfo.cs
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.dll
 C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.pdb
-C:\Users\Utilizador1\Documents\DEV\REPO\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.csprojAssemblyReference.cache

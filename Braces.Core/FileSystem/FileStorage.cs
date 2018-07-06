@@ -46,6 +46,8 @@ namespace Braces.Core
                 {
                     fileStream.Seek(0, SeekOrigin.Begin);
                     await fileStream.WriteAsync(buffer, 0, buffer.Length);
+                    fileStream.Close();
+                    fileStream.Dispose();
                 }
             }
             catch (Exception e)
@@ -58,6 +60,11 @@ namespace Braces.Core
         public static string GetHOMEPATH()
         {
             return Environment.GetEnvironmentVariable("HOMEPATH");
+        }
+
+        public static string GetUserProfilePath()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         }
     }
 }

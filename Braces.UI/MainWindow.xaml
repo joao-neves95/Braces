@@ -69,17 +69,18 @@
 
             <Canvas Panel.ZIndex="2">
                 <Grid x:Name="explorerPanel" Canvas.ZIndex="3" Canvas.Left="0" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
-                    <userControls:ExplorerUserControl />
+                    <userControls:ExplorerControl />
                 </Grid>
 
                 <Grid x:Name="searchPanel" Canvas.ZIndex="3" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
-                    <userControls:SearchUserControl />
+                    <userControls:SearchControl />
                 </Grid>
             </Canvas>
             <!--#endregion-->
 
-            <RichTextBox x:Name="richTextBox" Block.LineHeight="3" AcceptsTab="True" />
-
+            <Grid ScrollViewer.CanContentScroll="True">
+                <userControls:TextEditorControl x:Name="textEditor1" />
+            </Grid>
         </DockPanel>
     </Grid>
 </Window>
