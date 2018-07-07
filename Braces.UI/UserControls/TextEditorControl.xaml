@@ -6,7 +6,19 @@
              xmlns:local="clr-namespace:Braces.UI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.CommandBindings>
+        <CommandBinding
+            Command="Cut"
+        />
+    </UserControl.CommandBindings>
+
+    <UserControl.InputBindings>
+        <KeyBinding x:Name="DeleteCurrentLineBinding" Command="Cut" Modifiers="Ctrl" Key="X" />
+    </UserControl.InputBindings>
+    
     <Grid>
-        <RichTextBox x:Name="richTextBox"  Block.LineHeight="3" AcceptsTab="True" KeyDown="OnKeyDownHandler" VerticalScrollBarVisibility="Auto" />
+        <RichTextBox x:Name="richTextBox"  Block.LineHeight="3" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" />
+
     </Grid>
 </UserControl>

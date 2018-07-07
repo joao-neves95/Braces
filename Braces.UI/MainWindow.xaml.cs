@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -123,9 +124,14 @@ namespace Braces.UI
             if (userSelectedFile == true)
             {
                 string filePath = openFileDialog.FileName;
-                string fileContent = await FileStorage.ReadFileAsStringAsync(filePath);
+                string fileContent = await FileStorage.ReadFileAsStringAsync( filePath );
+                string[] documentLines = Regex.Split(fileContent, "\n");
                 this.CurrentTextEditor.richTextBox.Document.Blocks.Clear();
-                this.CurrentTextEditor.richTextBox.Document.Blocks.Add(new Paragraph(new Run(fileContent)));
+                for (uint i = 0; i < documentLines.Length; ++i)
+                {
+                    documentLines[i] = Regex.Replace(documentLines[i], "(\r\n?|\n)", "");
+                    this.CurrentTextEditor.richTextBox.Document.Blocks.Add( new Paragraph( new Run( documentLines[i] ) ) );
+                }
 
                 this.CurrentFile = new FileModel(filePath);
             }
@@ -154,7 +160,7 @@ namespace Braces.UI
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "All Files|*.* |C|*.c |C#|*.cs |CSS|*.css |gitignore|.gitignore |HTML|*.html |JavaScript|*.js |Markdown|*.md |No Extension|*. |PHP|.php |SQL|*.sql |Text Files|*.txt";
-                // Fired when the user clicks save.
+                // Fired when the user clicks "save".
                 if (saveFileDialog.ShowDialog() == true)
                 {
                     this.CurrentFile = new FileModel(saveFileDialog.FileName);

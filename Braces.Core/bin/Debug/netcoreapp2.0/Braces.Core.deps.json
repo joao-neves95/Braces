@@ -8,7 +8,9 @@
     ".NETCoreApp,Version=v2.0": {
       "Braces.Core/0.1.0": {
         "dependencies": {
-          "ini-parser": "2.5.2"
+          "ini-parser": "2.5.2",
+          "PresentationCore": "4.0.0.0",
+          "PresentationFramework": "4.0.0.0"
         },
         "runtime": {
           "Braces.Core.dll": {}
@@ -17,6 +19,16 @@
       "ini-parser/2.5.2": {
         "runtime": {
           "lib/net20/INIFileParser.dll": {}
+        }
+      },
+      "PresentationCore/4.0.0.0": {
+        "runtime": {
+          "PresentationCore.dll": {}
+        }
+      },
+      "PresentationFramework/4.0.0.0": {
+        "runtime": {
+          "PresentationFramework.dll": {}
         }
       }
     }
@@ -33,6 +45,16 @@
       "sha512": "sha512-hp3gKmC/14+6eKLgv7Jd1Z7OV86lO+tNfOXr/stQbwmRhdQuXVSvrRAuAe7G5+lwhkov0XkqZ8/bn1PYWMx6eg==",
       "path": "ini-parser/2.5.2",
       "hashPath": "ini-parser.2.5.2.nupkg.sha512"
+    },
+    "PresentationCore/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PresentationFramework/4.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

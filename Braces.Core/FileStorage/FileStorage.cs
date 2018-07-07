@@ -7,8 +7,18 @@ using System.Threading.Tasks;
 
 namespace Braces.Core
 {
-    public class FileStorage
+    public static class FileStorage
     {
+        public static string GetHOMEPATH()
+        {
+            return Environment.GetEnvironmentVariable("HOMEPATH");
+        }
+
+        public static string GetUserProfilePath()
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        }
+
         public static async Task<string> ReadFileAsStringAsync(string filePath)
         {
             byte[] buffer = await ReadFileAsync(filePath);
@@ -57,14 +67,9 @@ namespace Braces.Core
             }
         }
 
-        public static string GetHOMEPATH()
+        public static async Task ReadDirAsync(string directoryPath)
         {
-            return Environment.GetEnvironmentVariable("HOMEPATH");
-        }
 
-        public static string GetUserProfilePath()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         }
     }
 }

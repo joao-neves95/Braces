@@ -12,7 +12,7 @@
         <CommandBinding 
             Command="Save"
             CanExecute="SaveCanExecute"
-            Executed="BtnSave_Click" 
+            Executed="BtnSave_Click"
         />
         <CommandBinding
             Command="Open"
