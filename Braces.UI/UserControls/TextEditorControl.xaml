@@ -1,4 +1,5 @@
-﻿<UserControl x:Class="Braces.UI.UserControls.TextEditorControl"
+﻿<UserControl x:Name="textEditorControl"
+             x:Class="Braces.UI.UserControls.TextEditorControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +7,7 @@
              xmlns:local="clr-namespace:Braces.UI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <UserControl.CommandBindings>
         <CommandBinding
             Command="Cut"
@@ -14,11 +15,49 @@
     </UserControl.CommandBindings>
 
     <UserControl.InputBindings>
-        <KeyBinding x:Name="DeleteCurrentLineBinding" Command="Cut" Modifiers="Ctrl" Key="X" />
+        <KeyBinding x:Name="CutBinding" Command="Cut" Modifiers="Ctrl" Key="X" />
     </UserControl.InputBindings>
-    
-    <Grid>
-        <RichTextBox x:Name="richTextBox"  Block.LineHeight="3" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" />
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--
+        For future reference:
+        
+            <ListBox>
+                <ListBoxItem>1</ListBoxItem>
+            </ListBox>
+        -->
+
+        <ScrollViewer x:Name="lineNumbersScroller" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
+            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=Height}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--#region LINE NUMBERS BLOCK -->
+                <TextBlock x:Name="lineNumersListBlock" Grid.Column="0" Grid.Row="0" Width="auto" TextWrapping="Wrap" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Hidden" TextAlignment="Center" Padding="0,1,0,0" FontFamily="{Binding ElementName=richTextBox, Path=FontFamily}" FontSize="{Binding ElementName=richTextBox, Path=FontSize}" Background="White" >
+                </TextBlock>
+                <!--#endregion-->
+
+                <!--#region TEXT EDITOR-->
+                <RichTextBox Grid.Column="1" Grid.Row="0" Width="auto" x:Name="richTextBox" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" BorderBrush="Transparent" Padding="0,1,0,0" SelectionOpacity="0" Block.LineHeight="1" >
+                    <FlowDocument ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                    </FlowDocument>
+                </RichTextBox>
+                <!--#endregion -->
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>
