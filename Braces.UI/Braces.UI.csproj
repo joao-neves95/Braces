@@ -75,6 +75,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="UIConfigurator.cs" />
+    <Compile Include="UserControls\CustomCommands.cs" />
     <Compile Include="UserControls\ExplorerControl.xaml.cs">
       <DependentUpon>ExplorerControl.xaml</DependentUpon>
     </Compile>

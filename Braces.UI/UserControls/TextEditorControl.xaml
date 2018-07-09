@@ -7,15 +7,39 @@
              xmlns:local="clr-namespace:Braces.UI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <RoutedUICommand x:Key="DuplicateCommand"/>
+    </UserControl.Resources>
 
     <UserControl.CommandBindings>
         <CommandBinding
             Command="Cut"
         />
+        <CommandBinding 
+            Command="MoveUp"
+            Executed="MoveUp_Handler"
+        />
+        <CommandBinding 
+            Command="MoveDown"
+            Executed="MoveDown_Handler"
+        />
+        <CommandBinding 
+            Command="{StaticResource DuplicateCommand}"
+            Executed="Duplicate_Handler"
+        />
+        <CommandBinding 
+            Command="ApplicationCommands.Paste"
+            Executed="Duplicate_Handler"
+        />
     </UserControl.CommandBindings>
+
 
     <UserControl.InputBindings>
         <KeyBinding x:Name="CutBinding" Command="Cut" Modifiers="Ctrl" Key="X" />
+        <KeyBinding Modifiers="Ctrl" Key="D" Command="{StaticResource DuplicateCommand}"/>
+        <KeyBinding Modifiers="Alt" Key="Up" Command="MoveUp"/>
+        <KeyBinding Modifiers="Alt" Key="Down" Command="MoveDown"/>
     </UserControl.InputBindings>
 
     <Grid>
@@ -36,7 +60,7 @@
         -->
 
         <ScrollViewer x:Name="lineNumbersScroller" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
-            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=Height}">
+            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=ActualHeight}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="*" />

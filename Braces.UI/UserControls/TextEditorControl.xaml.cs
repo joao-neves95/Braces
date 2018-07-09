@@ -102,6 +102,16 @@ namespace Braces.UI.UserControls
                     richTextBox.CaretPosition = moveTo;
             }
         }
+
+        private void OnTextEditorScroll(object sender, ScrollEventArgs e)
+        {
+            lineNumbersScroller.ScrollToVerticalOffset(e.NewValue);
+        }
+
+        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            lineNumbersScroller.ScrollToVerticalOffset(richTextBox.VerticalOffset);
+        }
         #endregion
 
         #region HANDLERS - Specific TextEditor Command Handlers
@@ -126,14 +136,39 @@ namespace Braces.UI.UserControls
                 // Execute the default behaviour (delete current selection).
                 richTextBox.Cut();
         }
-        private void OnTextEditorScroll(object sender, ScrollEventArgs e)
+
+        // TODO: Make a separate method for the caret positioning.
+        private void MoveUp_Handler(object sender, ExecutedRoutedEventArgs e)
         {
-            lineNumbersScroller.ScrollToVerticalOffset( e.NewValue );
+            Paragraph currentParagraph = richTextBox.CaretPosition.Paragraph;
+            Paragraph previousParagraph = currentParagraph.PreviousBlock as Paragraph;
+            int currentPointerOffset = richTextBox.CaretPosition.GetOffsetToPosition( currentParagraph.ContentStart );
+            richTextBox.Document.Blocks.Remove(currentParagraph);
+            richTextBox.Document.Blocks.InsertBefore(previousParagraph, currentParagraph);
+            richTextBox.CaretPosition = previousParagraph.PreviousBlock.ContentStart;
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
         }
 
-        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
+        private void MoveDown_Handler(object sender, ExecutedRoutedEventArgs e)
         {
-            lineNumbersScroller.ScrollToVerticalOffset( richTextBox.VerticalOffset );
+            Paragraph currentParagraph = richTextBox.CaretPosition.Paragraph;
+            Paragraph nextParagraph = currentParagraph.NextBlock as Paragraph;
+            int currentPointerOffset = richTextBox.CaretPosition.GetOffsetToPosition( currentParagraph.ContentStart );
+            richTextBox.Document.Blocks.Remove(currentParagraph);
+            richTextBox.Document.Blocks.InsertAfter(nextParagraph, currentParagraph);
+            richTextBox.CaretPosition = nextParagraph.NextBlock.ContentStart;
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
+        }
+
+        private void Duplicate_Handler(object sender, ExecutedRoutedEventArgs e)
+        {
+            Paragraph currentParagraph = richTextBox.CaretPosition.Paragraph;
+            TextRange currentParagraphContents = new TextRange(currentParagraph.ContentStart, currentParagraph.ContentEnd);
+            int currentPointerOffset = richTextBox.CaretPosition.GetOffsetToPosition(currentParagraph.ContentStart);
+            Paragraph newParagraph = new Paragraph(new Run(currentParagraphContents.Text));
+            richTextBox.Document.Blocks.InsertAfter(currentParagraph, newParagraph);
+            richTextBox.CaretPosition = currentParagraph.NextBlock.ContentStart;
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
         }
         #endregion
         #endregion
@@ -178,6 +213,5 @@ namespace Braces.UI.UserControls
                 this.LineCount = richTextBox.Document.Blocks.Count;
             };
         }
-
     }
 }
