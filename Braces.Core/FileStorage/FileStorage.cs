@@ -22,7 +22,8 @@ namespace Braces.Core
         public static async Task<string> ReadFileAsStringAsync(string filePath)
         {
             byte[] buffer = await ReadFileAsync(filePath);
-            return Encoding.UTF8.GetString(buffer);
+            return Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+            //return new UnicodeEncoding().GetString(buffer, 0, buffer.Length);
         }
 
         public static async Task<byte[]> ReadFileAsync(string filePath)
@@ -48,8 +49,10 @@ namespace Braces.Core
             }
         }
 
-        public static async Task SaveFileAsync(string filePath, byte[] buffer)
+        public static async Task SaveFileAsync(string filePath, string content)
         {
+            int bufferSize = content.Length;
+            byte[] buffer = Encoding.UTF8.GetBytes(content.ToCharArray(0, bufferSize), 0, bufferSize);
             try
             {
                 using (FileStream fileStream = File.Open(filePath, FileMode.Create, FileAccess.Write))

@@ -154,7 +154,7 @@ namespace Braces.UI
                 this.CurrentTextEditor.richTextBox.Document.ContentEnd
             );
 
-            byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);
+            // byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);
 
             if (this.CurrentFile == null)
             {
@@ -167,7 +167,7 @@ namespace Braces.UI
                 }
             }
 
-            await FileStorage.SaveFileAsync(this.CurrentFile.CompletePath, encodedInput);
+            await FileStorage.SaveFileAsync(this.CurrentFile.CompletePath, userInput.Text);
         }
         #endregion
     }
