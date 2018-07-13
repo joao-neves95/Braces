@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Braces.UI"
         xmlns:userControls="clr-namespace:Braces.UI.UserControls"
         mc:Ignorable="d"
-        x:Name="Window" Title="Braces" MinHeight="100" MinWidth="50" Height="550" Width="900" WindowStartupLocation="CenterScreen">
+        x:Name="Window" Title="Braces" MinHeight="100" MinWidth="50" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     
     <Window.CommandBindings>
         <CommandBinding 
@@ -68,20 +68,49 @@
             </StackPanel>
 
             <Canvas Panel.ZIndex="2">
-                <Grid x:Name="explorerPanel" Canvas.ZIndex="3" Canvas.Left="0" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
+                <Grid x:Name="explorerPanel" Canvas.ZIndex="3" Canvas.Left="0" Height="{Binding ElementName=Window, Path=Height, Mode=TwoWay}" Margin="-150,0,0,0">
                     <userControls:ExplorerControl />
                 </Grid>
 
-                <Grid x:Name="searchPanel" Canvas.ZIndex="3" Height="{Binding ElementName=Window, Path=Height}" Margin="-150,0,0,0">
+                <Grid x:Name="searchPanel" Canvas.ZIndex="3" Height="{Binding ElementName=Window, Path=Height, Mode=TwoWay}" Margin="-150,0,0,0">
                     <userControls:SearchControl />
                 </Grid>
             </Canvas>
             <!--#endregion-->
 
-            <Grid ScrollViewer.CanContentScroll="True">
-                <userControls:TextEditorControl x:Name="textEditor1" />
-            </Grid>
+            <!--#region TAB SYSTEM -->
+            <TabPanel>
+                <TabControl>
+                    
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image />
+                                <TextBlock>TextEditor1.txt</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid>
+                            <userControls:TextEditorControl x:Name="textEditor1" />
+                        </Grid>
+                    </TabItem>
+
+                    <TabItem>
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <Image />
+                                <TextBlock>TextEditor2.txt</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid>
+                            <userControls:TextEditorControl x:Name="textEditor2" />
+                        </Grid>
+                    </TabItem>
+
+                </TabControl>
+            </TabPanel>
+            <!--#endregion-->
             
         </DockPanel>
+
     </Grid>
 </Window>

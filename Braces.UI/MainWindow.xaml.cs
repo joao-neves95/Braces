@@ -37,7 +37,6 @@ namespace Braces.UI
             this.SearchIsVisible = false;
             this.CurrentFile = null;
 
-            // TODO: Implement the editor configurator.
             this.UIConfiguration = new UIConfigurator(userConfig, this);
 
             // Change after tab system.

@@ -14,28 +14,34 @@ namespace Braces.UI
 {
     public partial class UIConfigurator
     {
+        #region CTOR
+
+        public UIConfigurator(IniData userConfig, MainWindow mainWindow)
+        {
+            this.MainWnd = mainWindow;
+            this.UserConfig = userConfig;
+            this.ConfigureUI();
+        }
+
+        #endregion
+
         #region PROPERTIES
-        public MainWindow That { get; private set; }
+
+        public MainWindow MainWnd { get; private set; }
 
         public IniData UserConfig { get; private set; }
 
         public ModifierKeys DefaultModifier { get; set; }
 
         public string OpenPath { get; set; }
-        #endregion
 
-        public UIConfigurator(IniData userConfig, MainWindow mainWindow)
-        {
-            this.That = mainWindow;
-            this.UserConfig = userConfig;
-            this.ConfigureUI();
-        }
+        #endregion
 
         public void ConfigureUI()
         {
             this.DefaultModifier = Utils.StringToKeyEnum<ModifierKeys>( this.UserConfig["key_bindings"]["default_modifier"] );
-            ConfigureKey("save", That.SaveKeyBinding, That.SaveBtn);
-            ConfigureKey("open", That.OpenKeyBinding, That.OpenBtn);
+            ConfigureKey("save", MainWnd.SaveKeyBinding, MainWnd.SaveBtn);
+            ConfigureKey("open", MainWnd.OpenKeyBinding, MainWnd.OpenBtn);
 
             this.OpenPath = this.UserConfig["env"]["open_path"];
 
@@ -43,8 +49,8 @@ namespace Braces.UI
 
         public void UpdateTextEditorConfig()
         {
-            That.CurrentTextEditor.richTextBox.FontSize = 12;
-            That.CurrentTextEditor.richTextBox.FontFamily = new FontFamily("Segoe UI");
+            MainWnd.CurrentTextEditor.richTextBox.FontSize = 12;
+            MainWnd.CurrentTextEditor.richTextBox.FontFamily = new FontFamily("Segoe UI");
         }
 
         private void ConfigureKey(string inputKey, KeyBinding keyBinding, MenuItem menuItem)
@@ -53,7 +59,7 @@ namespace Braces.UI
             {
                 ModifierKeys modifierKeys = Utils.StringToKeyEnum<ModifierKeys>( this.UserConfig["key_bindings"][inputKey + "_modifiers"] );
                 keyBinding.Modifiers = modifierKeys;
-                That.SaveBtn.InputGestureText += modifierKeys.ToString();
+                MainWnd.SaveBtn.InputGestureText += modifierKeys.ToString();
             }
             else
             {
