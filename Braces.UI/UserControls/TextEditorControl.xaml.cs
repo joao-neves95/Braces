@@ -66,11 +66,12 @@ namespace Braces.UI.UserControls
         #endregion
 
         #region HANDLERS - Global TextEditor Listeners
+
         private void OnPreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return || e.Key == Key.Return)
             {
-                // Set the indentation based on the previuous paragraph.
+                // Set the current indentation based on the previuous paragraph.
                 Paragraph currParagraph = richTextBox.CaretPosition.Paragraph;
 
                 char[] currLineArr = new TextRange(currParagraph.ContentStart, currParagraph.ContentEnd).Text.ToCharArray();
@@ -103,21 +104,18 @@ namespace Braces.UI.UserControls
             }
         }
 
-        private void OnTextEditorScroll(object sender, ScrollEventArgs e)
+        private void AddTextEditorEventHandlers()
         {
-            lineNumbersScroller.ScrollToVerticalOffset(e.NewValue);
+            richTextBox.TextChanged += (sender, args) => {
+                this.LineCount = richTextBox.Document.Blocks.Count;
+                if (lineNumersListBlock.Inlines.Count != this.LineCount)
+                    this.InjectAllLineNumber();
+            };
         }
 
-        private void OnMouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            lineNumbersScroller.ScrollToVerticalOffset(richTextBox.VerticalOffset);
-        }
         #endregion
 
         #region HANDLERS - Specific TextEditor Command Handlers
-        private void MoveLine_Handler(object sender, KeyEventArgs e)
-        {
-        }
 
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -146,7 +144,7 @@ namespace Braces.UI.UserControls
             richTextBox.Document.Blocks.Remove(currentParagraph);
             richTextBox.Document.Blocks.InsertBefore(previousParagraph, currentParagraph);
             richTextBox.CaretPosition = previousParagraph.PreviousBlock.ContentStart;
-            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset - 1 );
         }
 
         private void MoveDown_Handler(object sender, ExecutedRoutedEventArgs e)
@@ -157,7 +155,7 @@ namespace Braces.UI.UserControls
             richTextBox.Document.Blocks.Remove(currentParagraph);
             richTextBox.Document.Blocks.InsertAfter(nextParagraph, currentParagraph);
             richTextBox.CaretPosition = nextParagraph.NextBlock.ContentStart;
-            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset - 1 );
         }
 
         private void Duplicate_Handler(object sender, ExecutedRoutedEventArgs e)
@@ -168,12 +166,13 @@ namespace Braces.UI.UserControls
             Paragraph newParagraph = new Paragraph(new Run(currentParagraphContents.Text));
             richTextBox.Document.Blocks.InsertAfter(currentParagraph, newParagraph);
             richTextBox.CaretPosition = currentParagraph.NextBlock.ContentStart;
-            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset );
+            richTextBox.CaretPosition = richTextBox.CaretPosition.GetPositionAtOffset( -currentPointerOffset - 1 );
         }
         #endregion
         #endregion
 
         #region METHODS - LINE NUMBERS LIST
+
         private void AddLineNumber(int num = -1)
         {
             Label newLine = new Label();
@@ -190,8 +189,23 @@ namespace Braces.UI.UserControls
 
         private void RemoveLineNumber()
         {
-            lineNumersListBlock.Inlines.Remove(lineNumersListBlock.Inlines.LastInline);
+            lineNumersListBlock.Inlines.Remove( lineNumersListBlock.Inlines.LastInline );
         }
+
+        /// <summary>
+        /// This clears and updates all line numbers.
+        /// </summary>
+        private void InjectAllLineNumber()
+        {
+            lineNumersListBlock.Inlines.Clear();
+            this.LineCount = richTextBox.Document.Blocks.Count;
+
+            for (int i = 0; i < this.LineCount; ++i)
+            {
+                this.AddLineNumber(i);
+            }
+        }
+
         #endregion
 
         private void OverrideDefaultEditorKeyBindings()
@@ -206,12 +220,5 @@ namespace Braces.UI.UserControls
             };
         }
 
-        private void AddTextEditorEventHandlers()
-        {
-            richTextBox.Document.Blocks.Count();
-            richTextBox.TextChanged += (sender, args) => {
-                this.LineCount = richTextBox.Document.Blocks.Count;
-            };
-        }
     }
 }

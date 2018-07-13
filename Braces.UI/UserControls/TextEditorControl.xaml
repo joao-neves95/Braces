@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Braces.UI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <UserControl.Resources>
         <RoutedUICommand x:Key="DuplicateCommand"/>
     </UserControl.Resources>
@@ -60,7 +60,7 @@
         -->
 
         <ScrollViewer x:Name="lineNumbersScroller" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
-            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=ActualHeight}">
+            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=Height}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="*" />
@@ -76,7 +76,7 @@
                 <!--#endregion-->
 
                 <!--#region TEXT EDITOR-->
-                <RichTextBox Grid.Column="1" Grid.Row="0" Width="auto" x:Name="richTextBox" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" BorderBrush="Transparent" Padding="0,1,0,0" SelectionOpacity="0" Block.LineHeight="1" >
+                <RichTextBox Grid.Column="1" Grid.Row="0" Width="auto" x:Name="richTextBox" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" Padding="0,1,0,0" SelectionOpacity="0" Block.LineHeight="1" BorderThickness="0" >
                     <FlowDocument ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
                     </FlowDocument>
                 </RichTextBox>

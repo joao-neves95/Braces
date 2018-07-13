@@ -81,6 +81,7 @@
             <Grid ScrollViewer.CanContentScroll="True">
                 <userControls:TextEditorControl x:Name="textEditor1" />
             </Grid>
+            
         </DockPanel>
     </Grid>
 </Window>

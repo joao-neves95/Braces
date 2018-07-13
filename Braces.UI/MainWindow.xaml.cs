@@ -38,7 +38,7 @@ namespace Braces.UI
             this.CurrentFile = null;
 
             // TODO: Implement the editor configurator.
-            this.UIConfiguraton = new UIConfigurator(userConfig, this);
+            this.UIConfiguration = new UIConfigurator(userConfig, this);
 
             // Change after tab system.
             this.CurrentTextEditor = textEditor1;
@@ -47,7 +47,7 @@ namespace Braces.UI
         #region PROPERTIES
 
         // TODO: Use the FileModel instead.
-        public UIConfigurator UIConfiguraton { get; set; }
+        public UIConfigurator UIConfiguration { get; set; }
 
         public FileModel CurrentFile { get; set; }
 
@@ -61,7 +61,7 @@ namespace Braces.UI
             set
             {
                 this.currentTextEditor = value;
-                UIConfiguraton.UpdateTextEditorConfig();
+                UIConfiguration.UpdateTextEditorConfig();
             }
         }
 
@@ -117,7 +117,7 @@ namespace Braces.UI
         {
             // TODO: Break the path to test and improve exception handling.
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = this.UIConfiguraton.OpenPath;
+            openFileDialog.InitialDirectory = this.UIConfiguration.OpenPath;
             bool? userSelectedFile = openFileDialog.ShowDialog();
 
             // Fired when the user clicks on "open".
@@ -127,13 +127,13 @@ namespace Braces.UI
                 string fileContent = await FileStorage.ReadFileAsStringAsync( filePath );
                 string[] documentLines = Regex.Split(fileContent, "\n");
                 this.CurrentTextEditor.richTextBox.Document.Blocks.Clear();
-                for (uint i = 0; i < documentLines.Length; ++i)
+                for (uint i = 0; i < documentLines.Length - 1; ++i)
                 {
                     documentLines[i] = Regex.Replace(documentLines[i], "(\r\n?|\n)", "");
                     this.CurrentTextEditor.richTextBox.Document.Blocks.Add( new Paragraph( new Run( documentLines[i] ) ) );
                 }
 
-                this.CurrentFile = new FileModel(filePath);
+                this.CurrentFile = new FileModel( filePath );
             }
         }
 
