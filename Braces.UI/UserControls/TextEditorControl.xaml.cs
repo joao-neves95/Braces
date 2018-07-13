@@ -109,7 +109,7 @@ namespace Braces.UI.UserControls
             richTextBox.TextChanged += (sender, args) => {
                 this.LineCount = richTextBox.Document.Blocks.Count;
                 if (lineNumersListBlock.Inlines.Count != this.LineCount)
-                    this.InjectAllLineNumber();
+                    this.InjectAllLineNumbers();
             };
         }
 
@@ -195,7 +195,7 @@ namespace Braces.UI.UserControls
         /// <summary>
         /// This clears and updates all line numbers.
         /// </summary>
-        private void InjectAllLineNumber()
+        private void InjectAllLineNumbers()
         {
             lineNumersListBlock.Inlines.Clear();
             this.LineCount = richTextBox.Document.Blocks.Count;
