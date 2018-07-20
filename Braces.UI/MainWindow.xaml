@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Braces.UI"
         xmlns:userControls="clr-namespace:Braces.UI.UserControls"
         mc:Ignorable="d"
-        x:Name="Window" Title="Braces" MinHeight="100" MinWidth="50" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        x:Name="Window" Title="Braces" MinHeight="100" MinWidth="50" Width="1100" Height="800" WindowStartupLocation="CenterScreen" WindowState="Normal">
     
     <Window.CommandBindings>
         <CommandBinding 
@@ -61,53 +61,66 @@
             <!--#endregion-->
             <!-- TODO: Add a toolbar. -->
             
+            <!--#region CONTENT -->
+            
             <!--#region SIDENAV-->
-            <StackPanel Panel.ZIndex="5" Name="pnlSideNav" Height="auto" Width="48" Orientation="vertical" HorizontalAlignment="Left" Background="Gray">
+            <StackPanel Panel.ZIndex="5" Name="pnlSideNav" Height="auto" Width="48" Orientation="vertical" HorizontalAlignment="Left" Background="Gray" DockPanel.Dock="Left">
                 <Button Height="25" x:Name="BtnSideNavExplorer" Visibility="Visible" Panel.ZIndex="2" Content="Explorer" Click="BtnSideNavExplorer_Click"></Button>
                 <Button Height="25" x:Name="BtnSideNavSearch" Visibility="Visible" Panel.ZIndex="2" Content="Search" Click="BtnSideNavSearch_Click"/>
             </StackPanel>
 
-            <Canvas Panel.ZIndex="2">
-                <Grid x:Name="explorerPanel" Canvas.ZIndex="3" Canvas.Left="0" Height="{Binding ElementName=Window, Path=Height, Mode=TwoWay}" Margin="-150,0,0,0">
-                    <userControls:ExplorerControl />
-                </Grid>
+            <Grid x:Name="contentGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Canvas Panel.ZIndex="2" Grid.Column="0" Grid.Row="0">
+                    <Grid x:Name="explorerPanel" Grid.Row="0" Grid.Column="0" Height="{Binding ElementName=contentGrid, Path=ActualHeight, BindsDirectlyToSource=True, Mode=OneWay}" Canvas.ZIndex="3" Canvas.Left="0" Margin="-150,0,0,0" >
+                        <userControls:ExplorerControl />
+                    </Grid>
 
-                <Grid x:Name="searchPanel" Canvas.ZIndex="3" Height="{Binding ElementName=Window, Path=Height, Mode=TwoWay}" Margin="-150,0,0,0">
-                    <userControls:SearchControl />
-                </Grid>
-            </Canvas>
+                    <Grid x:Name="searchPanel" Height="{Binding ElementName=contentGrid, Path=ActualHeight, BindsDirectlyToSource=True, Mode=OneWay}" Canvas.ZIndex="3" Margin="-150,0,0,0" >
+                        <userControls:SearchControl />
+                    </Grid>
+                </Canvas>
             <!--#endregion-->
 
-            <!--#region TAB SYSTEM -->
-            <TabPanel>
-                <TabControl>
+                <!--#region TAB SYSTEM -->
+                <TabPanel>
+                    <TabControl Height="{Binding ElementName=contentGrid, Path=ActualHeight, BindsDirectlyToSource=True, Mode=OneWay}">
                     
-                    <TabItem>
-                        <TabItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <Image />
-                                <TextBlock>TextEditor1.txt</TextBlock>
-                            </StackPanel>
-                        </TabItem.Header>
-                        <Grid>
-                            <userControls:TextEditorControl x:Name="textEditor1" />
-                        </Grid>
-                    </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image />
+                                    <TextBlock>TextEditor1.txt</TextBlock>
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <userControls:TextEditorControl x:Name="textEditor1" />
+                            </Grid>
+                        </TabItem>
 
-                    <TabItem>
-                        <TabItem.Header>
-                            <StackPanel Orientation="Horizontal">
-                                <Image />
-                                <TextBlock>TextEditor2.txt</TextBlock>
-                            </StackPanel>
-                        </TabItem.Header>
-                        <Grid>
-                            <userControls:TextEditorControl x:Name="textEditor2" />
-                        </Grid>
-                    </TabItem>
+                        <TabItem>
+                            <TabItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image />
+                                    <TextBlock>TextEditor2.txt</TextBlock>
+                                </StackPanel>
+                            </TabItem.Header>
+                            <Grid>
+                                <userControls:TextEditorControl x:Name="textEditor2" />
+                            </Grid>
+                        </TabItem>
 
-                </TabControl>
-            </TabPanel>
+                    </TabControl>
+                </TabPanel>
+                <!--#endregion-->
+                
+            </Grid>
             <!--#endregion-->
             
         </DockPanel>
