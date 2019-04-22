@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Braces.Core.Enums;
 
-namespace Braces.Core.PluginSystem
+namespace Braces.Core.ExtensionSystem
 {
     public interface IPlugin : IExtension
     {
-        string PluginName { get; }
+        List<string> FileTypes { get; }
 
         void Execute();
     }

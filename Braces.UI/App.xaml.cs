@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Braces.Core;
+using Braces.Core.ExtensionSystem;
 
 namespace Braces.UI
 {
@@ -20,6 +21,7 @@ namespace Braces.UI
             await userConfig.InitAsync();
             MainWindow = new MainWindow(userConfig.Config);
             MainWindow.Show();
+            await PluginManager.Instance.FindPluginsAsync();
         }
     }
 }
