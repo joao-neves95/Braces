@@ -7,7 +7,7 @@ namespace Braces.Core.Enums
     public enum ExtensionType
     {
         Plugin,
-        ColorTheme,
+        Theme,
         CodeTemplate,
         CodeSnippets
     }

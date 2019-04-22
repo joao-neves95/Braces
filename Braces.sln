@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio 15
+# Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.UI", "Braces.UI\Braces.UI.csproj", "{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.Core", "Braces.Core\Braces.Core.csproj", "{821AB101-8D7F-4ED7-B455-04248F303DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.Core", "Braces.Core\Braces.Core.csproj", "{821AB101-8D7F-4ED7-B455-04248F303DA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DA503C8-EF15-4A73-A9A6-F16B1D7CEEE1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		TODO.md = TODO.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
