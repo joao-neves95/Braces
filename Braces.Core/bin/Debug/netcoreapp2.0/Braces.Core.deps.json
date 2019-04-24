@@ -18,17 +18,26 @@
       },
       "ini-parser/2.5.2": {
         "runtime": {
-          "lib/net20/INIFileParser.dll": {}
+          "lib/net20/INIFileParser.dll": {
+            "assemblyVersion": "2.5.2.0",
+            "fileVersion": "2.5.2.0"
+          }
         }
       },
       "PresentationCore/4.0.0.0": {
         "runtime": {
-          "PresentationCore.dll": {}
+          "PresentationCore.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2558.0"
+          }
         }
       },
       "PresentationFramework/4.0.0.0": {
         "runtime": {
-          "PresentationFramework.dll": {}
+          "PresentationFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2558.0"
+          }
         }
       }
     }

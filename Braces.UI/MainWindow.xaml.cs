@@ -18,7 +18,9 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using Microsoft.Win32;
 using Braces.Core;
+using Braces.Core.Enums;
 using Braces.Core.Models;
+using Braces.UI.ExtensionSystem;
 using Braces.UI.UserControls;
 using IniParser.Model;
 
@@ -32,6 +34,7 @@ namespace Braces.UI
         public MainWindow(IniData userConfig)
         {
             InitializeComponent();
+
             this.DataContext = this;
             this.ExplorerIsVisible = false;
             this.SearchIsVisible = false;
@@ -43,6 +46,12 @@ namespace Braces.UI
             this.CurrentTextEditor = textEditor1;
         }
 
+        #region FIELDS
+
+        private Core.ExtensionSystem.ExtensionSystem ExtensionSystem = Core.ExtensionSystem.ExtensionSystem.Instance;
+
+        #endregion
+
         #region PROPERTIES
 
         // TODO: Use the FileModel instead.
@@ -51,6 +60,7 @@ namespace Braces.UI
         public FileModel CurrentFile { get; set; }
 
         private TextEditorControl currentTextEditor;
+
         public TextEditorControl CurrentTextEditor
         {
             get
@@ -71,7 +81,6 @@ namespace Braces.UI
 
         #region SIDENAV
 
-        #region SIDENAV EXPLORER
         public bool ExplorerIsVisible { get; private set; }
 
         private void BtnSideNavExplorer_Click(object sender, RoutedEventArgs e)
@@ -79,9 +88,7 @@ namespace Braces.UI
             this.ShowHideSideNav(GetStoryboard(ExplorerIsVisible), explorerPanel);
             this.ExplorerIsVisible = !ExplorerIsVisible;
         }
-        #endregion
 
-        #region SIDENAV SHOW
         public bool SearchIsVisible { get; private set; }
 
         private void BtnSideNavSearch_Click(object sender, RoutedEventArgs e)
@@ -89,7 +96,6 @@ namespace Braces.UI
             this.ShowHideSideNav(GetStoryboard(SearchIsVisible), searchPanel);
             this.SearchIsVisible = !SearchIsVisible;
         }
-        #endregion
 
         private void ShowHideSideNav(string Storyboard, Grid target)
         {
@@ -126,6 +132,7 @@ namespace Braces.UI
                 string fileContent = await FileStorage.ReadFileAsStringAsync( filePath );
                 string[] documentLines = Regex.Split(fileContent, "\n");
                 this.CurrentTextEditor.richTextBox.Document.Blocks.Clear();
+
                 for (uint i = 0; i < documentLines.Length - 1; ++i)
                 {
                     documentLines[i] = Regex.Replace(documentLines[i], "(\r\n?|\n)", "");
@@ -133,6 +140,13 @@ namespace Braces.UI
                 }
 
                 this.CurrentFile = new FileModel( filePath );
+                await ExtensionSystem.PluginManager.FireEventAsync(
+                    EventName.OnFileOpen,
+                    this.CurrentFile.Extension,
+                    sender,
+                    e,
+                    new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
+               );
             }
         }
 
@@ -167,7 +181,15 @@ namespace Braces.UI
             }
 
             await FileStorage.SaveFileAsync(this.CurrentFile.CompletePath, userInput.Text);
+            await ExtensionSystem.PluginManager.FireEventAsync(
+                EventName.OnFileSave,
+                this.CurrentFile.Extension,
+                sender,
+                e,
+                new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
+           );
         }
+
         #endregion
     }
 }

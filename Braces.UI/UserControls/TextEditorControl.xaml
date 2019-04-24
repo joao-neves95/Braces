@@ -42,7 +42,7 @@
         <KeyBinding Modifiers="Alt" Key="Down" Command="MoveDown"/>
     </UserControl.InputBindings>
 
-    <Grid>
+    <Grid ScrollViewer.CanContentScroll="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -59,8 +59,8 @@
             </ListBox>
         -->
 
-        <ScrollViewer x:Name="lineNumbersScroller" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
-            <Grid Width="{Binding ElementName=textEditorControl, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=Height}">
+        <ScrollViewer x:Name="lineNumbersScroller" Grid.Column="0" Grid.Row="0" Width="auto" Height="auto" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="White" VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center" >
+            <Grid Width="{Binding ElementName=richTextBox, Path=Width}" Height="{Binding ElementName=textEditorControl, Path=Height}" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30" />
                     <ColumnDefinition Width="*" />
@@ -76,8 +76,10 @@
                 <!--#endregion-->
 
                 <!--#region TEXT EDITOR-->
-                <RichTextBox Grid.Column="1" Grid.Row="0" Width="auto" x:Name="richTextBox" AcceptsTab="True" PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" VerticalScrollBarVisibility="Auto" Padding="0,1,0,0" SelectionOpacity="0" Block.LineHeight="1" BorderThickness="0" >
-                    <FlowDocument ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" >
+                <RichTextBox x:Name="richTextBox" Grid.Column="1" Grid.Row="0" Width="auto" Padding="0,1,0,0" AcceptsTab="True" 
+                             ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto"
+                             PreviewKeyDown="OnPreviewKeyDown" KeyUp="OnKeyUp" Block.LineHeight="1" BorderThickness="0" >
+                    <FlowDocument ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                     </FlowDocument>
                 </RichTextBox>
                 <!--#endregion -->

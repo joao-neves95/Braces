@@ -21,7 +21,10 @@
       },
       "ini-parser/2.5.2": {
         "runtime": {
-          "lib/net20/INIFileParser.dll": {}
+          "lib/net20/INIFileParser.dll": {
+            "assemblyVersion": "2.5.2.0",
+            "fileVersion": "2.5.2.0"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -32,17 +35,26 @@
       },
       "PresentationCore/4.0.0.0": {
         "runtime": {
-          "PresentationCore.dll": {}
+          "PresentationCore.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2558.0"
+          }
         }
       },
       "PresentationFramework/4.0.0.0": {
         "runtime": {
-          "PresentationFramework.dll": {}
+          "PresentationFramework.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2558.0"
+          }
         }
       },
       "WindowsBase/4.0.0.0": {
         "runtime": {
-          "WindowsBase.dll": {}
+          "WindowsBase.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.2558.0"
+          }
         }
       }
     }
@@ -63,7 +75,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pyrxGo3EnWArAQ39uIDcx8/gBUglP+TmrFFWasuoxE2KI3N2vwfcHFSm1SCGsvv5PhvY13Ljloz0MJByM5PRPw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },

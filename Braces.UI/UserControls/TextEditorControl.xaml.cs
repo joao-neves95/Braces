@@ -26,6 +26,7 @@ namespace Braces.UI.UserControls
         {
             InitializeComponent();
             DataContext = this;
+            this.RichTextBox = richTextBox;
             this.OverrideDefaultEditorKeyBindings();
             this.AddTextEditorEventHandlers();
             richTextBox.Document.Blocks.Add(new Paragraph());
@@ -35,7 +36,11 @@ namespace Braces.UI.UserControls
         }
 
         #region PROPERTIES
+
+        public RichTextBox RichTextBox { get; }
+
         private int _lineCount;
+
         public int LineCount
         {
             get
@@ -49,6 +54,7 @@ namespace Braces.UI.UserControls
         }
 
         public string CurrentIndentation { get; set; }
+
         #endregion
 
         #region HANDLERS
@@ -173,7 +179,7 @@ namespace Braces.UI.UserControls
 
         #region METHODS - LINE NUMBERS LIST
 
-        private void AddLineNumber(int num = -1)
+        public void AddLineNumber(int num = -1)
         {
             Label newLine = new Label();
             newLine.Padding = new Thickness(0);
@@ -187,7 +193,7 @@ namespace Braces.UI.UserControls
             lineNumersListBlock.Inlines.Add( newLine );
         }
 
-        private void RemoveLineNumber()
+        public void RemoveLineNumber()
         {
             lineNumersListBlock.Inlines.Remove( lineNumersListBlock.Inlines.LastInline );
         }

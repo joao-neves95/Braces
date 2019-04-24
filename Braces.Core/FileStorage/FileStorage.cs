@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace Braces.Core
 {
@@ -11,12 +12,21 @@ namespace Braces.Core
     {
         public static string GetHOMEPATH()
         {
-            return Environment.GetEnvironmentVariable("HOMEPATH");
+            return GetCurrentOperatingSystem() == OSPlatform.Windows ? Environment.GetEnvironmentVariable( "HOMEDRIVE" ) + Environment.GetEnvironmentVariable( "HOMEPATH" ) :
+                                                                       Environment.GetEnvironmentVariable( "$HOME" );
+        }
+
+        public static OSPlatform GetCurrentOperatingSystem()
+        {
+            return RuntimeInformation.IsOSPlatform( OSPlatform.Windows ) ? OSPlatform.Windows :
+                   RuntimeInformation.IsOSPlatform( OSPlatform.Linux ) ? OSPlatform.Linux :
+                   RuntimeInformation.IsOSPlatform( OSPlatform.OSX ) ? OSPlatform.OSX :
+                   throw new NotSupportedException( "Unrecognized OSPlatform." );
         }
 
         public static string GetUserProfilePath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            return Environment.GetFolderPath( Environment.SpecialFolder.UserProfile );
         }
 
         public static async Task<string> ReadFileAsStringAsync(string filePath)
@@ -59,8 +69,6 @@ namespace Braces.Core
                 {
                     fileStream.Seek(0, SeekOrigin.Begin);
                     await fileStream.WriteAsync(buffer, 0, buffer.Length);
-                    fileStream.Close();
-                    fileStream.Dispose();
                 }
             }
             catch (Exception e)

@@ -15,20 +15,16 @@ namespace Braces.Core
 {
     public class UserConfig
     {
-        public static readonly string INI_PATH = Path.Combine(FileStorage.GetHOMEPATH(), "_braces");
-
-        private IniData config;
-        public IniData Config
-        {
-            get { return config; }
-            private set { config = value; }
-        }
-
         public UserConfig()
         {
         }
 
+        public static readonly string INI_PATH = Path.Combine( FileStorage.GetHOMEPATH(), "_braces" );
+
+        public IniData Config { get; private set; }
+
         #region PUBLIC METHODS
+
         /// <summary>
         /// Init the UserConfiguration. It parses the user configuration file, or creates a new default one, and stores the data in the userConfig.Config instance.
         /// </summary>
@@ -36,19 +32,21 @@ namespace Braces.Core
         public async Task InitAsync()
         {
             if (!File.Exists(INI_PATH))
-                this.InitIniFile();
+                await this.InitIniFile();
             else
                 await this.ParseIniFileAsync();
         }
+
         #endregion
 
-        #region PRIVATE METHODS
-        private void InitIniFile()
+        #region PRIVATE METHOD
+
+        private async Task InitIniFile()
         {
             IniData defaultIni = GetDefaultWindowsConfiguration();
 
             FileIniDataParser parser = new FileIniDataParser( GetIniParserConfiguration() );
-            parser.WriteFile(INI_PATH, defaultIni);
+            parser.WriteFile( INI_PATH, defaultIni );
 
             this.Config = defaultIni;
         }
@@ -110,6 +108,7 @@ namespace Braces.Core
 
             return defaultIni; 
         }
+
         #endregion
     }
 }
