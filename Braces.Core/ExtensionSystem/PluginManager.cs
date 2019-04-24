@@ -1,6 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -57,7 +60,17 @@ namespace Braces.Core.ExtensionSystem
         public async Task FindPluginsAsync()
         {
             // Simulate finding plugins.
-            List<Plugin> fetchedPlugins = new List<Plugin> { new TestPlugin() };
+            List<Plugin> fetchedPlugins = new List<Plugin> { /* new TestPlugin() */ };
+            // LOAD PLUGIN:
+            // TODO: Optimize this.
+            // TODO: Add a convention for the typename, or add the type name to a configuration file.
+            string assemblyPath = Path.GetFullPath( "../../../TestPlugin/bin/Debug/TestPlugin.dll" );
+            Assembly ptrAssembly = Assembly.LoadFile( assemblyPath );
+            Type thisPluginType = ptrAssembly.GetTypes().First( type => type.BaseType.Name == "Plugin" ); // .GetType();
+            fetchedPlugins.Add( (Plugin)Activator.CreateInstance( thisPluginType ) );
+
+            // List<Plugin> fetchedPlugins = 
+
             string currentFileType;
 
             for (int i = 0; i < fetchedPlugins.Count; ++i)
@@ -75,7 +88,7 @@ namespace Braces.Core.ExtensionSystem
                 }
             }
 
-            await Task.CompletedTask;
+            return;
         }
 
         public async Task LoadPluginsAsync()
@@ -100,7 +113,7 @@ namespace Braces.Core.ExtensionSystem
         public async Task FireEventAsync(string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args)
         {
             if (!this.PluginIdsByFileType.ContainsKey( fileTypeName ))
-                await Task.CompletedTask;
+                return;
 
             Plugin currentPlugin;
 
@@ -108,13 +121,16 @@ namespace Braces.Core.ExtensionSystem
             {
                 currentPlugin = this.Plugins[this.PluginIdsByFileType[fileTypeName][i]];
                 
+                if ( !currentPlugin.ImplementsMethod(eventName) )
+                    continue;
+
                 switch (eventName)
                 {
                     case EventName.OnFileSave:
-                        await currentPlugin.OnFileSave( sender, e, (FileEventArgs)args );
+                        await currentPlugin.OnFileSave( sender, e, args );
                         break;
                     case EventName.OnFileOpen:
-                        await currentPlugin.OnFileOpen( sender, e, (FileEventArgs)args);
+                        await currentPlugin.OnFileOpen( sender, e, args);
                         break;
                     default:
                         break;

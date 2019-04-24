@@ -29,7 +29,7 @@ namespace Braces.Core.ExtensionSystem
 
         public Plugin()
         {
-            this.Id = Utilities.RandomAlphaNumeric( 21 );
+            this.Id = Utilities.RandomAlphaNumeric( 15 );
         }
 
         #region PRIVATE PROPERTIES
@@ -48,7 +48,7 @@ namespace Braces.Core.ExtensionSystem
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
-        public virtual async Task OnFileOpen( object sender, RoutedEventArgs e, FileEventArgs args ) { }
+        public virtual async Task OnFileOpen( object sender, RoutedEventArgs e, object args ) { }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace Braces.Core.ExtensionSystem
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
-        public virtual async Task OnFileSave( object sender, RoutedEventArgs e, FileEventArgs args ) { }
+        public virtual async Task OnFileSave( object sender, RoutedEventArgs e, object args ) { }
 
         #endregion
     }

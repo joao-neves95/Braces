@@ -1,0 +1,14 @@
+C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csprojAssemblyReference.cache
+C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csproj.CoreCompileInputs.cache
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.pdb
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\Braces.Core.dll
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\Braces.exe
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\INIFileParser.dll
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\Braces.Core.pdb
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\Braces.pdb
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\Braces.exe.config
+C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csproj.CopyComplete
+C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.pdb
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll.config
+C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll
+C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.dll

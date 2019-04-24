@@ -20,7 +20,7 @@ using Microsoft.Win32;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.Models;
-using Braces.Core.ExtensionSystem;
+using Braces.UI.ExtensionSystem;
 using Braces.UI.UserControls;
 using IniParser.Model;
 
@@ -48,7 +48,7 @@ namespace Braces.UI
 
         #region FIELDS
 
-        private ExtensionSystem ExtensionSystem = ExtensionSystem.Instance;
+        private Core.ExtensionSystem.ExtensionSystem ExtensionSystem = Core.ExtensionSystem.ExtensionSystem.Instance;
 
         #endregion
 
@@ -145,7 +145,7 @@ namespace Braces.UI
                     this.CurrentFile.Extension,
                     sender,
                     e,
-                    new FileEventArgs( this.CurrentTextEditor.richTextBox, this.CurrentFile )
+                    new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
                );
             }
         }
@@ -186,7 +186,7 @@ namespace Braces.UI
                 this.CurrentFile.Extension,
                 sender,
                 e,
-                new FileEventArgs( this.CurrentTextEditor.richTextBox, this.CurrentFile )
+                new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
            );
         }
 

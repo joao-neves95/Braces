@@ -4,18 +4,19 @@ using System.Text;
 using Braces.Core.Models;
 using System.Windows;
 using System.Windows.Controls;
+using Braces.UI.UserControls;
 
-namespace Braces.Core.ExtensionSystem
+namespace Braces.UI.ExtensionSystem
 {
     public class FileEventArgs
     {
-        public FileEventArgs( RichTextBox textEditor, FileModel fileModel )
+        public FileEventArgs( TextEditorControl textEditor, FileModel fileModel )
         {
             this.TextEditor = textEditor;
             this.File = fileModel;
         }
 
-        public RichTextBox TextEditor { get; }
+        public TextEditorControl TextEditor { get; }
 
         public FileModel File { get; }
     }

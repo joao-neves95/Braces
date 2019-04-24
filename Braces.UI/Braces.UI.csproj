@@ -74,6 +74,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EventArguments\FileEventArgs.cs" />
     <Compile Include="UIConfigurator.cs" />
     <Compile Include="UserControls\CustomCommands.cs" />
     <Compile Include="UserControls\ExplorerControl.xaml.cs">
