@@ -12,3 +12,17 @@ C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.pdb
 C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll.config
 C:\Users\jpedrone\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll
 C:\Users\jpedrone\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll.config
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\TestPlugin.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\Braces.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\Braces.exe
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\INIFileParser.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\Braces.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\bin\Debug\Braces.exe.config
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csprojAssemblyReference.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csproj.CoreCompileInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.csproj.CopyComplete
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\TestPlugin\obj\Debug\TestPlugin.pdb

@@ -59,17 +59,11 @@ namespace Braces.Core.ExtensionSystem
         // TODO: Pass to the ExtensionManager and call this FindExtensionsAsync
         public async Task FindPluginsAsync()
         {
-            // Simulate finding plugins.
-            List<Plugin> fetchedPlugins = new List<Plugin> { /* new TestPlugin() */ };
             // LOAD PLUGIN:
-            // TODO: Optimize this.
-            // TODO: Add a convention for the typename, or add the type name to a configuration file.
-            string assemblyPath = Path.GetFullPath( "../../../TestPlugin/bin/Debug/TestPlugin.dll" );
-            Assembly ptrAssembly = Assembly.LoadFile( assemblyPath );
-            Type thisPluginType = ptrAssembly.GetTypes().First( type => type.BaseType.Name == "Plugin" ); // .GetType();
-            fetchedPlugins.Add( (Plugin)Activator.CreateInstance( thisPluginType ) );
-
-            // List<Plugin> fetchedPlugins = 
+            // This method of loading is temporary. In the future I will probably create a server
+            // to handle the comunication between the plugin and the UI.
+            List<Plugin> fetchedPlugins = new List<Plugin> { /* new TestPlugin() */ };
+            fetchedPlugins.Add( this.LoadPlugin( "../../../TestPlugin/bin/Debug/TestPlugin.dll" ) );
 
             string currentFileType;
 
@@ -91,8 +85,13 @@ namespace Braces.Core.ExtensionSystem
             return;
         }
 
-        public async Task LoadPluginsAsync()
+        public Plugin LoadPlugin( string path )
         {
+            string assemblyPath = Path.GetFullPath( path );
+            Assembly ptrAssembly = Assembly.LoadFile( assemblyPath );
+            // TODO: Add the plugin names to a local database or file and fetch the type from there.
+            Type thisPluginType = ptrAssembly.GetTypes().First( type => type.BaseType.Name == "Plugin" );
+            return (Plugin)Activator.CreateInstance( thisPluginType );
         }
 
         public async Task ExecutePluginsAsync()
@@ -120,7 +119,7 @@ namespace Braces.Core.ExtensionSystem
             for (int i = 0; i < this.PluginIdsByFileType[fileTypeName].Count; ++i)
             {
                 currentPlugin = this.Plugins[this.PluginIdsByFileType[fileTypeName][i]];
-                
+
                 if ( !currentPlugin.ImplementsMethod(eventName) )
                     continue;
 

@@ -20,8 +20,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\net471\Braces.Core.dll" target="lib\net471\Braces.Core.dll" />
-    <file src="C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.dll" target="lib\netcoreapp2.0\Braces.Core.dll" />
-    <file src="C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\Braces.Core.dll" target="lib\netstandard2.0\Braces.Core.dll" />
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\net471\Braces.Core.dll" target="lib\net471\Braces.Core.dll" />
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.dll" target="lib\netcoreapp2.0\Braces.Core.dll" />
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\Braces.Core.dll" target="lib\netstandard2.0\Braces.Core.dll" />
   </files>
 </package>

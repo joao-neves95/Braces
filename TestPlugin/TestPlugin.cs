@@ -65,7 +65,8 @@ namespace TestPlugin
         private void AddMesageToTextEditor( TextEditorControl textEditor, string message )
         {
             textEditor.RichTextBox.Document.Blocks.Add( new Paragraph( new Run( message ) ) );
-            textEditor.AddLineNumber( 1 );
+            textEditor.AddLineNumber();
+            textEditor.AddLineNumber();
         }
 
         #endregion

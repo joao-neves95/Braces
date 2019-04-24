@@ -16,14 +16,7 @@ namespace Braces.Core.ExtensionSystem
 
         static ExtensionSystem() { }
 
-        private ExtensionSystem()
-        {
-            // SET THE CURRENT OPERATING SYSTEM.
-            this.OperatingSystem = RuntimeInformation.IsOSPlatform( OSPlatform.Windows ) ? OSPlatform.Windows :
-                                   RuntimeInformation.IsOSPlatform( OSPlatform.Linux ) ? OSPlatform.Linux :
-                                   RuntimeInformation.IsOSPlatform( OSPlatform.OSX ) ? OSPlatform.OSX :
-                                   throw new NotSupportedException( "Unrecognized OSPlatform." );
-        }
+        private ExtensionSystem() { }
 
         private static readonly ExtensionSystem _instance = new ExtensionSystem();
 
@@ -41,7 +34,7 @@ namespace Braces.Core.ExtensionSystem
 
         public readonly PluginManager PluginManager = PluginManager.Instance;
 
-        public readonly OSPlatform OperatingSystem;
+        public readonly OSPlatform OperatingSystem = FileStorage.GetCurrentOperatingSystem();
 
         #endregion
 
