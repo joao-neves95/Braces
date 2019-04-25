@@ -6,6 +6,7 @@
     - ExtensionSystem.
     - Side Menu Slider Panels (Left and Bottom).
     - TabSystem.
+    - Commands.
     - Inline dropdown menu (for intelisence, snippets, etc.). Maybe it will also be a plugin.
     - Context Menu (on mouse hover/enter).
     - PopUps.
@@ -17,3 +18,7 @@
     - IntelliSence.
     - Vim commands.
     - DarkTheme/LightTheme.
+
+- Redo the XAML (UI).
+
+- Add try/catches and error handling (to the UI).
