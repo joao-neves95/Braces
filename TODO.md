@@ -19,6 +19,8 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
+- Sandbox the plugins.
+
 - Redo the XAML (UI).
 
 - Add try/catches and error handling (to the UI).
