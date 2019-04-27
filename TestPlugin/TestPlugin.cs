@@ -45,7 +45,6 @@ namespace TestPlugin
         {
             Braces.UI.ExtensionSystem.FileEventArgs eventArgs = (Braces.UI.ExtensionSystem.FileEventArgs)args;
             string message = $" This is from the Plugin { this.Name}.\n The name of the OPENED file is: { eventArgs.File.Name}.";
-            eventArgs.TextEditor.RichTextBox.Document.Blocks.Add( new Paragraph( new Run( message ) ) );
             Console.WriteLine( message );
             this.AddMesageToTextEditor( eventArgs.TextEditor, message );
         }
