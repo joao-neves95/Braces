@@ -23,9 +23,13 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
-- Refactor all the UI's XAML.
+- Refactor all the XAML (UI).
 
-- Refactor all the TextEditor control code (C#).
+- Refactor all the TextEditor UserControl code (C#).
+
+- Sandbox the plugins.
+
+- Add try/catches and error handling (to the UI).
 
 ---
 
