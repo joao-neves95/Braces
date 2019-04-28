@@ -33,6 +33,7 @@ namespace Braces.Core.ExtensionSystem
         #region FIELDS
 
         public readonly PluginManager PluginManager = PluginManager.Instance;
+        public readonly ThemeManager ThemeManager = ThemeManager.Instance;
 
         public readonly OSPlatform OperatingSystem = FileStorage.GetCurrentOperatingSystem();
 

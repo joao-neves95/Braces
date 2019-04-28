@@ -21,36 +21,15 @@ namespace Braces.ApiServer.Hubs
 
         public async Task FireEvent( string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args )
         {
-            if (!ExtSystem.PluginManager.PluginIdsByFileType.ContainsKey( fileTypeName ))
-                return;
-
-            Plugin thisGroup = Clients.Group( fileTypeName );
-            Plugin currentPlugin;
-
-            for (int i = 0; i < ExtSystem.PluginManager.PluginIdsByFileType[fileTypeName].Count; ++i)
-            {
-                currentPlugin = ExtSystem.PluginManager.Plugins[ExtSystem.PluginManager.PluginIdsByFileType[fileTypeName][i]];
-
-                if (!currentPlugin.ImplementsMethod( eventName ))
-                    continue;
-
-                switch (eventName)
-                {
-                    case EventName.OnFileSave:
-                        await thisGroup.OnFileSave( sender, e, args );
-                        break;
-                    case EventName.OnFileOpen:
-                        await thisGroup.OnFileOpen( sender, e, args );
-                        break;
-                    default:
-                        break;
-                }
-            }
         }
 
         public async Task AddEvent()
         {
             return;
+        }
+
+        public async Task AddComponent(object req)
+        {
         }
 
         #endregion

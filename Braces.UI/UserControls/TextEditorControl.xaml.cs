@@ -57,6 +57,23 @@ namespace Braces.UI.UserControls
 
         #endregion
 
+        #region PUBLIC METHODS
+
+        public void AddLineToEndOfFile(string content)
+        {
+            richTextBox.Document.Blocks.Add( new Paragraph( new Run( content ) ) );
+            this.AddLineNumber();
+        }
+
+        public void AddNewLineAfterCaretPosition( string content)
+        {
+
+            richTextBox.Document.Blocks.InsertAfter( richTextBox.CaretPosition.Paragraph, new Paragraph( new Run( content ) ) );
+            this.AddLineNumber();
+        }
+
+        #endregion
+
         #region HANDLERS
 
         #region HANDLERS - Property Changed Handlers

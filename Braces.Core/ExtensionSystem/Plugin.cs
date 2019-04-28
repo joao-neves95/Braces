@@ -60,7 +60,7 @@ namespace Braces.Core.ExtensionSystem
         /// <returns></returns>
         public virtual async Task OnFileSave( object sender, RoutedEventArgs e, object args ) { }
 
-        public virtual async Task OnKey( object sender, RoutedEventArgs e, object args ) { }
+        public virtual async Task OnTextEditorKeyDown( object sender, RoutedEventArgs e, object args ) { }
 
         #endregion
     }

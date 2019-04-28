@@ -7,6 +7,8 @@ namespace Braces.Core.Enums
 {
     public static class FileTypeName
     {
+        public const string ALL = "(ALL)";
+
         public const string TXT = ".txt";
 
         public const string MARKDOWN = ".md";
