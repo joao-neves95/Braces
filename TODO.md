@@ -16,8 +16,20 @@
   - Built-in Extensions:
     - Commands (pop-up).
     - Terminal.
+    - TaskList.
     - File Explorer.
     - Find and Replace.
     - IntelliSence.
     - Vim commands.
     - DarkTheme/LightTheme.
+
+- Refactor all the UI's XAML.
+
+- Refactor all the TextEditor control code (C#).
+
+---
+
+For possible future reference:
+
+https://github.com/damienbod/SignalRMessagingErrorHandling
+https://code.msdn.microsoft.com/windowsdesktop/Using-SignalR-in-WinForms-f1ec847b

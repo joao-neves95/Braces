@@ -1,0 +1,14 @@
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.API.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.API.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.exe
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\INIFileParser.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.exe.config
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\INIFileParser.xml
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.csprojAssemblyReference.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CoreCompileInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CopyComplete
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.pdb

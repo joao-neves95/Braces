@@ -123,6 +123,7 @@ namespace Braces.Core.ExtensionSystem
                 if ( !currentPlugin.ImplementsMethod(eventName) )
                     continue;
 
+                // TODO: Instead of calling the plugin directly, call the clients subscribed to the correct Hub instead.
                 switch (eventName)
                 {
                     case EventName.OnFileSave:
@@ -135,16 +136,10 @@ namespace Braces.Core.ExtensionSystem
                         break;
                 }
             }
+        }
 
-            // SOLUTION WITH REFLEXION.
-            //MethodInfo thisMethodInfo;
-            //if (thisMethodInfo.IsNull())
-            //    // TODO: Error handling.
-            //    await Task.CompletedTask;
-            //thisMethodInfo = thisFileTypePlugins[i].GetMethod( EventName.OnFileSave );
-            //IPlugin thisNewPluginInstance = (IPlugin)Activator.CreateInstance( thisFileTypePlugins.GetType(), null );
-            //Task thisTask = (Task)thisMethodInfo.Invoke( thisNewPluginInstance, new object[] { sender, e } );
-            //await thisTask;
+        public async Task FireEventAsync2( string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args )
+        {
         }
 
         #endregion
@@ -154,6 +149,3 @@ namespace Braces.Core.ExtensionSystem
         #endregion
     }
 }
-
-//This code loads a new dll to the current AppDomain.
-//Assembly.LoadFrom(@"<DLL Path>");

@@ -45,7 +45,9 @@ namespace Braces.ApiServer
 
             app.UseSignalR( route =>
              {
+                 // THIS IS ALL ONLY AN EXPERIENCE.
                  route.MapHub<GlobalHub>( "/global" );
+                 route.MapHub<MainWindowHub>( "/main-window" );
                  route.MapHub<TextEditorHub>( "/text-editor" );
                  route.MapHub<ConfigurationHub>( "/configuration" );
              } );
