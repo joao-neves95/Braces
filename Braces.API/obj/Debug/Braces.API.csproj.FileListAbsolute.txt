@@ -12,3 +12,17 @@ D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CoreComp
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CopyComplete
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\Braces.API.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.API.dll
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.API.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.exe
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\INIFileParser.dll
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.Core.dll
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.exe.config
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\INIFileParser.xml
+C:\Users\jpedrone\DEV\Braces\Braces.API\bin\Debug\Braces.Core.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.API\obj\Debug\Braces.API.csprojAssemblyReference.cache
+C:\Users\jpedrone\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CoreCompileInputs.cache
+C:\Users\jpedrone\DEV\Braces\Braces.API\obj\Debug\Braces.API.csproj.CopyComplete
+C:\Users\jpedrone\DEV\Braces\Braces.API\obj\Debug\Braces.API.dll
+C:\Users\jpedrone\DEV\Braces\Braces.API\obj\Debug\Braces.API.pdb

@@ -10,7 +10,8 @@ using IniParser.Parser;
 using IniParser.Model;
 using IniParser.Model.Configuration;
 
-// TODO: Consifer changing this public configuration file to JSON for more organization. Use the ini for the system config.
+// TODO: Pass this to the ConfigurationSystem.
+// TODO: Consider changing this public configuration file to JSON for more organization. Use the ini for the system config only.
 namespace Braces.Core
 {
     public class UserConfig
@@ -26,7 +27,9 @@ namespace Braces.Core
         #region PUBLIC METHODS
 
         /// <summary>
+        /// 
         /// Init the UserConfiguration. It parses the user configuration file, or creates a new default one, and stores the data in the userConfig.Config instance.
+        /// 
         /// </summary>
         /// <returns></returns>
         public async Task InitAsync()
@@ -106,7 +109,7 @@ namespace Braces.Core
             defaultIni["key_bindings"].AddKey("save_as_modifier", "Control+Shift");
             defaultIni["key_bindings"].AddKey("open", "O");
 
-            return defaultIni; 
+            return defaultIni;
         }
 
         #endregion
