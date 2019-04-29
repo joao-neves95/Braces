@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <HintPath>..\ReferenceDLLs\PresentationCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

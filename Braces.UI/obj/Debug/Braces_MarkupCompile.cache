@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI\obj\Debug\
+C:\Users\jpedrone\DEV\Braces\Braces.UI\obj\Debug\
 Braces.UI
 none
 false
 CODE_ANALYSIS;DEBUG;TRACE
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI\App.xaml
+C:\Users\jpedrone\DEV\Braces\Braces.UI\App.xaml
 41702707769
 
 122076478088
-15-2106909184
+151910354619
 MainWindow.xaml;UserControls\ExplorerControl.xaml;UserControls\SearchControl.xaml;UserControls\TextEditorControl.xaml;
 
 False

@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Braces.Core.Enums;
 
 namespace Braces.Core.ExtensionSystem
 {
-    public abstract class ComponentPlugin : Plugin
+    public abstract class ComponentPlugin : IPlugin
     {
         #region INTERFACE CONTENTS
 
-        public override List<string> FileTypes => throw new NotImplementedException();
+        public abstract List<string> FileTypes { get; }
+        public abstract string Name { get; }
+        public abstract string Description { get; }
+        public abstract string[] Authors { get; }
+        public abstract string Version { get; }
+        public abstract ExtensionType ExtensionType { get; }
 
-        public override string Name => throw new NotImplementedException();
-
-        public override string Description => throw new NotImplementedException();
-
-        public override string[] Authors => throw new NotImplementedException();
-
-        public override string Version => throw new NotImplementedException();
-
-        public override ExtensionType ExtensionType => throw new NotImplementedException();
-
-        public override void Execute()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Execute();
 
         #endregion
+
+        public virtual async Task AddComponentToWindow() { }
     }
 }

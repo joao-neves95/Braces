@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +7,7 @@ using Braces.Core.Enums;
 
 namespace Braces.Core.ExtensionSystem
 {
+    // TODO: Add the SignalR client in order to not make every user repeat this task.
     public abstract class Plugin : IPlugin
     {
         #region INTERFACE CONTENTS
