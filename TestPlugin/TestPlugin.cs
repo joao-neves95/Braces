@@ -16,7 +16,7 @@ namespace TestPlugin
         public static void Main() { }
     }
 
-    class TestPlugin : Plugin
+    public class TestPlugin : Plugin
     {
         #region PROPERTIES
 
@@ -46,7 +46,7 @@ namespace TestPlugin
             Braces.UI.ExtensionSystem.FileEventArgs eventArgs = (Braces.UI.ExtensionSystem.FileEventArgs)args;
             string message = $" This is from the Plugin { this.Name}.\n The name of the OPENED file is: { eventArgs.File.Name}.";
             Console.WriteLine( message );
-            this.AddMesageToTextEditor( eventArgs.TextEditor, message );
+            await Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
         }
 
         public override async Task OnFileSave( object sender, RoutedEventArgs e, object args )
@@ -54,18 +54,7 @@ namespace TestPlugin
             Braces.UI.ExtensionSystem.FileEventArgs eventArgs = (Braces.UI.ExtensionSystem.FileEventArgs)args;
             string message = $" This is from the Plugin {this.Name}.\n The name of the SAVED file is: {eventArgs.File.Name}.";
             Console.WriteLine( message );
-            this.AddMesageToTextEditor( eventArgs.TextEditor, message );
-        }
-
-        #endregion
-
-        #region PRIVATE METHODS
-
-        private void AddMesageToTextEditor( TextEditorControl textEditor, string message )
-        {
-            textEditor.RichTextBox.Document.Blocks.Add( new Paragraph( new Run( message ) ) );
-            textEditor.AddLineNumber();
-            textEditor.AddLineNumber();
+            await Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
         }
 
         #endregion

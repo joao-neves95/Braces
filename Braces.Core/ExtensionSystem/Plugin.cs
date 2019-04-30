@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Braces.Core.Enums;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Braces.Core.ExtensionSystem
 {
@@ -24,6 +25,8 @@ namespace Braces.Core.ExtensionSystem
 
         public abstract ExtensionType ExtensionType { get; }
 
+        public HubConnection Connection { get; set; }
+
         public abstract void Execute();
 
         #endregion
@@ -36,6 +39,14 @@ namespace Braces.Core.ExtensionSystem
         #region PRIVATE PROPERTIES
 
         public string Id { get; }
+
+        public string Path { get; } = "";
+
+        #endregion
+
+        #region PUBLIC PROPERTIES
+
+        //public 
 
         #endregion
 

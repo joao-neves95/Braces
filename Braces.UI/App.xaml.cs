@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Braces.Core;
-using Braces.Core.ExtensionSystem;
+using Braces.Core.ApiClientManager;
 using Braces.UI;
 
 namespace Braces.UI
@@ -27,7 +27,8 @@ namespace Braces.UI
             MainWindow = mainWindow;
             _MainWindow = mainWindow;
             MainWindow.Show();
-            await PluginManager.Instance.FindPluginsAsync();
+            ApiClientManager.Instance.StartApiServer();
+            // await PluginManager.Instance.FindPluginsAsync();
         }
     }
 }

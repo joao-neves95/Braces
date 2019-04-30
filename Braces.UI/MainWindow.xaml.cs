@@ -180,6 +180,7 @@ namespace Braces.UI
                 }
             }
 
+            // TODO: (TOFIX) Jump if the user did not select a file.
             await FileStorage.SaveFileAsync(this.CurrentFile.CompletePath, userInput.Text);
             await ExtensionSystem.PluginManager.FireEventAsync(
                 EventName.OnFileSave,

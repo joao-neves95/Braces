@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Braces.Core.Enums;
+using Newtonsoft.Json;
 
 namespace Braces.Core
 {
@@ -33,9 +34,14 @@ namespace Braces.Core
 
         #region EXTENSIONS
 
-        public static bool IsNull(this Object value)
+        public static bool IsNull( this Object value )
         {
             return value == null;
+        }
+
+        public static String ToJSON( this object content )
+        {
+            return JsonConvert.SerializeObject( content, Formatting.Indented );
         }
 
         #endregion

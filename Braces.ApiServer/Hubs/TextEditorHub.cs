@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
+using Braces.Core.ExtensionSystem;
 using Braces.API;
 
 namespace Braces.ApiServer.Hubs
 {
-    public class TextEditorHub : Hub
+    public class TextEditorHub : Hub<Plugin>
     {
         public void AddNewLineToEnd( string content )
         {

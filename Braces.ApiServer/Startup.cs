@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Braces.ApiServer.Hubs;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace Braces.ApiServer
 {
@@ -46,14 +48,24 @@ namespace Braces.ApiServer
             app.UseSignalR( route =>
              {
                  // THIS IS ALL ONLY AN EXPERIENCE.
-                 route.MapHub<GlobalHub>( "/global" );
-                 route.MapHub<MainWindowHub>( "/main-window" );
-                 route.MapHub<TextEditorHub>( "/text-editor" );
-                 route.MapHub<ConfigurationHub>( "/configuration" );
+                 route.MapHub<GlobalHub>( "/ws/global" );
+                 route.MapHub<MainWindowHub>( "/ws/main-window" );
+                 route.MapHub<TextEditorHub>( "/ws/text-editor" );
+                 route.MapHub<ConfigurationHub>( "/ws/configuration" );
              } );
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            StartPluginHost();
+
+            app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
+        }
+
+        private void StartPluginHost()
+        {
+            // Hardcoded for now.
+            Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\net471\\Braces.PluginHost.exe" );
         }
     }
 }
