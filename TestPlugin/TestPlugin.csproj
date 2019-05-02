@@ -51,9 +51,9 @@
       <Project>{4f9d33cd-dfb4-4a94-9ec2-1de27d23d7b5}</Project>
       <Name>Braces.PluginHost</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Braces.UI\Braces.UI.csproj">
-      <Project>{605cbd24-6c1b-4acd-98ec-cb3425dc7fa4}</Project>
-      <Name>Braces.UI</Name>
+    <ProjectReference Include="..\Braces.UI.WPF\Braces.UI.WPF.csproj">
+      <Project>{2f6484ea-0f0a-409e-975b-4d89a46faa6d}</Project>
+      <Name>Braces.UI.WPF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

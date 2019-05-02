@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.0</TargetFrameworks>
     <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
-    <ProjectReference Include="..\Braces.UI\Braces.UI.csproj" />
+    <ProjectReference Include="..\Braces.UI.WPF\Braces.UI.WPF.csproj" />
   </ItemGroup>
 
   <ItemGroup>

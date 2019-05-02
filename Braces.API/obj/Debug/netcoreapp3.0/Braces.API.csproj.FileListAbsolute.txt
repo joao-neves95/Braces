@@ -1,0 +1,15 @@
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.UI.WPF.exe
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.API.deps.json
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.API.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.API.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.UI.WPF.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.UI.WPF.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\bin\Debug\netcoreapp3.0\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.csprojAssemblyReference.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.csproj.CoreCompileInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.AssemblyInfoInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.AssemblyInfo.cs
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.csproj.CopyComplete
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.API\obj\Debug\netcoreapp3.0\Braces.API.pdb

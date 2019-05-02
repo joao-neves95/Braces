@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 using Braces.Core.ExtensionSystem;
-using Braces.API;
+using System.Windows;
 using Braces.ApiServer.Interfaces;
+using Braces.API;
 
 namespace Braces.ApiServer.Hubs
 {
@@ -24,7 +25,15 @@ namespace Braces.ApiServer.Hubs
 
         public void AddNewLineAfterCaretPosition( string contents )
         {
-            TextEditor.AddNewLineAfterCaretPosition( contents );
+            try
+            {
+                TextEditor.AddNewLineAfterCaretPosition( contents );
+
+            } catch (Exception e)
+            {
+                Console.WriteLine( e.Message );
+                Console.WriteLine( e.StackTrace );
+            }
         }
 
         public override Task OnDisconnectedAsync( Exception exception )
