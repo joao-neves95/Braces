@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TextEditorControl.xaml" />
+    <None Remove="UserControls\ExplorerControl.xaml" />
+    <None Remove="UserControls\SearchControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
@@ -16,6 +30,27 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserControls\ExplorerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\SearchControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TextEditorControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UserControls\ExplorerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\SearchControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\TextEditorControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using Braces.UI.ExtensionSystem;
 
 namespace Braces.PluginHost
 {

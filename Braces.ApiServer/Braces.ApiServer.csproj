@@ -1,16 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web;Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <!--<TargetFrameworks>netcoreapp2.2;netstandard2.0</TargetFrameworks>-->
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.*" Version="3.0.100-preview4-011223" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview4-19216-03" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.0.0-preview4.19212.13" />
+    <PackageReference Include="Microsoft.WindowsDesktop.App" Version="3.0.0-preview4-27613-28" />
   </ItemGroup>
 
   <ItemGroup>

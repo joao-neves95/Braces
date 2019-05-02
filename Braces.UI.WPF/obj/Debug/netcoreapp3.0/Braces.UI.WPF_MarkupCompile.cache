@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.WPF\App.xaml
-11151548125
+41702707769
 
-3-1744114505
-194901010985
-MainWindow.xaml;
+9698806883
+2161135947648
+MainWindow.xaml;UserControls\ExplorerControl.xaml;UserControls\SearchControl.xaml;UserControls\TextEditorControl.xaml;
 
-True
+False
 

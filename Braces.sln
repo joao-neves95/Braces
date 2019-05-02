@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.UI", "Braces.UI\Braces.UI.csproj", "{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.Core", "Braces.Core\Braces.Core.csproj", "{821AB101-8D7F-4ED7-B455-04248F303DA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DA503C8-EF15-4A73-A9A6-F16B1D7CEEE1}"
@@ -22,9 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{73F6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.PluginHost", "Braces.PluginHost\Braces.PluginHost.csproj", "{4F9D33CD-DFB4-4A94-9EC2-1DE27D23D7B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.API", "Braces.API\Braces.API.csproj", "{58790BAF-29ED-47C0-A948-C851BA2135D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.UI.WPF", "Braces.UI.WPF\Braces.UI.WPF.csproj", "{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.UI.WPF", "Braces.UI.WPF\Braces.UI.WPF.csproj", "{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.API", "Braces.API\Braces.API.csproj", "{288B4BD6-736E-4FFD-9082-096A11144394}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{605CBD24-6C1B-4ACD-98EC-CB3425DC7FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{821AB101-8D7F-4ED7-B455-04248F303DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{821AB101-8D7F-4ED7-B455-04248F303DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{821AB101-8D7F-4ED7-B455-04248F303DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -52,14 +46,14 @@ Global
 		{4F9D33CD-DFB4-4A94-9EC2-1DE27D23D7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F9D33CD-DFB4-4A94-9EC2-1DE27D23D7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F9D33CD-DFB4-4A94-9EC2-1DE27D23D7B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58790BAF-29ED-47C0-A948-C851BA2135D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58790BAF-29ED-47C0-A948-C851BA2135D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58790BAF-29ED-47C0-A948-C851BA2135D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58790BAF-29ED-47C0-A948-C851BA2135D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F6484EA-0F0A-409E-975B-4D89A46FAA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{288B4BD6-736E-4FFD-9082-096A11144394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{288B4BD6-736E-4FFD-9082-096A11144394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{288B4BD6-736E-4FFD-9082-096A11144394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{288B4BD6-736E-4FFD-9082-096A11144394}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
