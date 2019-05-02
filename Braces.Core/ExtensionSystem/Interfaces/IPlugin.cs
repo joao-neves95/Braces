@@ -12,8 +12,6 @@ namespace Braces.Core.ExtensionSystem
     {
         List<string> FileTypes { get; }
 
-        HubConnection Connection { get; set; }
-
         void Execute();
     }
 }

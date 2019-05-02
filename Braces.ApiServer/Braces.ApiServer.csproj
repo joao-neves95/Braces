@@ -20,6 +20,9 @@
     <Reference Include="PresentationCore">
       <HintPath>..\ReferenceDLLs\PresentationCore.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework">
+      <HintPath>..\ReferenceDLLs\PresentationFramework.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase">
       <HintPath>..\ReferenceDLLs\WindowsBase.dll</HintPath>
     </Reference>

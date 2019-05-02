@@ -17,10 +17,8 @@ namespace Braces.Core.ExtensionSystem
         public abstract string[] Authors { get; }
         public abstract string Version { get; }
         public abstract ExtensionType ExtensionType { get; }
-
-        public string Path => throw new NotImplementedException();
-
         public abstract HubConnection Connection { get; set; }
+        public abstract string Path { get; }
 
         public abstract void Execute();
 

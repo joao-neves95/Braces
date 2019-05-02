@@ -8,10 +8,6 @@ namespace Braces.Core.DTOs
 
         public string fileTypeName { get; set; }
 
-        public object sender { get; set; }
-
-        public RoutedEventArgs e { get; set; }
-
         public object args { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace Braces.Core
             return value == null;
         }
 
-        public static String ToJSON( this object content )
+        public static string ToJSON( this object content )
         {
             return JsonConvert.SerializeObject( content, Formatting.Indented );
         }

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Braces.Core</id>
+    <version>0.1.0</version>
+    <authors>shivayl</authors>
+    <owners>shivayl</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.1">
+        <dependency id="Microsoft.AspNetCore.SignalR.Client" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="ini-parser" version="2.5.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp2.0">
+        <dependency id="Microsoft.AspNetCore.SignalR.Client" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="ini-parser" version="2.5.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.SignalR.Client" version="1.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+        <dependency id="ini-parser" version="2.5.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\net471\Braces.Core.dll" target="lib\net471\Braces.Core.dll" />
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.dll" target="lib\netcoreapp2.0\Braces.Core.dll" />
+    <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\Braces.Core.dll" target="lib\netstandard2.0\Braces.Core.dll" />
+  </files>
+</package>

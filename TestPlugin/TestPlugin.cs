@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
-using Braces.Core.ExtensionSystem;
+using Newtonsoft.Json;
+using Braces.Core;
+using Braces.Core.Models;
 using Braces.Core.Enums;
-using Braces.UI.UserControls;
+using Braces.Core.ExtensionSystem;
+using Braces.UI.ExtensionSystem;
 
 namespace TestPlugin
 {
@@ -41,20 +44,23 @@ namespace TestPlugin
 
         #region EVENT HANDLERS
 
-        public override async Task OnFileOpen( object sender, RoutedEventArgs e, object args )
+        public override async Task OnFileOpen( object args )
         {
-            Braces.UI.ExtensionSystem.FileEventArgs eventArgs = (Braces.UI.ExtensionSystem.FileEventArgs)args;
-            string message = $" This is from the Plugin { this.Name}.\n The name of the OPENED file is: { eventArgs.File.Name}.";
+            Console.WriteLine( "Here" );
+            Console.WriteLine( args );
+            Console.WriteLine( args.ToJSON() );
+            FileEventArgs fileEvent = (FileEventArgs)args;
+            string message = $" This is from the Plugin { this.Name }.\n The name of the OPENED file is: { fileEvent.File.Name }.";
             Console.WriteLine( message );
-            await Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
+            await Braces.PluginHost.Program.Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
         }
 
-        public override async Task OnFileSave( object sender, RoutedEventArgs e, object args )
+        public override async Task OnFileSave( object args )
         {
-            Braces.UI.ExtensionSystem.FileEventArgs eventArgs = (Braces.UI.ExtensionSystem.FileEventArgs)args;
-            string message = $" This is from the Plugin {this.Name}.\n The name of the SAVED file is: {eventArgs.File.Name}.";
+            FileEventArgs fileEvent = (FileEventArgs)args;
+            string message = $" This is from the Plugin { this.Name }.\n The name of the SAVED file is: { fileEvent.File.Name }.";
             Console.WriteLine( message );
-            await Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
+            await Braces.PluginHost.Program.Connection.InvokeCoreAsync( "AddNewLineAfterCaretPosition", typeof(void), new object[] { message } );
         }
 
         #endregion

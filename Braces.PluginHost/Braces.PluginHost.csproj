@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
+    <ProjectReference Include="..\Braces.UI\Braces.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

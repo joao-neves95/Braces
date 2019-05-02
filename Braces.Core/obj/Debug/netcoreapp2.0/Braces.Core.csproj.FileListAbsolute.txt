@@ -1,0 +1,14 @@
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.deps.json
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\PresentationCore.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp2.0\PresentationFramework.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.Properties.Resources.resources
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.csproj.GenerateResource.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.csproj.CoreCompileInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.AssemblyInfoInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.AssemblyInfo.cs
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.csproj.CopyComplete
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp2.0\Braces.Core.csprojAssemblyReference.cache

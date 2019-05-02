@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -54,16 +54,15 @@ namespace Braces.ApiServer
                  route.MapHub<ConfigurationHub>( "/ws/configuration" );
              } );
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+            app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
 
             StartPluginHost();
-
-            app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
         }
 
         private void StartPluginHost()
         {
+            Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
             Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\net471\\Braces.PluginHost.exe" );
         }

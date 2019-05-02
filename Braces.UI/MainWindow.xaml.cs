@@ -143,9 +143,7 @@ namespace Braces.UI
                 await ExtensionSystem.PluginManager.FireEventAsync(
                     EventName.OnFileOpen,
                     this.CurrentFile.Extension,
-                    sender,
-                    e,
-                    new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
+                    new FileEventArgs( this.CurrentFile )
                );
             }
         }
@@ -185,9 +183,7 @@ namespace Braces.UI
             await ExtensionSystem.PluginManager.FireEventAsync(
                 EventName.OnFileSave,
                 this.CurrentFile.Extension,
-                sender,
-                e,
-                new FileEventArgs( this.CurrentTextEditor, this.CurrentFile )
+                new FileEventArgs( this.CurrentFile )
            );
         }
 

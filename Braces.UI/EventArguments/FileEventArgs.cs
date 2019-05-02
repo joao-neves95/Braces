@@ -10,14 +10,11 @@ namespace Braces.UI.ExtensionSystem
 {
     public class FileEventArgs
     {
-        public FileEventArgs( TextEditorControl textEditor, FileModel fileModel )
+        public FileEventArgs( FileModel fileModel )
         {
-            this.TextEditor = textEditor;
             this.File = fileModel;
         }
 
-        public TextEditorControl TextEditor { get; }
-
-        public FileModel File { get; }
+        public FileModel File { get; set; }
     }
 }

@@ -43,7 +43,7 @@ namespace Braces.Core.ApiClientManager
         public void StartApiServer()
         {
             // The path is hardcoded for now.
-            Process.Start( "dotnet", "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp2.2\\Braces.ApiServer.dll" );
+            Process.Start( "dotnet", "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp2.2\\Braces.ApiServer.dll" );
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Braces.Core.ApiClientManager
         /// </summary>
         /// <param name="dto"> The Data Transfer Object (DTO) instance </param>
         /// <returns></returns>
-        public async Task Post( string apiPath, IDTO dto )
+        public async Task PostAsJSON( string apiPath, IDTO dto )
         {
             try
             {
@@ -61,7 +61,7 @@ namespace Braces.Core.ApiClientManager
                 {
                     await _HttpClient.PostAsync(
                         $"{PROTOCOL}://localhost:{PORT}/api/{apiPath}",
-                        new StringContent( dto.ToJSON() )
+                        new StringContent( dto.ToJSON(), Encoding.UTF8, "application/json" )
                     );
                 }
             }
