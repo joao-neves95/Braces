@@ -43,7 +43,7 @@ namespace Braces.Core.ApiClientManager
         public void StartApiServer()
         {
             // The path is hardcoded for now.
-            Process.Start( "dotnet", "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp2.2\\Braces.ApiServer.dll" );
+            Process.Start( "dotnet", "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp3.0\\Braces.ApiServer.dll" );
         }
 
         /// <summary>
@@ -57,6 +57,8 @@ namespace Braces.Core.ApiClientManager
         {
             try
             {
+                Console.WriteLine( "dto" );
+                Console.WriteLine( dto.ToJSON() );
                 using ( _HttpClient = new HttpClient() )
                 {
                     await _HttpClient.PostAsync(

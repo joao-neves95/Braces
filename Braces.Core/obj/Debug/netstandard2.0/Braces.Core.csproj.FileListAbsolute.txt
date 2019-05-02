@@ -4,6 +4,7 @@ D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\Braces.Cor
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\PresentationCore.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\PresentationFramework.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netstandard2.0\WindowsBase.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.csprojAssemblyReference.cache
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.Properties.Resources.resources
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.csproj.GenerateResource.cache
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.csproj.CoreCompileInputs.cache
@@ -12,4 +13,3 @@ D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Cor
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.csproj.CopyComplete
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.pdb
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netstandard2.0\Braces.Core.csprojAssemblyReference.cache

@@ -28,8 +28,16 @@ namespace Braces.ApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices( IServiceCollection services )
         {
-            services.AddSignalR();
-            services.AddMvc().SetCompatibilityVersion( CompatibilityVersion.Version_2_2 );
+            services.AddSignalR()
+                .AddNewtonsoftJsonProtocol();
+
+            services.AddMvc( options => options.EnableEndpointRouting = false )
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion( CompatibilityVersion.Version_3_0 );
+
+            services.AddControllers( options => options.EnableEndpointRouting = false )
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion( CompatibilityVersion.Version_3_0 );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,16 +53,18 @@ namespace Braces.ApiServer
                 app.UseHsts();
             }
 
-            app.UseSignalR( route =>
+            app.UseRouting();
+
+            app.UseEndpoints( endpoints =>
              {
-                 // THIS IS ALL ONLY AN EXPERIENCE.
-                 route.MapHub<GlobalHub>( "/ws/global" );
-                 route.MapHub<MainWindowHub>( "/ws/main-window" );
-                 route.MapHub<TextEditorHub>( "/ws/text-editor" );
-                 route.MapHub<ConfigurationHub>( "/ws/configuration" );
+                 endpoints.MapHub<TextEditorHub>( "/ws/text-editor" );
+                 endpoints.MapHub<GlobalHub>( "/ws/global" );
+                 endpoints.MapHub<MainWindowHub>( "/ws/main-window" );
+                 endpoints.MapHub<ConfigurationHub>( "/ws/configuration" );
+
+                 endpoints.MapControllerRoute( "default", "{controller=Home}/{action=Index}/{id?}" );
              } );
 
-            app.UseMvc();
             app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
 
             StartPluginHost();
@@ -64,7 +74,7 @@ namespace Braces.ApiServer
         {
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
-            Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\net471\\Braces.PluginHost.exe" );
+            Process.Start( "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\net471\\Braces.PluginHost.exe" );
         }
     }
 }

@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {}
+  },
+  "projects": {
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
+        "projectName": "Braces.UI.WPF",
+        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
+        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
+              "include": "None",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0-preview4-27615-11, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

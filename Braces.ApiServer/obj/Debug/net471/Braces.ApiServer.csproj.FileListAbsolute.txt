@@ -1,5 +1,0 @@
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\obj\Debug\net471\Braces.ApiServer.csprojAssemblyReference.cache
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\obj\Debug\net471\Braces.ApiServer.exe.config
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\obj\Debug\net471\Braces.ApiServer.csproj.CoreCompileInputs.cache
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\obj\Debug\net471\Braces.ApiServer.AssemblyInfoInputs.cache
-D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\obj\Debug\net471\Braces.ApiServer.AssemblyInfo.cs

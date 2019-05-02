@@ -1,0 +1,243 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj": {}
+  },
+  "projects": {
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+        "projectName": "Braces.Core",
+        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471",
+          "netcoreapp2.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "projectReferences": {}
+          },
+          "net471": {
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        },
+        "net471": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            }
+          }
+        },
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            },
+            "ini-parser": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj",
+        "projectName": "Braces.PluginHost",
+        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj",
+        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471",
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+              },
+              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj": {
+                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj"
+              }
+            }
+          },
+          "net471": {
+            "projectReferences": {
+              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+              },
+              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj": {
+                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        },
+        "net471": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj",
+        "projectName": "Braces.UI",
+        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI\\Braces.UI.csproj"
+      },
+      "frameworks": {
+        "net471": {}
+      }
+    }
+  }
+}

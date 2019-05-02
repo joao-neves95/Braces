@@ -23,6 +23,8 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
+- Remove unnecessary references and target frameworks.
+
 - Refactor all the UI's XAML.
 
 - Refactor all the TextEditor control code (C#).

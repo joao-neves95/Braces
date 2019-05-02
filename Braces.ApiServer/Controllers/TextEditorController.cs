@@ -31,6 +31,7 @@ namespace Braces.ApiServer.Controllers
         [HttpPost("fire-event")]
         public async Task FireEvent([FromBody] FireEventDTO fireEventDTO )
         {
+            //Console.WriteLine( fireEventDTO.ToJSON() );
             await this._hubContext.Clients.All.SendAsync( fireEventDTO.eventName, fireEventDTO.fileTypeName, fireEventDTO.args );
         }
 
