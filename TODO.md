@@ -34,3 +34,5 @@
 - Sandbox the plugins (Docker).
 
 - Add try/catches and error handling (to the UI).
+
+- Add support for having projects (workspaces).
