@@ -25,13 +25,10 @@
 
 - Remove unnecessary references and target frameworks.
 
-- Refactor all the UI's XAML.
+- Refactor all the XAML (Braces.UI.WPF).
 
-- Refactor all the TextEditor control code (C#).
+- Refactor all the TextEditorControl code (C#).
 
----
+- Sandbox the plugins.
 
-For possible future reference:
-
-https://github.com/damienbod/SignalRMessagingErrorHandling
-https://code.msdn.microsoft.com/windowsdesktop/Using-SignalR-in-WinForms-f1ec847b
+- Add try/catches and error handling (to the UI).
