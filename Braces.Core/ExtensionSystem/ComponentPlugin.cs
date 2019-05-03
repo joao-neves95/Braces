@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Braces.Core.Enums;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Braces.Core.ExtensionSystem
 {
@@ -16,6 +17,8 @@ namespace Braces.Core.ExtensionSystem
         public abstract string[] Authors { get; }
         public abstract string Version { get; }
         public abstract ExtensionType ExtensionType { get; }
+        public abstract HubConnection Connection { get; set; }
+        public abstract string Path { get; }
 
         public abstract void Execute();
 

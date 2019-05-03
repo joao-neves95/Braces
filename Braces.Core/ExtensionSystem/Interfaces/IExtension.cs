@@ -16,6 +16,8 @@ namespace Braces.Core.ExtensionSystem
 
         string Version { get; }
 
+        string Path { get; }
+
         // TODO: Do this with another way to simplify.
         ExtensionType ExtensionType { get;  }
     }

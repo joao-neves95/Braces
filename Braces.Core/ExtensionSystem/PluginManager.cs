@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Braces.Core.Enums;
+using Braces.Core.ApiClientManager;
+using Braces.Core.DTOs;
 
 namespace Braces.Core.ExtensionSystem
 {
@@ -89,7 +91,6 @@ namespace Braces.Core.ExtensionSystem
         {
             string assemblyPath = Path.GetFullPath( path );
             Assembly ptrAssembly = Assembly.LoadFile( assemblyPath );
-            // TODO: Add the plugin names to a local database or file and fetch the type from there.
             Type thisPluginType = ptrAssembly.GetTypes().First( type => type.BaseType.Name == "Plugin" );
             return (Plugin)Activator.CreateInstance( thisPluginType );
         }
@@ -109,33 +110,40 @@ namespace Braces.Core.ExtensionSystem
         /// <param name="e"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async Task FireEventAsync(string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args)
+        public async Task FireEventAsync(string eventName, string fileTypeName, object args)
         {
-            if (!this.PluginIdsByFileType.ContainsKey( fileTypeName ))
-                return;
-
-            Plugin currentPlugin;
-
-            for (int i = 0; i < this.PluginIdsByFileType[fileTypeName].Count; ++i)
+            await ApiClientManager.ApiClientManager._.PostAsJSON( "text-editor/fire-event", new FireEventDTO()
             {
-                currentPlugin = this.Plugins[this.PluginIdsByFileType[fileTypeName][i]];
+                eventName = eventName,
+                fileTypeName = fileTypeName,
+                args = args
+            } );
 
-                if ( !currentPlugin.ImplementsMethod(eventName) )
-                    continue;
+            //if (!this.PluginIdsByFileType.ContainsKey( fileTypeName ))
+            //    return;
 
-                // TODO: Instead of calling the plugin directly, call the clients subscribed to the correct Hub instead.
-                switch (eventName)
-                {
-                    case EventName.OnFileSave:
-                        await currentPlugin.OnFileSave( sender, e, args );
-                        break;
-                    case EventName.OnFileOpen:
-                        await currentPlugin.OnFileOpen( sender, e, args);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            //Plugin currentPlugin;
+
+            //for (int i = 0; i < this.PluginIdsByFileType[fileTypeName].Count; ++i)
+            //{
+            //    currentPlugin = this.Plugins[this.PluginIdsByFileType[fileTypeName][i]];
+
+            //    if ( !currentPlugin.ImplementsMethod(eventName) )
+            //        continue;
+
+            //    // TODO: Instead of calling the plugin directly, call the clients subscribed to the correct Hub instead.
+            //    switch (eventName)
+            //    {
+            //        case EventName.OnFileSave:
+            //            await currentPlugin.OnFileSave( sender, e, args );
+            //            break;
+            //        case EventName.OnFileOpen:
+            //            await currentPlugin.OnFileOpen( sender, e, args);
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
         }
 
         public async Task FireEventAsync2( string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args )

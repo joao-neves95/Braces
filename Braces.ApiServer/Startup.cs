@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Braces.ApiServer.Hubs;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace Braces.ApiServer
 {
@@ -26,8 +29,16 @@ namespace Braces.ApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices( IServiceCollection services )
         {
-            services.AddSignalR();
-            services.AddMvc().SetCompatibilityVersion( CompatibilityVersion.Version_2_2 );
+            services.AddSignalR()
+                .AddNewtonsoftJsonProtocol();
+
+            services.AddMvc( options => options.EnableEndpointRouting = false )
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion( CompatibilityVersion.Version_3_0 );
+
+            services.AddControllers( options => options.EnableEndpointRouting = false )
+                .AddNewtonsoftJson()
+                .SetCompatibilityVersion( CompatibilityVersion.Version_3_0 );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,17 +54,29 @@ namespace Braces.ApiServer
                 app.UseHsts();
             }
 
-            app.UseSignalR( route =>
+            app.UseRouting();
+
+            app.UseEndpoints( endpoints =>
              {
-                 // THIS IS ALL ONLY AN EXPERIENCE.
-                 route.MapHub<GlobalHub>( "/global" );
-                 route.MapHub<MainWindowHub>( "/main-window" );
-                 route.MapHub<TextEditorHub>( "/text-editor" );
-                 route.MapHub<ConfigurationHub>( "/configuration" );
+                 endpoints.MapHub<TextEditorHub>( "/ws/text-editor" );
+                 endpoints.MapHub<GlobalHub>( "/ws/global" );
+                 endpoints.MapHub<MainWindowHub>( "/ws/main-window" );
+                 endpoints.MapHub<ConfigurationHub>( "/ws/configuration" );
+
+                 endpoints.MapControllerRoute( "default", "{controller=Home}/{action=Index}/{id?}" );
              } );
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+            app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
+
+            StartPluginHost();
+        }
+
+        private void StartPluginHost()
+        {
+            Console.WriteLine( "Starting the PluginHost..." );
+            // Hardcoded for now.
+            // string pluginHostPath = Path.GetFullPath( "..\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
+            Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }
     }
 }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
-using System.Windows;
 using Braces.Core.ExtensionSystem;
 using Braces.Core.Enums;
 
@@ -18,10 +17,6 @@ namespace Braces.ApiServer.Hubs
         #endregion
 
         #region METHODS
-
-        public async Task FireEvent( string eventName, string fileTypeName, object sender, RoutedEventArgs e, object args )
-        {
-        }
 
         public async Task AddEvent()
         {

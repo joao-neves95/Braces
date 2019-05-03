@@ -23,17 +23,12 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
-- Refactor all the XAML (UI).
+- Remove unnecessary references and target frameworks.
 
-- Refactor all the TextEditor UserControl code (C#).
+- Refactor all the XAML (Braces.UI.WPF).
+
+- Refactor all the TextEditorControl code (C#).
 
 - Sandbox the plugins.
 
 - Add try/catches and error handling (to the UI).
-
----
-
-For possible future reference:
-
-https://github.com/damienbod/SignalRMessagingErrorHandling
-https://code.msdn.microsoft.com/windowsdesktop/Using-SignalR-in-WinForms-f1ec847b

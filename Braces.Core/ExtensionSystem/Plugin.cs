@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Braces.Core.Enums;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Braces.Core.ExtensionSystem
 {
@@ -37,6 +38,14 @@ namespace Braces.Core.ExtensionSystem
 
         public string Id { get; }
 
+        public string Path { get; } = "";
+
+        #endregion
+
+        #region PUBLIC PROPERTIES
+
+        //public 
+
         #endregion
 
         #region EVENTS
@@ -49,7 +58,7 @@ namespace Braces.Core.ExtensionSystem
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
-        public virtual async Task OnFileOpen( object sender, RoutedEventArgs e, object args ) { }
+        public virtual async Task OnFileOpen( object args ) { }
 
         /// <summary>
         /// 
@@ -59,9 +68,9 @@ namespace Braces.Core.ExtensionSystem
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <returns></returns>
-        public virtual async Task OnFileSave( object sender, RoutedEventArgs e, object args ) { }
+        public virtual async Task OnFileSave( object args ) { }
 
-        public virtual async Task OnTextEditorKeyDown( object sender, RoutedEventArgs e, object args ) { }
+        public virtual async Task OnTextEditorKeyDown( object args ) { }
 
         #endregion
     }
