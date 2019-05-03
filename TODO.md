@@ -31,6 +31,6 @@
 
 - Refactor all the TextEditorControl code (C#).
 
-- Sandbox the plugins.
+- Sandbox the plugins (Docker).
 
 - Add try/catches and error handling (to the UI).
