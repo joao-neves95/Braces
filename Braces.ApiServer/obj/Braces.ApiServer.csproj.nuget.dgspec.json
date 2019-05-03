@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj": {}
+    "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj": {}
   },
   "projects": {
-    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj": {
+    "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
+        "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
         "projectName": "Braces.ApiServer",
-        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
-        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
-        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\obj\\",
+        "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
+        "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -36,11 +36,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj": {
-                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj"
-              },
-              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+              "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+                "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
               }
             }
           }
@@ -92,91 +89,21 @@
         }
       }
     },
-    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj",
-        "projectName": "Braces.API",
-        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj",
-        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
-        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.0": {
-            "projectReferences": {
-              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
-                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.0": {
-          "dependencies": {
-            "Microsoft.NETCore.Platforms": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview4.19212.13, )",
-              "autoReferenced": true
-            },
-            "Microsoft.WindowsDesktop.App": {
-              "target": "Package",
-              "version": "[3.0.0-preview4-27613-28, )"
-            },
-            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
-              "target": "Package",
-              "version": "[3.0.0-preview4-27615-11, )"
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+    "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
       "version": "0.1.0",
       "restore": {
-        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+        "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
         "projectName": "Braces.Core",
-        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
-        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
-        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\obj\\",
+        "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+        "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -274,79 +201,6 @@
             "ini-parser": {
               "target": "Package",
               "version": "[2.5.2, )"
-            }
-          },
-          "imports": [
-            "net461"
-          ],
-          "assetTargetFallback": true,
-          "warn": true
-        }
-      }
-    },
-    "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
-        "projectName": "Braces.UI.WPF",
-        "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
-        "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
-        "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "netcoreapp3.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
-        },
-        "frameworks": {
-          "netcoreapp3.0": {
-            "projectReferences": {
-              "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-                "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "netcoreapp3.0": {
-          "dependencies": {
-            "Microsoft.NETCore.Platforms": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview4.19212.13, )",
-              "autoReferenced": true
-            },
-            "ini-parser": {
-              "target": "Package",
-              "version": "[2.5.2, )"
-            },
-            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
-              "include": "None",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview4-27615-11, )",
-              "autoReferenced": true
             }
           },
           "imports": [

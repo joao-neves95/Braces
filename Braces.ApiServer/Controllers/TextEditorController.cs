@@ -29,7 +29,7 @@ namespace Braces.ApiServer.Controllers
 #pragma warning disable SG0016 // Controller method is vulnerable to CSRF
 
         [HttpPost("fire-event")]
-        public async Task FireEvent([FromBody] FireEventDTO fireEventDTO )
+        public async void FireEvent([FromBody] FireEventDTO fireEventDTO )
         {
             //Console.WriteLine( fireEventDTO.ToJSON() );
             await this._hubContext.Clients.All.SendAsync( fireEventDTO.eventName, fireEventDTO.fileTypeName, fireEventDTO.args );

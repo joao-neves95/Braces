@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Diagnostics;
 using System.Net.Http.Headers;
 using Braces.Core.DTOs;
+using System.IO;
 
 namespace Braces.Core.ApiClientManager
 {
@@ -19,7 +20,12 @@ namespace Braces.Core.ApiClientManager
 
         private static readonly ApiClientManager _instance = new ApiClientManager();
 
-        public static ApiClientManager Instance
+        /// <summary>
+        /// 
+        /// Get the current singleton instance.
+        /// 
+        /// </summary>
+        public static ApiClientManager _
         {
             get
             {
@@ -43,7 +49,8 @@ namespace Braces.Core.ApiClientManager
         public void StartApiServer()
         {
             // The path is hardcoded for now.
-            Process.Start( "dotnet", "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp3.0\\Braces.ApiServer.dll" );
+            string apiServerPath = Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp3.0\\Braces.ApiServer.dll" );
+            Process.Start( "dotnet", apiServerPath );
         }
 
         /// <summary>

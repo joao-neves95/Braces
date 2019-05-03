@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
+using Braces.UI.WPF.EventArguments;
 
 namespace Braces.PluginHost
 {
@@ -28,16 +29,16 @@ namespace Braces.PluginHost
             // TODO: Load plugins and order them by language and only load them when necessary.
             Console.WriteLine( "Loading plugin..." );
             // The path is hardcoded for now.
-            await LoadPlugin( "../../../TestPlugin/bin/Debug/TestPlugin.dll" );
+            await LoadPlugin( "../../../Plugins/TesterPlugin/bin/Debug/TestPlugin.dll" );
 
             Console.WriteLine( "Initializing PluginHosts's SignalR Client connection..." );
-            await InitClient( null );
+            await StartClient( null );
 
             Console.ReadLine();
             Console.WriteLine( "Exit" );
         }
 
-        public static async Task InitClient( Plugin plugin )
+        public static async Task StartClient( Plugin plugin )
         {
             Connection = new HubConnectionBuilder()
                 .WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
@@ -66,7 +67,7 @@ namespace Braces.PluginHost
 
             try
             {
-                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\TestPlugin\\bin\\Debug\\TestPlugin.dll" ) );
+                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\bin\\Debug\\netcoreapp3.0\\TesterPlugin.dll" ) );
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 Type thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );

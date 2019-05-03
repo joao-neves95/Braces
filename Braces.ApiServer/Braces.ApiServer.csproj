@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Braces.API\Braces.API.csproj" />
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
   </ItemGroup>
 

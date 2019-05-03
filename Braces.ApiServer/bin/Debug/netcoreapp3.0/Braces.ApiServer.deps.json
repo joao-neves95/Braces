@@ -24,7 +24,6 @@
     ".NETCoreApp,Version=v3.0": {
       "Braces.ApiServer/1.0.0": {
         "dependencies": {
-          "Braces.API": "1.0.0",
           "Braces.Core": "0.1.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.0.0-preview4-19216-03",
           "Microsoft.NETCore.Platforms": "3.0.0-preview4.19212.13",
@@ -1854,13 +1853,13 @@
             "rid": "unix",
             "assetType": "runtime",
             "assemblyVersion": "4.5.0.3",
-            "fileVersion": "4.6.26720.1"
+            "fileVersion": "4.6.26720.2"
           },
           "runtimes/win/lib/netstandard2.0/System.Private.ServiceModel.dll": {
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "4.5.0.3",
-            "fileVersion": "4.6.26720.1"
+            "fileVersion": "4.6.26720.2"
           }
         }
       },
@@ -2222,7 +2221,7 @@
         "runtime": {
           "lib/netstandard2.0/System.ServiceModel.NetTcp.dll": {
             "assemblyVersion": "4.5.0.3",
-            "fileVersion": "4.6.26720.2"
+            "fileVersion": "4.6.26720.1"
           }
         },
         "compile": {
@@ -2474,19 +2473,6 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
-      "Braces.API/1.0.0": {
-        "dependencies": {
-          "Braces.UI.WPF": "1.0.0",
-          "Microsoft.WindowsDesktop.App": "3.0.0-preview4-27613-28",
-          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "3.0.0-preview4-27615-11"
-        },
-        "runtime": {
-          "Braces.API.dll": {}
-        },
-        "compile": {
-          "Braces.API.dll": {}
-        }
-      },
       "Braces.Core/0.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
@@ -2498,18 +2484,6 @@
         },
         "compile": {
           "Braces.Core.dll": {}
-        }
-      },
-      "Braces.UI.WPF/1.0.0": {
-        "dependencies": {
-          "Braces.Core": "0.1.0",
-          "ini-parser": "2.5.2"
-        },
-        "runtime": {
-          "Braces.UI.WPF.dll": {}
-        },
-        "compile": {
-          "Braces.UI.WPF.dll": {}
         }
       },
       "Accessibility/4.0.0.0": {
@@ -4486,7 +4460,7 @@
     "Microsoft.AspNetCore.Razor.Language/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zW2jJWCnijyoZqL3a4W5zuvObFluZ7dvZeasbZVhBc8h1ZD4INufdpWXgtxceiu5wqfnedH+mzGTUdM4jNccUQ==",
+      "sha512": "sha512-IeyzVFXZdpUAnWKWoNYE0SsP1Eu7JLjZaC94jaI1VfGtK57QykROz/iGMc8D0VcqC8i02qYTPQN/wPKm6PfidA==",
       "path": "microsoft.aspnetcore.razor.language/2.2.0",
       "hashPath": "microsoft.aspnetcore.razor.language.2.2.0.nupkg.sha512"
     },
@@ -4626,7 +4600,7 @@
     "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cBcFp3iIi/c6AK9F/aZxbZaNhWGOLSJD071L9tO8JbyODp38NDKsJ38Xq/KJUCt1EUIlqnyF6PdqOngFuCvD1Q==",
+      "sha512": "sha512-dDZiDnoFFz0dNYccWE4m/Lf0goElwAzjCQaitNV3qMvQFGdxTQS0ov8Wy/ktNbdc5KsC0xK1kj5YF3Q1RDS7aA==",
       "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
       "hashPath": "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512"
     },
@@ -4801,7 +4775,7 @@
     "runtime.linux-x64.runtime.native.System.IO.Ports/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Z8Jb70QaSqyW3N3V7E9QmDKXjdrSilb8Lf3SPh+0RD6m+8OE4FntuEAgRhB8obTuZhTcspzM/XbQZxkO8o45+A==",
+      "sha512": "sha512-hnUMwXr6lfqCZKlOq/wRfiMY5tVIReXhD0ic9xyr95RjvloP5+D2fVIvtYeLfwEgwBBpD6xbQBqpjSRw/lLlng==",
       "path": "runtime.linux-x64.runtime.native.system.io.ports/4.6.0-preview4.19212.13",
       "hashPath": "runtime.linux-x64.runtime.native.system.io.ports.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -4815,7 +4789,7 @@
     "runtime.native.System.Data.SqlClient.sni/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AfhH96Uw55zh7/isg5tsN1p2kLdTfnCikDfSSto7XHpin+/hmfpm2HcoPtN5vqcAW//DfOjPWqzNPShFWw0gaQ==",
+      "sha512": "sha512-gcZhxHyUMWniLkGLoIsCBwqMyDQH9hcg5NjVDYuJPVgrAt27RT5cYnJZfvh+AUwfzhSLgmUQpVQqySnYBYu/xQ==",
       "path": "runtime.native.system.data.sqlclient.sni/4.6.0-preview4.19212.13",
       "hashPath": "runtime.native.system.data.sqlclient.sni.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -4829,7 +4803,7 @@
     "runtime.native.System.IO.Ports/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cPP5tHS2l/DrC5PyZuNFkRr/9bnGjZ9luhgeXwmlN0W1vrh4jlwsYdn/+AlDVNWCBrhVC+7ELM0QlqOxh3Vtag==",
+      "sha512": "sha512-IlRi5u9Zhk33c4yLnWeOlMVgJYVD5iIkYvVGjwJyDO0qsD+WYyixPk54ZwObGQmo2ooV6/Cw4eGDqExSmmS1+A==",
       "path": "runtime.native.system.io.ports/4.6.0-preview4.19212.13",
       "hashPath": "runtime.native.system.io.ports.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -5333,7 +5307,7 @@
     "System.Private.ServiceModel/4.5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ancrQgJagx+yC4SZbuE+eShiEAUIF0E1d21TRSoy1C/rTwafAVcBr/fKibkq5TQzyy9uNil2tx2/iaUxsy0S9g==",
+      "sha512": "sha512-Y4ouOY/aXIuS0rvrr2tHQ8cahsqJ8i/BGhcj2d+LZWdrIVFU3oLM78Lw/HH/yO5B2I7bX5fujuhGwixN/UzYVw==",
       "path": "system.private.servicemodel/4.5.3",
       "hashPath": "system.private.servicemodel.4.5.3.nupkg.sha512"
     },
@@ -5466,7 +5440,7 @@
     "System.Security.AccessControl/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-O6Z0DHu0y86QWxjmRz56ZQ0vEjbcGpuwwttVKTlmB2XesbieA/vTG5JKA8XZtNESy05bbClVq2d4K5OEq+cbxA==",
+      "sha512": "sha512-6CR7JK35I3R5uKUxmVmAYMb87KIBm1ivqdvRMqxqABgE0FJ1XjKyObV6gC9WgIDKxANLCSwXk8URr3ppJisuPw==",
       "path": "system.security.accesscontrol/4.6.0-preview4.19212.13",
       "hashPath": "system.security.accesscontrol.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -5480,7 +5454,7 @@
     "System.Security.Cryptography.Cng/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-F8WC0EHIHGhvFWfkevBiAm1GJX+ae3EBT9BYjH07BOQSH/Prw47KfibPGVQ5n4PTA0FB5PYGtMAGBuDftexjSQ==",
+      "sha512": "sha512-sVnxuyry/5mx+glWTstPHLO3aAobPWtnqY6zSsEt5ZKEm6/ayiNb4c5kpdBlIgp0LPiSPOTyufFP3xt0qLuGgg==",
       "path": "system.security.cryptography.cng/4.6.0-preview4.19212.13",
       "hashPath": "system.security.cryptography.cng.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -5508,7 +5482,7 @@
     "System.Security.Cryptography.Pkcs/4.6.0-preview4.19212.13": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-z4aEh9kkyZXlMr1Z6yX3Ey7X3kakRLCl341GQaAzgqvPtxI1PxnyJKZ/+b+b6+iwBdfWd75lXqpnFbpXZQLiqw==",
+      "sha512": "sha512-GyXrkI5kznhGgT7ECeY2upEm9OW+E8RP7CPxFEI/M3IvCnBoGR3bAwNz2jSl8jFkcR6W+6f1IssuFnloFocHTQ==",
       "path": "system.security.cryptography.pkcs/4.6.0-preview4.19212.13",
       "hashPath": "system.security.cryptography.pkcs.4.6.0-preview4.19212.13.nupkg.sha512"
     },
@@ -5571,7 +5545,7 @@
     "System.ServiceModel.NetTcp/4.5.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zVDHSsYQecYj0/ZKrwmHW45g7wB057WL9mnEPelIb/3bxk9r9r9NXTj/qTKaxsDB+bxMMbC8Xu0RgslSqeCK4w==",
+      "sha512": "sha512-Bx4oVK4ApBvZ0C3J62A8p3j6U0XK54JjN0byK52Qw4EgK89Uc48XzbF+0m1Oysc2bnnbrur+SwFWw7J8co3jTQ==",
       "path": "system.servicemodel.nettcp/4.5.3",
       "hashPath": "system.servicemodel.nettcp.4.5.3.nupkg.sha512"
     },
@@ -5729,17 +5703,7 @@
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
     },
-    "Braces.API/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Braces.Core/0.1.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Braces.UI.WPF/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

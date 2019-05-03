@@ -112,7 +112,7 @@ namespace Braces.Core.ExtensionSystem
         /// <returns></returns>
         public async Task FireEventAsync(string eventName, string fileTypeName, object args)
         {
-            await ApiClientManager.ApiClientManager.Instance.PostAsJSON( "text-editor/fire-event", new FireEventDTO()
+            await ApiClientManager.ApiClientManager._.PostAsJSON( "text-editor/fire-event", new FireEventDTO()
             {
                 eventName = eventName,
                 fileTypeName = fileTypeName,

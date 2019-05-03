@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 using Braces.Core;
 using Braces.Core.ApiClientManager;
+using Braces.UI.WPF.API;
 
 namespace Braces.UI.WPF
 {
@@ -20,7 +22,13 @@ namespace Braces.UI.WPF
             MainWindow = mainWindow;
             _MainWindow = mainWindow;
             MainWindow.Show();
-            ApiClientManager.Instance.StartApiServer();
+            ApiClientManager._.StartApiServer();
+            await Task.Run( async () =>
+             {
+                 // TODO: Find better way.
+                 await Task.Delay( 5000 );
+                 await APISignalRClient._.StartClient();
+             } );
         }
     }
 }

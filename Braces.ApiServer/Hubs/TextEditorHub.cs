@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
-using Braces.Core.ExtensionSystem;
-using System.Windows;
+using Braces.Core.Enums;
 using Braces.ApiServer.Interfaces;
-using Braces.API;
 
 namespace Braces.ApiServer.Hubs
 {
-    public class TextEditorHub : Hub<IPluginClient>
+    public class TextEditorHub : Hub
     {
         public async Task Join( string fileTypeName )
         {
@@ -18,22 +16,21 @@ namespace Braces.ApiServer.Hubs
             await Groups.AddToGroupAsync( Context.ConnectionId, fileTypeName );
         }
 
-        public void AddNewLineToEnd( string content )
+        public async Task BindUI()
         {
-            TextEditor.AddNewLineToEndOfFile( content );
+            Console.WriteLine( "Binding UI..." );
+            await Groups.AddToGroupAsync( Context.ConnectionId, SignalRGroupNames.UI );
+            Console.WriteLine( "UI binding complete." );
+        }
+        
+        public async Task AddNewLineToEnd( string content )
+        {
+            await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddNewLineToEndOfFile, content );
         }
 
-        public void AddNewLineAfterCaretPosition( string contents )
+        public async Task AddNewLineAfterCaretPosition( string content )
         {
-            try
-            {
-                TextEditor.AddNewLineAfterCaretPosition( contents );
-
-            } catch (Exception e)
-            {
-                Console.WriteLine( e.Message );
-                Console.WriteLine( e.StackTrace );
-            }
+            await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddNewLineAfterCaretPosition, content );
         }
 
         public override Task OnDisconnectedAsync( Exception exception )

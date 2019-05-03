@@ -2933,21 +2933,6 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "Braces.API/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "Braces.UI.WPF": "1.0.0",
-          "Microsoft.WindowsDesktop.App": "3.0.0-preview4-27613-28",
-          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "3.0.0-preview4-27615-11"
-        },
-        "compile": {
-          "bin/placeholder/Braces.API.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Braces.API.dll": {}
-        }
-      },
       "Braces.Core/0.1.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -2961,20 +2946,6 @@
         },
         "runtime": {
           "bin/placeholder/Braces.Core.dll": {}
-        }
-      },
-      "Braces.UI.WPF/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.0",
-        "dependencies": {
-          "Braces.Core": "0.1.0",
-          "ini-parser": "2.5.2"
-        },
-        "compile": {
-          "bin/placeholder/Braces.UI.WPF.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Braces.UI.WPF.dll": {}
         }
       }
     }
@@ -3075,7 +3046,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/2.2.0": {
-      "sha512": "zW2jJWCnijyoZqL3a4W5zuvObFluZ7dvZeasbZVhBc8h1ZD4INufdpWXgtxceiu5wqfnedH+mzGTUdM4jNccUQ==",
+      "sha512": "IeyzVFXZdpUAnWKWoNYE0SsP1Eu7JLjZaC94jaI1VfGtK57QykROz/iGMc8D0VcqC8i02qYTPQN/wPKm6PfidA==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.language/2.2.0",
       "files": [
@@ -3414,7 +3385,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
-      "sha512": "cBcFp3iIi/c6AK9F/aZxbZaNhWGOLSJD071L9tO8JbyODp38NDKsJ38Xq/KJUCt1EUIlqnyF6PdqOngFuCvD1Q==",
+      "sha512": "dDZiDnoFFz0dNYccWE4m/Lf0goElwAzjCQaitNV3qMvQFGdxTQS0ov8Wy/ktNbdc5KsC0xK1kj5YF3Q1RDS7aA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
       "files": [
@@ -4226,7 +4197,7 @@
       ]
     },
     "runtime.linux-x64.runtime.native.System.IO.Ports/4.6.0-preview4.19212.13": {
-      "sha512": "Z8Jb70QaSqyW3N3V7E9QmDKXjdrSilb8Lf3SPh+0RD6m+8OE4FntuEAgRhB8obTuZhTcspzM/XbQZxkO8o45+A==",
+      "sha512": "hnUMwXr6lfqCZKlOq/wRfiMY5tVIReXhD0ic9xyr95RjvloP5+D2fVIvtYeLfwEgwBBpD6xbQBqpjSRw/lLlng==",
       "type": "package",
       "path": "runtime.linux-x64.runtime.native.system.io.ports/4.6.0-preview4.19212.13",
       "files": [
@@ -4255,7 +4226,7 @@
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.6.0-preview4.19212.13": {
-      "sha512": "AfhH96Uw55zh7/isg5tsN1p2kLdTfnCikDfSSto7XHpin+/hmfpm2HcoPtN5vqcAW//DfOjPWqzNPShFWw0gaQ==",
+      "sha512": "gcZhxHyUMWniLkGLoIsCBwqMyDQH9hcg5NjVDYuJPVgrAt27RT5cYnJZfvh+AUwfzhSLgmUQpVQqySnYBYu/xQ==",
       "type": "package",
       "path": "runtime.native.system.data.sqlclient.sni/4.6.0-preview4.19212.13",
       "files": [
@@ -4283,7 +4254,7 @@
       ]
     },
     "runtime.native.System.IO.Ports/4.6.0-preview4.19212.13": {
-      "sha512": "cPP5tHS2l/DrC5PyZuNFkRr/9bnGjZ9luhgeXwmlN0W1vrh4jlwsYdn/+AlDVNWCBrhVC+7ELM0QlqOxh3Vtag==",
+      "sha512": "IlRi5u9Zhk33c4yLnWeOlMVgJYVD5iIkYvVGjwJyDO0qsD+WYyixPk54ZwObGQmo2ooV6/Cw4eGDqExSmmS1+A==",
       "type": "package",
       "path": "runtime.native.system.io.ports/4.6.0-preview4.19212.13",
       "files": [
@@ -6890,7 +6861,7 @@
       ]
     },
     "System.Private.ServiceModel/4.5.3": {
-      "sha512": "ancrQgJagx+yC4SZbuE+eShiEAUIF0E1d21TRSoy1C/rTwafAVcBr/fKibkq5TQzyy9uNil2tx2/iaUxsy0S9g==",
+      "sha512": "Y4ouOY/aXIuS0rvrr2tHQ8cahsqJ8i/BGhcj2d+LZWdrIVFU3oLM78Lw/HH/yO5B2I7bX5fujuhGwixN/UzYVw==",
       "type": "package",
       "path": "system.private.servicemodel/4.5.3",
       "files": [
@@ -7854,7 +7825,7 @@
       ]
     },
     "System.Security.AccessControl/4.6.0-preview4.19212.13": {
-      "sha512": "O6Z0DHu0y86QWxjmRz56ZQ0vEjbcGpuwwttVKTlmB2XesbieA/vTG5JKA8XZtNESy05bbClVq2d4K5OEq+cbxA==",
+      "sha512": "6CR7JK35I3R5uKUxmVmAYMb87KIBm1ivqdvRMqxqABgE0FJ1XjKyObV6gC9WgIDKxANLCSwXk8URr3ppJisuPw==",
       "type": "package",
       "path": "system.security.accesscontrol/4.6.0-preview4.19212.13",
       "files": [
@@ -7940,7 +7911,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.6.0-preview4.19212.13": {
-      "sha512": "F8WC0EHIHGhvFWfkevBiAm1GJX+ae3EBT9BYjH07BOQSH/Prw47KfibPGVQ5n4PTA0FB5PYGtMAGBuDftexjSQ==",
+      "sha512": "sVnxuyry/5mx+glWTstPHLO3aAobPWtnqY6zSsEt5ZKEm6/ayiNb4c5kpdBlIgp0LPiSPOTyufFP3xt0qLuGgg==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.6.0-preview4.19212.13",
       "files": [
@@ -8102,7 +8073,7 @@
       ]
     },
     "System.Security.Cryptography.Pkcs/4.6.0-preview4.19212.13": {
-      "sha512": "z4aEh9kkyZXlMr1Z6yX3Ey7X3kakRLCl341GQaAzgqvPtxI1PxnyJKZ/+b+b6+iwBdfWd75lXqpnFbpXZQLiqw==",
+      "sha512": "GyXrkI5kznhGgT7ECeY2upEm9OW+E8RP7CPxFEI/M3IvCnBoGR3bAwNz2jSl8jFkcR6W+6f1IssuFnloFocHTQ==",
       "type": "package",
       "path": "system.security.cryptography.pkcs/4.6.0-preview4.19212.13",
       "files": [
@@ -8467,7 +8438,7 @@
       ]
     },
     "System.ServiceModel.NetTcp/4.5.3": {
-      "sha512": "zVDHSsYQecYj0/ZKrwmHW45g7wB057WL9mnEPelIb/3bxk9r9r9NXTj/qTKaxsDB+bxMMbC8Xu0RgslSqeCK4w==",
+      "sha512": "Bx4oVK4ApBvZ0C3J62A8p3j6U0XK54JjN0byK52Qw4EgK89Uc48XzbF+0m1Oysc2bnnbrur+SwFWw7J8co3jTQ==",
       "type": "package",
       "path": "system.servicemodel.nettcp/4.5.3",
       "files": [
@@ -9568,25 +9539,14 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "Braces.API/1.0.0": {
-      "type": "project",
-      "path": "../Braces.API/Braces.API.csproj",
-      "msbuildProject": "../Braces.API/Braces.API.csproj"
-    },
     "Braces.Core/0.1.0": {
       "type": "project",
       "path": "../Braces.Core/Braces.Core.csproj",
       "msbuildProject": "../Braces.Core/Braces.Core.csproj"
-    },
-    "Braces.UI.WPF/1.0.0": {
-      "type": "project",
-      "path": "../Braces.UI.WPF/Braces.UI.WPF.csproj",
-      "msbuildProject": "../Braces.UI.WPF/Braces.UI.WPF.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "Braces.API >= 1.0.0",
       "Braces.Core >= 0.1.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.0.0-preview4-19216-03",
       "Microsoft.NETCore.Platforms >= 3.0.0-preview4.19212.13",
@@ -9597,23 +9557,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joao9\\.nuget\\packages\\": {},
+    "C:\\Users\\jpedrone\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
+      "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
       "projectName": "Braces.ApiServer",
-      "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
-      "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
-      "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\obj\\",
+      "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
+      "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9632,11 +9592,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj": {
-              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.API\\Braces.API.csproj"
-            },
-            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+            "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+              "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
             }
           }
         }

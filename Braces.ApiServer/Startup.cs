@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -74,7 +75,8 @@ namespace Braces.ApiServer
         {
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
-            Process.Start( "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\net471\\Braces.PluginHost.exe" );
+            // string pluginHostPath = Path.GetFullPath( "..\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
+            Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }
     }
 }
