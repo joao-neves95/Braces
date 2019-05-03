@@ -23,6 +23,8 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
+- Migrate Braces.Core to .NET Core 3.
+
 - Remove unnecessary references and target frameworks.
 
 - Refactor all the XAML (Braces.UI.WPF).
