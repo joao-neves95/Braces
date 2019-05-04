@@ -29,10 +29,14 @@
 
 - Refactor all the XAML (Braces.UI.WPF).
 
-- Refactor all the TextEditorControl code (C#).
+- Refactor all the UI C# code (Braces.UI.WPF).
 
 - Sandbox the plugins (Docker).
 
-- Add try/catches and error handling (to the UI).
+- Add a more strict UI API enforcement (and for multiple languages).
 
-- Add support for having projects (workspaces).
+- Add try/catches and error handling (to the UI and ApiServer).
+
+- Add support for having projects (workspaces): custom configuration.
+
+- Add support for plugins written in multiple languages (e.g.: Node.js, Java).
