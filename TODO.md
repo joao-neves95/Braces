@@ -27,6 +27,8 @@
 
 - Remove unnecessary references and target frameworks.
 
+- Use interfaces as method parameters instead of object.
+
 - Refactor all the XAML (Braces.UI.WPF).
 
 - Refactor all the UI C# code (Braces.UI.WPF).
