@@ -2935,7 +2935,7 @@
       },
       "Braces.Core/0.1.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v3.0",
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
           "Newtonsoft.Json": "11.0.2",
