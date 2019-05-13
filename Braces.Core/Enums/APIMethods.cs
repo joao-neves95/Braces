@@ -14,9 +14,17 @@ namespace Braces.Core.Enums
 
         public const string GetCurrentLine = "GetCurrentLine";
 
+        public const string SendCurrentLine = "SendCurrentLine";
+
+        public const string ReceiveCurrentLine = "ReceiveCurrentLine";
+
         public const string SetCurrentLne = "SetCurrentLne";
 
         public const string GetAllText = "GetAllText";
+
+        public const string SendAllText = "SendAllText";
+
+        public const string ReceiveAllText = "ReceiveAllText";
 
         public const string SetAllText = "SetAllText";
     }

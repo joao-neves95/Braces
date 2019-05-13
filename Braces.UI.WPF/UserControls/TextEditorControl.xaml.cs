@@ -1,10 +1,12 @@
-﻿using System.Text;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using Braces.Core;
+using Braces.Core.Interfaces;
 
 namespace Braces.UI.WPF.UserControls
 {
@@ -101,7 +103,6 @@ namespace Braces.UI.WPF.UserControls
                 richTextBox.Document.Blocks.Add( new Paragraph( new Run( currentLine ) ) );
             }
         }
-
 
         #endregion
 

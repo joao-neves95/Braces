@@ -56,7 +56,8 @@ namespace TestPlugin
             FileEventArgs fileEvent = (FileEventArgs)args;
             string message = $" This is from the Plugin { this.Name }.\n The name of the SAVED file is: { fileEvent.File.Name }.";
             Console.WriteLine( message );
-            await Braces.PluginHost.Program.Connection.InvokeCoreAsync( APIMethods.AddTextAfterCaretPosition, typeof(Task), new object[] { "SAVE" } );
+            return;
+            // await Braces.PluginHost.Program.Connection.InvokeCoreAsync( APIMethods.AddTextAfterCaretPosition, typeof(Task), new object[] { "SAVE" } );
         }
 
         #endregion

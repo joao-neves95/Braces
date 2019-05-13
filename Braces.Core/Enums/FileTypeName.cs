@@ -17,6 +17,8 @@ namespace Braces.Core.Enums
 
         public const string TS = ".ts";
 
+        public const string JSON = ".json";
+
         public const string CS = ".cs";
 
         public const string C = ".c";

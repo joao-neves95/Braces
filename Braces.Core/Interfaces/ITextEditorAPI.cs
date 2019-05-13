@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Braces.Core
+namespace Braces.Core.Interfaces
 {
     public interface ITextEditorAPI
     {
-        public void AddNewLineToEndOfFile(string content);
+        public Task AddNewLineToEndOfFile(string content);
 
-        public void AddTextAfterCaretPosition(string content);
+        public Task AddTextAfterCaretPosition(string content);
 
-        public void AddNewLineBelowCaretPosition(string content);
+        public Task AddNewLineBelowCaretPosition(string content);
 
-        public string GetCurrentLine();
+        public Task<string> GetCurrentLine();
 
-        public void SetCurrentLne(string content);
+        public Task SetCurrentLne(string content);
 
-        public string GetAllText();
+        public Task<string> GetAllText();
 
-        public void SetAllText(string content);
+        public Task SetAllText(string content);
     }
 }

@@ -72,6 +72,8 @@ namespace Braces.Core.ExtensionSystem
 
         public virtual async Task OnTextEditorKeyDown( object args ) { }
 
+        public virtual async Task OnReceiveAllText(string allText) { }
+
         #endregion
     }
 }

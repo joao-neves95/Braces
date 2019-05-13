@@ -46,6 +46,7 @@ namespace Braces.PluginHost
 
             Connection.On<string, object>( EventName.OnFileOpen, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
             Connection.On<string, object>( EventName.OnFileSave, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileSave, fileTypeName, args ) );
+            Connection.On<string, string>( APIMethods.ReceiveAllText, async ( fileTypeName, content ) => await Program.FireEventOnPlugins( APIMethods.ReceiveAllText, fileTypeName, content ) );
 
             Connection.Closed += async ( error ) =>
             {
@@ -56,11 +57,13 @@ namespace Braces.PluginHost
 
             Console.WriteLine( "Starting the connection..." );
             await Connection.StartAsync();
+            await Connection.InvokeAsync( "BindPluginHost" );
             Console.ReadLine();
         }
 
         #region PRIVATE METHODS
 
+        // TEMPORARY.
         private static async Task LoadPlugin( string path )
         {
             Console.WriteLine( Path.GetFullPath( path ) );
@@ -71,6 +74,11 @@ namespace Braces.PluginHost
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 Type thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );
+
+                thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\Braces_JSONBeautifier\\bin\\Debug\\netcoreapp3.0\\Braces_JSONBeautifier.dll" ) );
+                // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
+                thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
+                Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );
             }
             catch (Exception ex)
             {
@@ -80,7 +88,17 @@ namespace Braces.PluginHost
 
         private static async Task FireEventOnPlugins( string eventName, string fileTypeName, object args )
         {
-            FileEventArgs eventArgs = JsonConvert.DeserializeObject<FileEventArgs>( args.ToJSON() );
+            Console.WriteLine( "FireEvent" );
+            FileEventArgs eventArgs = new FileEventArgs( new Braces.Core.Models.FileModel( Path.Combine( FileStorage.GetHOMEPATH(), "_braces" ) ) );
+
+            try
+            {
+                eventArgs = JsonConvert.DeserializeObject<FileEventArgs>( args.ToJSON() );
+            }
+            catch
+            {
+                // continue;
+            }
 
             for (int i = 0; i < Plugins.Count; ++i)
             {
@@ -95,6 +113,9 @@ namespace Braces.PluginHost
                         break;
                     case EventName.OnFileSave:
                         await Plugins[i].OnFileSave( eventArgs );
+                        break;
+                    case APIMethods.ReceiveAllText:
+                        await Plugins[i].OnReceiveAllText( (string)args );
                         break;
                     default:
                         break;

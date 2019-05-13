@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Braces.Core\Braces.Core.csproj" />
+    <ProjectReference Include="..\..\Braces.PluginHost\Braces.PluginHost.csproj" />
+    <ProjectReference Include="..\..\Braces.UI.WPF\Braces.UI.WPF.csproj" />
+  </ItemGroup>
+
+</Project>
