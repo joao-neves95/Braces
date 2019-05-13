@@ -23,14 +23,19 @@ namespace Braces.ApiServer.Hubs
             Console.WriteLine( "UI binding complete." );
         }
         
-        public async Task AddNewLineToEnd( string content )
+        public async Task AddNewLineToEndOfFile( string content )
         {
             await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddNewLineToEndOfFile, content );
         }
 
-        public async Task AddNewLineAfterCaretPosition( string content )
+        public async Task AddNewLineBelowCaretPosition( string content )
         {
-            await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddNewLineAfterCaretPosition, content );
+            await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddNewLineBelowCaretPosition, content );
+        }
+
+        public async Task AddTextAfterCaretPosition(string content)
+        {
+            await Clients.Group( SignalRGroupNames.UI ).SendAsync( APIMethods.AddTextAfterCaretPosition, content );
         }
 
         public override Task OnDisconnectedAsync( Exception exception )

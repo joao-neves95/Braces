@@ -130,16 +130,9 @@ namespace Braces.UI.WPF
             {
                 string filePath = openFileDialog.FileName;
                 string fileContent = await FileStorage.ReadFileAsStringAsync( filePath );
-                string[] documentLines = Regex.Split( fileContent, "\n" );
-                this.CurrentTextEditor.richTextBox.Document.Blocks.Clear();
-
-                for (uint i = 0; i < documentLines.Length - 1; ++i)
-                {
-                    documentLines[i] = Regex.Replace( documentLines[i], "(\r\n?|\n)", "" );
-                    this.CurrentTextEditor.richTextBox.Document.Blocks.Add( new Paragraph( new Run( documentLines[i] ) ) );
-                }
-
+                this.CurrentTextEditor.SetAllText( fileContent );
                 this.CurrentFile = new FileModel( filePath );
+
                 await ExtensionSystem.PluginManager.FireEventAsync(
                     EventName.OnFileOpen,
                     this.CurrentFile.Extension,
@@ -160,11 +153,7 @@ namespace Braces.UI.WPF
             // About the TextRange Class:
             // https://docs.microsoft.com/en-us/dotnet/api/system.windows.documents.textrange?view=netframework-4.7.2
 
-            TextRange userInput = new TextRange(
-                this.CurrentTextEditor.richTextBox.Document.ContentStart,
-                this.CurrentTextEditor.richTextBox.Document.ContentEnd
-            );
-
+            string fileContents = this.CurrentTextEditor.GetAllText();
             // byte[] encodedInput = new UnicodeEncoding().GetBytes(userInput.Text);
 
             if (this.CurrentFile == null)
@@ -176,10 +165,14 @@ namespace Braces.UI.WPF
                 {
                     this.CurrentFile = new FileModel( saveFileDialog.FileName );
                 }
+                else
+                {
+                    return;
+                }
             }
 
             // TODO: (TOFIX) Jump if the user did not select a file.
-            await FileStorage.SaveFileAsync( this.CurrentFile.CompletePath, userInput.Text );
+            await FileStorage.SaveFileAsync( this.CurrentFile.CompletePath, fileContents );
             await ExtensionSystem.PluginManager.FireEventAsync(
                 EventName.OnFileSave,
                 this.CurrentFile.Extension,

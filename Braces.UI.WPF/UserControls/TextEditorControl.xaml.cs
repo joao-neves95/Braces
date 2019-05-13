@@ -1,15 +1,17 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using Braces.Core;
 
 namespace Braces.UI.WPF.UserControls
 {
     /// <summary>
     /// Interaction logic for TextEditorControl.xaml
     /// </summary>
-    public partial class TextEditorControl : UserControl
+    public partial class TextEditorControl : UserControl, ITextEditorAPI
     {
         public TextEditorControl()
         {
@@ -47,20 +49,59 @@ namespace Braces.UI.WPF.UserControls
 
         #endregion
 
-        #region PUBLIC METHODS
+        #region PUBLIC API METHODS
 
-        public void AddLineToEndOfFile(string content)
+        public void AddNewLineToEndOfFile(string content)
         {
             richTextBox.Document.Blocks.Add( new Paragraph( new Run( content ) ) );
             this.AddLineNumber();
         }
 
-        public void AddNewLineAfterCaretPosition(string content)
+        public void AddNewLineBelowCaretPosition(string content)
         {
-
             richTextBox.Document.Blocks.InsertAfter( richTextBox.CaretPosition.Paragraph, new Paragraph( new Run( content ) ) );
             this.AddLineNumber();
         }
+
+        public void AddTextAfterCaretPosition(string content)
+        {
+            richTextBox.CaretPosition.InsertTextInRun( content );
+        }
+
+        public string GetCurrentLine()
+        {
+            return richTextBox.CaretPosition.Paragraph.ContentStart.GetTextInRun( LogicalDirection.Forward );
+        }
+
+        public void SetCurrentLne(string content)
+        {
+            richTextBox.CaretPosition.Paragraph.Inlines.Clear();
+            richTextBox.CaretPosition.Paragraph.Inlines.Add( new Run( content ) );
+        }
+
+        public string GetAllText()
+        {
+            TextRange userInput = new TextRange(
+                this.richTextBox.Document.ContentStart,
+                this.richTextBox.Document.ContentEnd
+            );
+
+            return userInput.Text;
+        }
+
+        public void SetAllText(string content)
+        {
+            richTextBox.Document.Blocks.Clear();
+            string[] allLines = content.Split( new string[] { "\n", "\r\n" }, System.StringSplitOptions.None );
+            string currentLine = "";
+            for (int i = 0; i < allLines.Length; ++i)
+            {
+                currentLine = allLines[i];
+                currentLine = Regex.Replace( currentLine, "(\r\n?|\n)", "" );
+                richTextBox.Document.Blocks.Add( new Paragraph( new Run( currentLine ) ) );
+            }
+        }
+
 
         #endregion
 
@@ -232,6 +273,5 @@ namespace Braces.UI.WPF.UserControls
                 }
             };
         }
-
     }
 }
