@@ -1,0 +1,13 @@
+C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\Braces.Core.deps.json
+C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\Braces.Core.dll
+C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\Braces.Core.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\PresentationCore.dll
+C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\PresentationFramework.dll
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.Properties.Resources.resources
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.csproj.GenerateResource.cache
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.csproj.CoreCompileInputs.cache
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.AssemblyInfoInputs.cache
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.AssemblyInfo.cs
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.csproj.CopyComplete
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.dll
+C:\Users\jpedrone\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.pdb

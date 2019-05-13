@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.UI.WPF", "Braces.UI.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesterPlugin", "Plugins\TesterPlugin\TesterPlugin.csproj", "{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces_JSONBeautifier", "Plugins\Braces_JSONBeautifier\Braces_JSONBeautifier.csproj", "{27ED5926-0410-4132-96EC-349A9B4EEAF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,12 +50,17 @@ Global
 		{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4} = {73F6E659-93F4-4E05-9990-7F524748C87A}
+		{27ED5926-0410-4132-96EC-349A9B4EEAF5} = {73F6E659-93F4-4E05-9990-7F524748C87A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB51DC9E-1AF1-4434-8481-CDA888CCF8D3}

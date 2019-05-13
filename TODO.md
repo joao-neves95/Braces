@@ -23,8 +23,6 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
-- Migrate Braces.Core to .NET Core 3.
-
 - Remove unnecessary references and target frameworks.
 
 - Use interfaces as method parameters instead of object.

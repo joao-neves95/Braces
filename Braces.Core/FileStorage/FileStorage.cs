@@ -31,50 +31,59 @@ namespace Braces.Core
 
         public static async Task<string> ReadFileAsStringAsync(string filePath)
         {
-            byte[] buffer = await ReadFileAsync(filePath);
-            return Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+            byte[] buffer = await ReadFileAsync( filePath );
+            return Encoding.UTF8.GetString( buffer, 0, buffer.Length );
             //return new UnicodeEncoding().GetString(buffer, 0, buffer.Length);
         }
 
+        private static object readLock = new object();
+
         public static async Task<byte[]> ReadFileAsync(string filePath)
         {
-            try
+            lock(readLock)
             {
-                byte[] buffer;
-
-                using (FileStream fileStream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                try
                 {
-                    buffer = new byte[fileStream.Length];
-                    await fileStream.ReadAsync(buffer, 0, (int)fileStream.Length);
-                    fileStream.Close();
-                    fileStream.Dispose();
-                    return buffer;
+                    byte[] buffer;
+
+                    using (FileStream fileStream = File.Open( filePath, FileMode.Open, FileAccess.Read ))
+                    {
+                        buffer = new byte[fileStream.Length];
+                        fileStream.ReadAsync( buffer, 0, (int)fileStream.Length ).GetAwaiter().GetResult();
+                        fileStream.Close();
+                        fileStream.Dispose();
+                        return buffer;
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"An error has occured: {e}");
-                // throw new ApplicationException($"An error has occured: {e}");
-                return new byte[0];
+                catch (Exception e)
+                {
+                    Console.WriteLine( $"An error has occured: {e}" );
+                    // throw new ApplicationException($"An error has occured: {e}");
+                    return new byte[0];
+                }
             }
         }
 
+        private static object _saveLock = new object();
+
         public static async Task SaveFileAsync(string filePath, string content)
         {
-            int bufferSize = content.Length;
-            byte[] buffer = Encoding.UTF8.GetBytes(content.ToCharArray(0, bufferSize), 0, bufferSize);
-            try
+            lock (_saveLock)
             {
-                using (FileStream fileStream = File.Open(filePath, FileMode.Create, FileAccess.Write))
+                int bufferSize = content.Length;
+                byte[] buffer = Encoding.UTF8.GetBytes(content.ToCharArray(0, bufferSize), 0, bufferSize);
+                try
                 {
-                    fileStream.Seek(0, SeekOrigin.Begin);
-                    await fileStream.WriteAsync(buffer, 0, buffer.Length);
+                    using (FileStream fileStream = File.Open(filePath, FileMode.Create, FileAccess.Write))
+                    {
+                        fileStream.Seek(0, SeekOrigin.Begin);
+                        fileStream.WriteAsync( buffer, 0, buffer.Length ).GetAwaiter().GetResult();
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"An error has occured: {e}");
-                // throw new ApplicationException($"An error has occured: {e}");
+                catch (Exception e)
+                {
+                    Console.WriteLine($"An error has occured: {e}");
+                }
             }
         }
 

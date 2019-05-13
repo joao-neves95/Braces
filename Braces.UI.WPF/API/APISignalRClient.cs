@@ -78,13 +78,29 @@ namespace Braces.UI.WPF.API
 
             Connection.On<string>( APIMethods.AddNewLineToEndOfFile, async content =>
             {
-                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.AddLineToEndOfFile( content ) );
+                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.AddNewLineToEndOfFile( content ) );
             } );
 
-            Connection.On<string>( APIMethods.AddNewLineAfterCaretPosition, async content => {
-                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.AddNewLineAfterCaretPosition( content ) );
+            Connection.On<string>( APIMethods.AddNewLineBelowCaretPosition, async content => {
+                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.AddNewLineBelowCaretPosition( content ) );
             } );
-            
+
+            Connection.On<string>( APIMethods.AddTextAfterCaretPosition, async content => {
+                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.AddTextAfterCaretPosition( content ) );
+            } );
+
+            Connection.On<string>( APIMethods.SetAllText, async content => {
+                await App.Current.Dispatcher.BeginInvoke( () => App._MainWindow.CurrentTextEditor.SetAllText( content ) );
+            } );
+
+            Connection.On<string>( APIMethods.GetCurrentLine, async content => {
+                await App.Current.Dispatcher.BeginInvoke( () => Connection.SendAsync( APIMethods.SendCurrentLine, App._MainWindow.CurrentTextEditor.GetCurrentLine() ) );
+            } );
+
+            Connection.On<string>( APIMethods.GetAllText, async fileTypeName => {
+                await App.Current.Dispatcher.BeginInvoke( () => Connection.SendAsync( APIMethods.SendAllText, fileTypeName, App._MainWindow.CurrentTextEditor.GetAllText() ) );
+            } );
+
             // End of THE API.
 
             Connection.Closed += async (error) =>

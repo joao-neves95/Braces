@@ -64,8 +64,6 @@ namespace Braces.Core.ApiClientManager
         {
             try
             {
-                Console.WriteLine( "dto" );
-                Console.WriteLine( dto.ToJSON() );
                 using ( _HttpClient = new HttpClient() )
                 {
                     await _HttpClient.PostAsync(
@@ -77,9 +75,6 @@ namespace Braces.Core.ApiClientManager
             catch ( Exception ex )
             {
                 Console.WriteLine( ex );
-            }
-            finally
-            {
                 _HttpClient.Dispose();
             }
         }
