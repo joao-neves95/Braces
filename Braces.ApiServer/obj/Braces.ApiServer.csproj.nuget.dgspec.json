@@ -53,7 +53,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.0.0-preview4-19216-03, )"
+              "version": "[3.0.0-preview5-19227-01, )"
             },
             "Microsoft.NETCore.Platforms": {
               "suppressParent": "All",
@@ -71,7 +71,7 @@
             },
             "Microsoft.WindowsDesktop.App": {
               "target": "Package",
-              "version": "[3.0.0-preview4-27613-28, )"
+              "version": "[3.0.0-preview5-27626-15, )"
             },
             "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
               "include": "None",
