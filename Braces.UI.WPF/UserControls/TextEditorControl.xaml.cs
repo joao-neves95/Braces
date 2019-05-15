@@ -56,13 +56,14 @@ namespace Braces.UI.WPF.UserControls
         public void AddNewLineToEndOfFile(string content)
         {
             richTextBox.Document.Blocks.Add( new Paragraph( new Run( content ) ) );
-            this.AddLineNumber();
+            this.LineCount++;
         }
 
         public void AddNewLineBelowCaretPosition(string content)
         {
             richTextBox.Document.Blocks.InsertAfter( richTextBox.CaretPosition.Paragraph, new Paragraph( new Run( content ) ) );
             this.AddLineNumber();
+            this.LineCount++;
         }
 
         public void AddTextAfterCaretPosition(string content)

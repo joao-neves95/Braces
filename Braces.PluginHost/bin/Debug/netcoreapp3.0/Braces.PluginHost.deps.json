@@ -13,9 +13,7 @@
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
           "Microsoft.NETCore.Platforms": "3.0.0-preview4.19212.13",
           "Newtonsoft.Json": "11.0.2",
-          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "3.0.0-preview4-27615-11",
-          "PresentationCore": "4.0.0.0",
-          "PresentationFramework": "4.0.0.0"
+          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": "3.0.0-preview4-27615-11"
         },
         "runtime": {
           "Braces.PluginHost.dll": {}
@@ -263,7 +261,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "ini-parser": "2.5.2"
+          "ini-parser": "2.5.2",
+          "PresentationCore": "4.0.0.0"
         },
         "runtime": {
           "Braces.Core.dll": {}
@@ -278,17 +277,9 @@
           "Braces.UI.WPF.dll": {}
         }
       },
-      "PresentationCore/4.0.0.0": {
+      "PresentationCore.Reference/4.0.0.0": {
         "runtime": {
           "PresentationCore.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.7.2558.0"
-          }
-        }
-      },
-      "PresentationFramework/4.0.0.0": {
-        "runtime": {
-          "PresentationFramework.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.7.2558.0"
           }
@@ -501,12 +492,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "PresentationCore/4.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "PresentationFramework/4.0.0.0": {
+    "PresentationCore.Reference/4.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

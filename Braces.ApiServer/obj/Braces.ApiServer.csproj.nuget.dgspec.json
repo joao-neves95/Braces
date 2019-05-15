@@ -61,6 +61,10 @@
               "version": "[3.0.0-preview4.19212.13, )",
               "autoReferenced": true
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.5.4, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.2.3, )"

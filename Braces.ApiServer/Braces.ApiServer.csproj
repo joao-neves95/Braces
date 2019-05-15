@@ -1,14 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web;Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.Web;Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <!--<TargetFrameworks>netcoreapp2.2;netstandard2.0</TargetFrameworks>-->
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <UseWPF>true</UseWPF>
+    <UserSecretsId>fa04ec7e-ee71-4fa5-bacf-648a2e7d97f9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview4-19216-03" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.5.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="3.0.0-preview4.19212.13" />
     <PackageReference Include="Microsoft.WindowsDesktop.App" Version="3.0.0-preview4-27613-28" />
@@ -16,18 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PresentationCore">
-      <HintPath>..\ReferenceDLLs\PresentationCore.dll</HintPath>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <HintPath>..\ReferenceDLLs\PresentationFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>..\ReferenceDLLs\WindowsBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

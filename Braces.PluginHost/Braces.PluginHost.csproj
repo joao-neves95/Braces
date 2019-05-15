@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,21 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Braces.Core\Braces.Core.csproj" />
     <ProjectReference Include="..\Braces.UI.WPF\Braces.UI.WPF.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PresentationCore">
-      <HintPath>..\ReferenceDLLs\PresentationCore.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <HintPath>..\ReferenceDLLs\PresentationFramework.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <HintPath>..\ReferenceDLLs\WindowsBase.dll</HintPath>
-      <Private>true</Private>
-    </Reference>
   </ItemGroup>
 
 </Project>

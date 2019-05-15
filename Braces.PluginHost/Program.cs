@@ -55,7 +55,7 @@ namespace Braces.PluginHost
                 await Connection.StartAsync();
             };
 
-            Console.WriteLine( "Starting the connection..." );
+            Console.WriteLine( "Starting the PluginHost connection..." );
             await Connection.StartAsync();
             await Connection.InvokeAsync( "BindPluginHost" );
             Console.ReadLine();

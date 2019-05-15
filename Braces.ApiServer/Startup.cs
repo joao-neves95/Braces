@@ -76,6 +76,7 @@ namespace Braces.ApiServer
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
             // string pluginHostPath = Path.GetFullPath( "..\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
+            //Process.Start( "docker", "run -p 5999:99 --name braces.plugin-host braces.plugin-host" );
             Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }
     }
