@@ -36,5 +36,12 @@ namespace Braces.ApiServer.Controllers
         }
 
 #pragma warning restore SG0016 // Controller method is vulnerable to CSRF
+
+        [HttpGet("print-test-message/{message}")]
+        public ActionResult PrintTestMessage([FromRoute] string message)
+        {
+            Console.WriteLine( message );
+            return Ok( "The test was seccessful." );
+        }
     }
 }

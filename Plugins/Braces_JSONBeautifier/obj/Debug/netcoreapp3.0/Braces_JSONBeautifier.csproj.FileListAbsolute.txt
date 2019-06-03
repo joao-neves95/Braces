@@ -1,6 +1,3 @@
-C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.csproj.CoreCompileInputs.cache
-C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.AssemblyInfoInputs.cache
-C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.AssemblyInfo.cs
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3.0\Braces.UI.WPF.exe
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3.0\Braces.PluginHost.exe
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3.0\Braces_JSONBeautifier.deps.json
@@ -14,6 +11,9 @@ C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3.0\Braces.PluginHost.pdb
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\bin\Debug\netcoreapp3.0\Braces.UI.WPF.pdb
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.csprojAssemblyReference.cache
+C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.csproj.CoreCompileInputs.cache
+C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.AssemblyInfoInputs.cache
+C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.AssemblyInfo.cs
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.csproj.CopyComplete
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.dll
 C:\Users\jpedrone\DEV\Braces\Plugins\Braces_JSONBeautifier\obj\Debug\netcoreapp3.0\Braces_JSONBeautifier.pdb

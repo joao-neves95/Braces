@@ -58,7 +58,7 @@
             "Microsoft.NETCore.Platforms": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview4.19212.13, )",
+              "version": "[3.0.0-preview5.19224.8, )",
               "autoReferenced": true
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
@@ -76,13 +76,6 @@
             "Microsoft.WindowsDesktop.App": {
               "target": "Package",
               "version": "[3.0.0-preview4-27613-28, )"
-            },
-            "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
-              "include": "None",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.0.0-preview4-27615-11, )",
-              "autoReferenced": true
             }
           },
           "imports": [
@@ -144,7 +137,7 @@
             "Microsoft.NETCore.Platforms": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview4.19212.13, )",
+              "version": "[3.0.0-preview5.19224.8, )",
               "autoReferenced": true
             },
             "Newtonsoft.Json": {

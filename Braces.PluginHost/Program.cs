@@ -5,12 +5,14 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
 using Braces.UI.WPF.EventArguments;
+using System.Diagnostics;
 
 namespace Braces.PluginHost
 {
@@ -31,17 +33,47 @@ namespace Braces.PluginHost
             // The path is hardcoded for now.
             await LoadPlugin( "../../../Plugins/TesterPlugin/bin/Debug/TestPlugin.dll" );
 
+            try
+            {
+                Console.WriteLine( "Testing the connection to the ApiServer..." );
+                HttpClient httpClient = new HttpClient();
+                // For testing the connection.
+                // Returns void.
+                HttpResponseMessage res = await httpClient.GetAsync( 
+                    $"{PROTOCOL}://localhost:{PORT}/api/text-editor/This+is+a+test+message+from+the+Plugin-Host." 
+                );
+
+                if ( !res.IsSuccessStatusCode )
+                {
+                    throw new Exception( res.ReasonPhrase );
+                }
+                else
+                {
+                    Console.WriteLine( "Successfull connection with the ApiServer." );
+                    httpClient.Dispose();
+                }
+            } catch (Exception e)
+            {
+                Console.WriteLine( e.Message );
+                Console.WriteLine( e.StackTrace );
+                Console.WriteLine( "The connection with the server failed. Exiting..." );
+                Process.GetCurrentProcess().Kill( true );
+            }
+
             Console.WriteLine( "Initializing PluginHosts's SignalR Client connection..." );
-            await StartClient( null );
+            await StartClient();
 
             Console.ReadLine();
             Console.WriteLine( "Exit" );
         }
 
-        public static async Task StartClient( Plugin plugin )
+        public static async Task StartClient()
         {
             Connection = new HubConnectionBuilder()
-                .WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
+                //.WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
+                .WithUrl( $"{PROTOCOL}://127.0.0.1:{PORT}/ws/text-editor" )
+                //.WithUrl( $"{PROTOCOL}://host.docker.internal:{PORT}/ws/text-editor" )
+                //.WithUrl( $"{PROTOCOL}://172.17.160.1:{PORT}/ws/text-editor" )
                 .Build();
 
             Connection.On<string, object>( EventName.OnFileOpen, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
@@ -70,12 +102,12 @@ namespace Braces.PluginHost
 
             try
             {
-                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\bin\\Debug\\netcoreapp3.0\\TesterPlugin.dll" ) );
+                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "Plugins\\TesterPlugin\\bin\\Debug\\netcoreapp3.0\\TesterPlugin.dll" ) );
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 Type thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );
 
-                thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\Braces_JSONBeautifier\\bin\\Debug\\netcoreapp3.0\\Braces_JSONBeautifier.dll" ) );
+                thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "Plugins\\Braces_JSONBeautifier\\bin\\Debug\\netcoreapp3.0\\Braces_JSONBeautifier.dll" ) );
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );

@@ -9,7 +9,7 @@
       "Braces.Core/0.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
-          "Microsoft.NETCore.Platforms": "3.0.0-preview4.19212.13",
+          "Microsoft.NETCore.Platforms": "3.0.0-preview5.19224.8",
           "Newtonsoft.Json": "11.0.2",
           "ini-parser": "2.5.2",
           "PresentationCore": "4.0.0.0",
@@ -227,7 +227,7 @@
           }
         }
       },
-      "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {},
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {},
       "Newtonsoft.Json/11.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -406,12 +406,12 @@
       "path": "microsoft.extensions.primitives/2.2.0",
       "hashPath": "microsoft.extensions.primitives.2.2.0.nupkg.sha512"
     },
-    "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dDZiDnoFFz0dNYccWE4m/Lf0goElwAzjCQaitNV3qMvQFGdxTQS0ov8Wy/ktNbdc5KsC0xK1kj5YF3Q1RDS7aA==",
-      "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
-      "hashPath": "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512"
+      "sha512": "sha512-MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
+      "hashPath": "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",

@@ -14,11 +14,6 @@
         <dependency id="ini-parser" version="2.5.2" exclude="Build,Analyzers" />
       </group>
     </dependencies>
-    <frameworkReferences>
-      <group targetFramework=".NETCoreApp3.0">
-        <frameworkReference name="Microsoft.NETCore.App" />
-      </group>
-    </frameworkReferences>
   </metadata>
   <files>
     <file src="C:\Users\jpedrone\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\Braces.Core.dll" target="lib\netcoreapp3.0\Braces.Core.dll" />

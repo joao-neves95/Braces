@@ -15,6 +15,7 @@ namespace Braces.ApiServer
     {
         public static void Main( string[] args )
         {
+            Console.WriteLine( "Starting the ApiServer..." );
             CreateHostBuilder( args ).Build().Run();
         }
 

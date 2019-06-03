@@ -228,7 +228,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -546,17 +546,17 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
-      "sha512": "dDZiDnoFFz0dNYccWE4m/Lf0goElwAzjCQaitNV3qMvQFGdxTQS0ov8Wy/ktNbdc5KsC0xK1kj5YF3Q1RDS7aA==",
+    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "sha512": "MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
+      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -808,7 +808,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.AspNetCore.SignalR.Client >= 1.1.0",
-      "Microsoft.NETCore.Platforms >= 3.0.0-preview4.19212.13",
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
       "Newtonsoft.Json >= 11.0.2",
       "ini-parser >= 2.5.2"
     ]
@@ -868,7 +868,7 @@
           "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.0-preview4.19212.13, )",
+            "version": "[3.0.0-preview5.19224.8, )",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {

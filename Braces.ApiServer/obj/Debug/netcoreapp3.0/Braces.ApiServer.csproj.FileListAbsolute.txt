@@ -1,7 +1,6 @@
-C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.csproj.CoreCompileInputs.cache
-C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.AssemblyInfoInputs.cache
-C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.AssemblyInfo.cs
-C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.csprojAssemblyReference.cache
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\appsettings.Development.json
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Braces.ApiServer.exe
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Braces.ApiServer.deps.json
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Braces.ApiServer.runtimeconfig.json
@@ -15,7 +14,6 @@ C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Client.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
-C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
@@ -29,6 +27,7 @@ C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.Win32.Registry.AccessControl.dll
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\System.ComponentModel.Composition.dll
@@ -83,6 +82,10 @@ C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\runtimes\w
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Braces.Core.dll
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Braces.Core.pdb
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.csprojAssemblyReference.cache
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.csproj.CoreCompileInputs.cache
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.AssemblyInfoInputs.cache
+C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.AssemblyInfo.cs
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.RazorTargetAssemblyInfo.cache
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.csproj.CopyComplete
 C:\Users\jpedrone\DEV\Braces\Braces.ApiServer\obj\Debug\netcoreapp3.0\Braces.ApiServer.dll
