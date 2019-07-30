@@ -23,6 +23,8 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
+- Move all hardcoded path strings to a resources file.
+
 - Remove unnecessary references and target frameworks.
 
 - Use interfaces as method parameters instead of object.
