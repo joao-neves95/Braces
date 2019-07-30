@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -21,11 +21,13 @@ namespace Braces.PluginHost
         private static List<Plugin> Plugins = new List<Plugin>();
 
         public const string PROTOCOL = "http";
-        public const string PORT = "5000";
+        public const string HOST = "10.0.75.1";
+        public const string HOST_PORT = "5000";
+        public const string CONTAINER_PORT = "69";
 
         public static HubConnection Connection { get; private set; }
 
-        static async Task Main( string[] args )
+        static async Task Main(string[] args)
         {
             // TODO: Load plugin assembly and sandbox it in a new domain (Docker?).
             // TODO: Load plugins and order them by language and only load them when necessary.
@@ -36,14 +38,15 @@ namespace Braces.PluginHost
             try
             {
                 Console.WriteLine( "Testing the connection to the ApiServer..." );
+                Console.WriteLine( $"Sending message to - {PROTOCOL}://{HOST}:{HOST_PORT}" );
                 HttpClient httpClient = new HttpClient();
                 // For testing the connection.
-                // Returns void.
-                HttpResponseMessage res = await httpClient.GetAsync( 
-                    $"{PROTOCOL}://localhost:{PORT}/api/text-editor/This+is+a+test+message+from+the+Plugin-Host." 
+                HttpResponseMessage res = await httpClient.GetAsync(
+                    //$"{PROTOCOL}://localhost:{PORT}/api/text-editor/This+is+a+test+message+from+the+Plugin-Host."
+                    $"{PROTOCOL}://{HOST}:{HOST_PORT}/api/text-editor/It+is+all+OK+with+the+PluginHost!"
                 );
 
-                if ( !res.IsSuccessStatusCode )
+                if (!res.IsSuccessStatusCode)
                 {
                     throw new Exception( res.ReasonPhrase );
                 }
@@ -52,7 +55,9 @@ namespace Braces.PluginHost
                     Console.WriteLine( "Successfull connection with the ApiServer." );
                     httpClient.Dispose();
                 }
-            } catch (Exception e)
+
+            }
+            catch (Exception e)
             {
                 Console.WriteLine( e.Message );
                 Console.WriteLine( e.StackTrace );
@@ -70,17 +75,17 @@ namespace Braces.PluginHost
         public static async Task StartClient()
         {
             Connection = new HubConnectionBuilder()
+                .WithUrl( $"{PROTOCOL}://127.0.0.1:{HOST_PORT}/ws/text-editor" )
                 //.WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
-                .WithUrl( $"{PROTOCOL}://127.0.0.1:{PORT}/ws/text-editor" )
                 //.WithUrl( $"{PROTOCOL}://host.docker.internal:{PORT}/ws/text-editor" )
                 //.WithUrl( $"{PROTOCOL}://172.17.160.1:{PORT}/ws/text-editor" )
                 .Build();
 
-            Connection.On<string, object>( EventName.OnFileOpen, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
-            Connection.On<string, object>( EventName.OnFileSave, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileSave, fileTypeName, args ) );
-            Connection.On<string, string>( APIMethods.ReceiveAllText, async ( fileTypeName, content ) => await Program.FireEventOnPlugins( APIMethods.ReceiveAllText, fileTypeName, content ) );
+            Connection.On<string, object>( EventName.OnFileOpen, async (fileTypeName, args) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
+            Connection.On<string, object>( EventName.OnFileSave, async (fileTypeName, args) => await Program.FireEventOnPlugins( EventName.OnFileSave, fileTypeName, args ) );
+            Connection.On<string, string>( APIMethods.ReceiveAllText, async (fileTypeName, content) => await Program.FireEventOnPlugins( APIMethods.ReceiveAllText, fileTypeName, content ) );
 
-            Connection.Closed += async ( error ) =>
+            Connection.Closed += async (error) =>
             {
                 Console.WriteLine( "Connection lost. Trying to reconnect..." );
                 await Task.Delay( new Random().Next( 0, 5 ) * 1000 );
@@ -96,7 +101,7 @@ namespace Braces.PluginHost
         #region PRIVATE METHODS
 
         // TEMPORARY.
-        private static async Task LoadPlugin( string path )
+        private static async Task LoadPlugin(string path)
         {
             Console.WriteLine( Path.GetFullPath( path ) );
 

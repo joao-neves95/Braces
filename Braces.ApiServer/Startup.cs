@@ -19,6 +19,9 @@ namespace Braces.ApiServer
 {
     public class Startup
     {
+        public const string HOST_PORT = "5002";
+        public const string CONTAINER_PORT = "69";
+
         public Startup( IConfiguration configuration )
         {
             Configuration = configuration;
@@ -29,8 +32,7 @@ namespace Braces.ApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices( IServiceCollection services )
         {
-            services.AddSignalR()
-                .AddNewtonsoftJsonProtocol();
+            services.AddSignalR();
 
             services.AddMvc( options => options.EnableEndpointRouting = false )
                 .AddNewtonsoftJson()
@@ -44,6 +46,7 @@ namespace Braces.ApiServer
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure( IApplicationBuilder app, IHostingEnvironment env )
         {
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -56,14 +59,14 @@ namespace Braces.ApiServer
             app.UseRouting();
 
             app.UseEndpoints( endpoints =>
-             {
-                 endpoints.MapHub<TextEditorHub>( "/ws/text-editor" );
-                 endpoints.MapHub<GlobalHub>( "/ws/global" );
-                 endpoints.MapHub<MainWindowHub>( "/ws/main-window" );
-                 endpoints.MapHub<ConfigurationHub>( "/ws/configuration" );
+            {
+                endpoints.MapHub<TextEditorHub>( "/ws/text-editor" );
+                endpoints.MapHub<GlobalHub>( "/ws/global" );
+                endpoints.MapHub<MainWindowHub>( "/ws/main-window" );
+                endpoints.MapHub<ConfigurationHub>( "/ws/configuration" );
 
-                 endpoints.MapControllerRoute( "default", "{controller=Home}/{action=Index}/{id?}" );
-             } );
+                endpoints.MapControllerRoute( "default", "{controller=Home}/{action=Index}/{id?}" );
+            } );
 
             app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
 
@@ -74,9 +77,8 @@ namespace Braces.ApiServer
         {
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
-            // string pluginHostPath = Path.GetFullPath( "..\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
-            //Process.Start( "docker", "run -p 5999:99 --name braces.plugin-host braces.plugin-host" );
-            Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
+            Process.Start("docker", $"run --rm --network=\"nat\" -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
+            //Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }
     }
 }
