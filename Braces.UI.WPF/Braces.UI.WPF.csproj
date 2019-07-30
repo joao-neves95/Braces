@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="TextEditorControl.xaml" />
-    <None Remove="UserControls\ExplorerControl.xaml" />
-    <None Remove="UserControls\SearchControl.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ini-parser" Version="2.5.2" />
   </ItemGroup>
 

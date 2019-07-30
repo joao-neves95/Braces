@@ -228,7 +228,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -244,6 +244,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview4-27615-11": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-x64/native/_._": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
         }
       },
       "System.Buffers/4.5.0": {
@@ -313,10 +322,7 @@
         },
         "runtime": {
           "bin/placeholder/Braces.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.NETCore.App"
-        ]
+        }
       }
     }
   },
@@ -564,17 +570,17 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
-      "sha512": "zhgy08eNf89IrzGZXbHbzEcxLk7zfbB5H9rIV9q7/QlA+iBZrKP4VuC7Hq2O1Oh+qD0pLA+LQIQ5YpqTomhW/w==",
+    "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
+      "sha512": "cBcFp3iIi/c6AK9F/aZxbZaNhWGOLSJD071L9tO8JbyODp38NDKsJ38Xq/KJUCt1EUIlqnyF6PdqOngFuCvD1Q==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
+      "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -609,6 +615,24 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "runtime.win-x64.Microsoft.NETCore.DotNetAppHost/3.0.0-preview4-27615-11": {
+      "sha512": "J4YSTnKz4p9+2dGau8a9SOkp57ypLvtz1wQpeS3VC8LDY8DUSmh3hH1yFOB5sIHORIiV21CwuebVAf1co4yrgw==",
+      "type": "package",
+      "path": "runtime.win-x64.microsoft.netcore.dotnetapphost/3.0.0-preview4-27615-11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "runtime.win-x64.microsoft.netcore.dotnetapphost.3.0.0-preview4-27615-11.nupkg.sha512",
+        "runtime.win-x64.microsoft.netcore.dotnetapphost.nuspec",
+        "runtimes/win-x64/native/apphost.exe",
+        "runtimes/win-x64/native/comhost.dll",
+        "runtimes/win-x64/native/ijwhost.dll",
+        "runtimes/win-x64/native/ijwhost.lib",
+        "version.txt"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -831,28 +855,29 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Braces.Core >= 0.1.0",
-      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
-      "ini-parser >= 2.5.2"
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview4.19212.13",
+      "ini-parser >= 2.5.2",
+      "runtime.win-x64.Microsoft.NETCore.DotNetAppHost >= 3.0.0-preview4-27615-11"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jpedrone\\.nuget\\packages\\": {},
+    "C:\\Users\\joao9\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
+      "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
       "projectName": "Braces.UI.WPF",
-      "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
-      "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.UI.WPF\\obj\\",
+      "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
+      "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+      "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -871,8 +896,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-              "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
             }
           }
         }
@@ -889,23 +914,26 @@
           "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.0-preview5.19224.8, )",
+            "version": "[3.0.0-preview4.19212.13, )",
             "autoReferenced": true
           },
           "ini-parser": {
             "target": "Package",
             "version": "[2.5.2, )"
+          },
+          "runtime.win-x64.Microsoft.NETCore.DotNetAppHost": {
+            "include": "None",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.0.0-preview4-27615-11, )",
+            "autoReferenced": true
           }
         },
         "imports": [
           "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": [
-          "Microsoft.NETCore.App",
-          "Microsoft.WindowsDesktop.App"
-        ]
+        "warn": true
       }
     }
   },

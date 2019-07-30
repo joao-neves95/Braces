@@ -3,11 +3,11 @@
     "tfm": "netcoreapp3.0",
     "framework": {
       "name": "Microsoft.WindowsDesktop.App",
-      "version": "3.0.0-preview5-27626-15"
+      "version": "3.0.0-preview4-27613-28"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\jpedrone\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\jpedrone\\.nuget\\packages",
+      "C:\\Users\\joao9\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\joao9\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {

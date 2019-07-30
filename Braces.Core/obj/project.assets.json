@@ -228,7 +228,7 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
+      "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -546,17 +546,17 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
-      "sha512": "zhgy08eNf89IrzGZXbHbzEcxLk7zfbB5H9rIV9q7/QlA+iBZrKP4VuC7Hq2O1Oh+qD0pLA+LQIQ5YpqTomhW/w==",
+    "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
+      "sha512": "cBcFp3iIi/c6AK9F/aZxbZaNhWGOLSJD071L9tO8JbyODp38NDKsJ38Xq/KJUCt1EUIlqnyF6PdqOngFuCvD1Q==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
+      "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512",
+        "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -808,30 +808,30 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
       "Microsoft.AspNetCore.SignalR.Client >= 1.1.0",
-      "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
+      "Microsoft.NETCore.Platforms >= 3.0.0-preview4.19212.13",
       "Newtonsoft.Json >= 11.0.2",
       "ini-parser >= 2.5.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jpedrone\\.nuget\\packages\\": {},
+    "C:\\Users\\joao9\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
       "projectName": "Braces.Core",
-      "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
-      "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\obj\\",
+      "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
+      "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+      "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -868,7 +868,7 @@
           "Microsoft.NETCore.Platforms": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.0.0-preview5.19224.8, )",
+            "version": "[3.0.0-preview4.19212.13, )",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
@@ -884,10 +884,7 @@
           "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": [
-          "Microsoft.NETCore.App"
-        ]
+        "warn": true
       }
     }
   },
