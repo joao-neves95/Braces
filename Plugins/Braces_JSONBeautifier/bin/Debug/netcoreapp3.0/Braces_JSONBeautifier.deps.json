@@ -12,7 +12,7 @@
           "Braces.PluginHost": "1.0.0",
           "Braces.UI.WPF": "1.0.0",
           "Microsoft.NETCore.Platforms": "3.0.0-preview5.19224.8",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "Braces_JSONBeautifier.dll": {}
@@ -53,7 +53,7 @@
       "Microsoft.AspNetCore.Http.Connections.Common/1.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "2.2.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.2",
           "System.Buffers": "4.5.0"
         },
         "runtime": {
@@ -105,7 +105,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "2.2.0",
           "Microsoft.Extensions.Options": "2.2.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.2",
           "System.Buffers": "4.5.0"
         },
         "runtime": {
@@ -118,7 +118,7 @@
       "Microsoft.AspNetCore.SignalR.Protocols.Json/1.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Common": "1.1.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
@@ -227,11 +227,11 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {},
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.2.21924"
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
           }
         }
       },
@@ -258,7 +258,7 @@
       "Braces.Core/0.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
-          "Newtonsoft.Json": "11.0.2",
+          "Newtonsoft.Json": "12.0.2",
           "ini-parser": "2.5.2",
           "PresentationCore": "4.0.0.0"
         },
@@ -271,7 +271,7 @@
           "Braces.Core": "0.1.0",
           "Braces.UI.WPF": "1.0.0",
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "Braces.PluginHost.dll": {}
@@ -431,16 +431,16 @@
     "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
+      "sha512": "sha512-zhgy08eNf89IrzGZXbHbzEcxLk7zfbB5H9rIV9q7/QlA+iBZrKP4VuC7Hq2O1Oh+qD0pLA+LQIQ5YpqTomhW/w==",
       "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "hashPath": "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512"
     },
-    "Newtonsoft.Json/11.0.2": {
+    "Newtonsoft.Json/12.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
-      "path": "newtonsoft.json/11.0.2",
-      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",

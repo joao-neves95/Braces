@@ -71,7 +71,10 @@
             "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": [
+            "Microsoft.NETCore.App"
+          ]
         }
       }
     },
@@ -138,14 +141,17 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[11.0.2, )"
+              "version": "[12.0.2, )"
             }
           },
           "imports": [
             "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": [
+            "Microsoft.NETCore.App"
+          ]
         }
       }
     },
@@ -211,7 +217,11 @@
             "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "frameworkReferences": [
+            "Microsoft.NETCore.App",
+            "Microsoft.WindowsDesktop.App"
+          ]
         }
       }
     }

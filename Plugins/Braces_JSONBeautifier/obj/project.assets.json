@@ -237,7 +237,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -313,7 +313,10 @@
         },
         "runtime": {
           "bin/placeholder/Braces.Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.NETCore.App"
+        ]
       },
       "Braces.PluginHost/1.0.0": {
         "type": "project",
@@ -322,14 +325,17 @@
           "Braces.Core": "0.1.0",
           "Braces.UI.WPF": "1.0.0",
           "Microsoft.AspNetCore.SignalR.Client": "1.1.0",
-          "Newtonsoft.Json": "11.0.2"
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
           "bin/placeholder/Braces.PluginHost.dll": {}
         },
         "runtime": {
           "bin/placeholder/Braces.PluginHost.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.NETCore.App"
+        ]
       },
       "Braces.UI.WPF/1.0.0": {
         "type": "project",
@@ -343,7 +349,11 @@
         },
         "runtime": {
           "bin/placeholder/Braces.UI.WPF.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.NETCore.App",
+          "Microsoft.WindowsDesktop.App"
+        ]
       }
     }
   },
@@ -592,7 +602,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
-      "sha512": "MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
+      "sha512": "zhgy08eNf89IrzGZXbHbzEcxLk7zfbB5H9rIV9q7/QlA+iBZrKP4VuC7Hq2O1Oh+qD0pLA+LQIQ5YpqTomhW/w==",
       "type": "package",
       "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "files": [
@@ -608,10 +618,10 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -634,7 +644,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -871,7 +881,7 @@
       "Braces.PluginHost >= 1.0.0",
       "Braces.UI.WPF >= 1.0.0",
       "Microsoft.NETCore.Platforms >= 3.0.0-preview5.19224.8",
-      "Newtonsoft.Json >= 11.0.2"
+      "Newtonsoft.Json >= 12.0.2"
     ]
   },
   "packageFolders": {
@@ -939,14 +949,17 @@
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[11.0.2, )"
+            "version": "[12.0.2, )"
           }
         },
         "imports": [
           "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "frameworkReferences": [
+          "Microsoft.NETCore.App"
+        ]
       }
     }
   },

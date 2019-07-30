@@ -400,7 +400,7 @@
     "Microsoft.NETCore.Platforms/3.0.0-preview5.19224.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MEt1XzSndofi4WBoGaRcMZdy9rqNtZITVZev2PTtXizcNe4csoN7U638Q73M93I/LxroBAI1IB+6HQOuklkKrw==",
+      "sha512": "sha512-zhgy08eNf89IrzGZXbHbzEcxLk7zfbB5H9rIV9q7/QlA+iBZrKP4VuC7Hq2O1Oh+qD0pLA+LQIQ5YpqTomhW/w==",
       "path": "microsoft.netcore.platforms/3.0.0-preview5.19224.8",
       "hashPath": "microsoft.netcore.platforms.3.0.0-preview5.19224.8.nupkg.sha512"
     },
