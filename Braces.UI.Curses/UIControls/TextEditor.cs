@@ -30,7 +30,8 @@ namespace Braces.UI.Curses.UIControls
                 X = 0,
                 Y = Pos.Bottom(MainWindow.TopMenubar.MenuBar),
                 Width = Dim.Fill(),
-                Height = Dim.Fill()
+                Height = Dim.Fill(),
+                Text = ""
             };
         }
 
