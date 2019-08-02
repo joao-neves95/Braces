@@ -304,10 +304,7 @@
         },
         "runtime": {
           "bin/placeholder/Braces.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.NETCore.App"
-        ]
+        }
       },
       "Braces.PluginHost/1.0.0": {
         "type": "project",
@@ -323,10 +320,7 @@
         },
         "runtime": {
           "bin/placeholder/Braces.PluginHost.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.NETCore.App"
-        ]
+        }
       },
       "Braces.UI.WPF/1.0.0": {
         "type": "project",
@@ -342,8 +336,7 @@
           "bin/placeholder/Braces.UI.WPF.dll": {}
         },
         "frameworkReferences": [
-          "Microsoft.NETCore.App",
-          "Microsoft.WindowsDesktop.App"
+          "Microsoft.WindowsDesktop.App.WPF"
         ]
       }
     }
@@ -857,23 +850,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jpedrone\\.nuget\\packages\\": {},
+    "C:\\Users\\joao9\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\TesterPlugin.csproj",
+      "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Plugins\\TesterPlugin\\TesterPlugin.csproj",
       "projectName": "TesterPlugin",
-      "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\TesterPlugin.csproj",
-      "packagesPath": "C:\\Users\\jpedrone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\obj\\",
+      "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Plugins\\TesterPlugin\\TesterPlugin.csproj",
+      "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+      "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Plugins\\TesterPlugin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jpedrone\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -881,25 +874,19 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-              "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
+            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
+              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj"
             },
-            "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj": {
-              "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj"
+            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj": {
+              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.PluginHost\\Braces.PluginHost.csproj"
             },
-            "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
-              "projectPath": "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj"
+            "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
+              "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj"
             }
           }
         }
@@ -913,13 +900,23 @@
     "frameworks": {
       "netcoreapp3.0": {
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": [
-          "Microsoft.NETCore.App"
-        ]
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        }
       }
     }
   },
@@ -928,7 +925,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'ini-parser 2.5.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
+      "message": "Package 'ini-parser 2.5.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.0'. This package may not be fully compatible with your project.",
       "libraryId": "ini-parser",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.0"

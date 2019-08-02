@@ -1,0 +1,15 @@
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.exe
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.deps.json
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.runtimeconfig.json
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.runtimeconfig.dev.json
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Braces.UI.Curses.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.csproj.CoreCompileInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.AssemblyInfoInputs.cache
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.AssemblyInfo.cs
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\NStack.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\bin\Debug\netcoreapp3.0\Terminal.Gui.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.csproj.CopyComplete
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.UI.Curses\obj\Debug\netcoreapp3.0\Braces.UI.Curses.csprojAssemblyReference.cache

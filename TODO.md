@@ -23,6 +23,10 @@
     - Vim commands.
     - DarkTheme/LightTheme.
 
+- Migrate from .NET Core Preview 4 to .NET Core Preview 5.
+
+- Sandbox the plugins (Docker).
+
 - Move all hardcoded path strings to a resources file.
 
 - Remove unnecessary references and target frameworks.
@@ -33,8 +37,6 @@
 
 - Refactor all the UI C# code (Braces.UI.WPF).
 
-- Sandbox the plugins (Docker).
-
 - Add a more strict UI API enforcement (and for multiple languages).
 
 - Add try/catches and error handling (to the UI and ApiServer).
@@ -42,3 +44,7 @@
 - Add support for having projects (workspaces): custom configuration.
 
 - Add support for plugins written in multiple languages (e.g.: Node.js, Java).
+
+- Add support (API) for using plugins from other editors (Eg: VSCode, Atom, etc.).
+
+- Add support (API) for using Braces plugins in other editors (Eg: VSCode, Atom, etc.).
