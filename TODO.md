@@ -22,10 +22,13 @@
     - IntelliSence.
     - Vim commands.
     - DarkTheme/LightTheme.
-
-- Migrate from .NET Core Preview 4 to .NET Core Preview 5.
+    - Braces Extensions to VSCode API (use Braces extensions on VSCode)
+    - VSCode Extensions to Braces API (use VSCode extensions on any Braces UI)
+    - Vim plugins to Braces API (use Vim plugins on any Braces UI) - (???)
 
 - Sandbox the plugins (Docker).
+
+- Migrate from .NET Core Preview 4 to .NET Core Preview 7.
 
 - Move all hardcoded path strings to a resources file.
 
