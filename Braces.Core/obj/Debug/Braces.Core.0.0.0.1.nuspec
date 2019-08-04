@@ -9,11 +9,16 @@
     <description>Package Description</description>
     <dependencies>
       <group targetFramework=".NETCoreApp3.0">
+        <dependency id="Microsoft.AspNetCore.Mvc.NewtonsoftJson" version="3.0.0-preview7.19365.7" exclude="Build,Analyzers" />
         <dependency id="Microsoft.AspNetCore.SignalR.Client" version="3.0.0-preview7.19365.7" exclude="Build,Analyzers" />
-        <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
         <dependency id="ini-parser" version="2.5.2" exclude="Build,Analyzers" />
       </group>
     </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
   </metadata>
   <files>
     <file src="D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\bin\Debug\netcoreapp3.0\Braces.Core.dll" target="lib\netcoreapp3.0\Braces.Core.dll" />

@@ -9,9 +9,10 @@
       "Braces.PluginHost/0.0.0.1": {
         "dependencies": {
           "Braces.Core": "0.0.0.1",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.0.0-preview7.19365.7",
           "Microsoft.AspNetCore.SignalR.Client": "3.0.0-preview7.19365.7",
-          "Microsoft.NETCore.App": "3.0.0-preview7-27912-14",
-          "Newtonsoft.Json": "12.0.2"
+          "Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson": "3.0.0-preview7.19365.7",
+          "Microsoft.NETCore.App": "3.0.0-preview7-27912-14"
         },
         "runtime": {
           "Braces.PluginHost.dll": {}
@@ -29,12 +30,6 @@
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "3.0.0-preview7.19365.7",
           "System.IO.Pipelines": "4.6.0-preview7.19362.9"
-        },
-        "runtime": {
-          "lib/netstandard2.1/Microsoft.AspNetCore.Connections.Abstractions.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36507"
-          }
         }
       },
       "Microsoft.AspNetCore.Http.Connections.Client/3.0.0-preview7.19365.7": {
@@ -53,21 +48,34 @@
       "Microsoft.AspNetCore.Http.Connections.Common/3.0.0-preview7.19365.7": {
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0-preview7.19365.7"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Http.Connections.Common.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36507"
-          }
         }
       },
       "Microsoft.AspNetCore.Http.Features/3.0.0-preview7.19365.7": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.0.0-preview7.19362.4",
           "System.IO.Pipelines": "4.6.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.AspNetCore.JsonPatch/3.0.0-preview7.19365.7": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.6.0-preview7.19362.9",
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.19.36507"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.0.0-preview7.19365.7": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "3.0.0-preview7.19365.7",
+          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.19.36507"
           }
@@ -104,122 +112,67 @@
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0-preview7.19365.7",
           "Microsoft.Extensions.Options": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.SignalR.Common.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36507"
-          }
         }
       },
       "Microsoft.AspNetCore.SignalR.Protocols.Json/3.0.0-preview7.19365.7": {
         "dependencies": {
           "Microsoft.AspNetCore.SignalR.Common": "3.0.0-preview7.19365.7"
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson/3.0.0-preview7.19365.7": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "3.0.0-preview7.19365.7",
+          "Newtonsoft.Json": "12.0.1"
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.19.36507"
           }
         }
       },
+      "Microsoft.CSharp/4.6.0-preview7.19362.9": {},
       "Microsoft.Extensions.Configuration/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
       "Microsoft.Extensions.Configuration.Binder/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0-preview7.19362.4": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
-        }
-      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0-preview7.19362.4": {},
       "Microsoft.Extensions.Logging/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "3.0.0-preview7.19362.4",
           "Microsoft.Extensions.DependencyInjection": "3.0.0-preview7.19362.4",
           "Microsoft.Extensions.Logging.Abstractions": "3.0.0-preview7.19362.4",
           "Microsoft.Extensions.Options": "3.0.0-preview7.19362.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/3.0.0-preview7.19362.4": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
-        }
-      },
+      "Microsoft.Extensions.Logging.Abstractions/3.0.0-preview7.19362.4": {},
       "Microsoft.Extensions.Options/3.0.0-preview7.19362.4": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0-preview7.19362.4",
           "Microsoft.Extensions.Primitives": "3.0.0-preview7.19362.4",
           "System.ComponentModel.Annotations": "4.6.0-preview7.19362.9"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
       "Microsoft.Extensions.Primitives/3.0.0-preview7.19362.4": {
         "dependencies": {
           "System.Memory": "4.5.2",
           "System.Runtime.CompilerServices.Unsafe": "4.6.0-preview7.19362.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.36204"
-          }
         }
       },
       "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
@@ -228,30 +181,34 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {},
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "fileVersion": "12.0.1.22727"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
           }
         }
       },
       "System.ComponentModel.Annotations/4.6.0-preview7.19362.9": {},
-      "System.IO.Pipelines/4.6.0-preview7.19362.9": {
-        "runtime": {
-          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.700.19.36209"
-          }
-        }
-      },
+      "System.IO.Pipelines/4.6.0-preview7.19362.9": {},
       "System.Memory/4.5.2": {},
       "System.Runtime.CompilerServices.Unsafe/4.6.0-preview7.19362.9": {},
       "System.Threading.Channels/4.6.0-preview7.19362.9": {},
       "Braces.Core/0.0.0.1": {
         "dependencies": {
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.0.0-preview7.19365.7",
           "Microsoft.AspNetCore.SignalR.Client": "3.0.0-preview7.19365.7",
-          "Newtonsoft.Json": "12.0.2",
           "ini-parser": "2.5.2",
           "PresentationCore": "4.0.0.0"
         },
@@ -310,6 +267,20 @@
       "path": "microsoft.aspnetcore.http.features/3.0.0-preview7.19365.7",
       "hashPath": "microsoft.aspnetcore.http.features.3.0.0-preview7.19365.7.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.JsonPatch/3.0.0-preview7.19365.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bfeP4sJyyZgVOKcq74TxxuM18mzLaIKN9HsA9aGAps+Hs251bNyN7ywAatVlV0tX+OrAPMR7ExOOLvaUrMymzA==",
+      "path": "microsoft.aspnetcore.jsonpatch/3.0.0-preview7.19365.7",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.3.0.0-preview7.19365.7.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.NewtonsoftJson/3.0.0-preview7.19365.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4phNPDhaDDh1TpFDFCphlgkZhUBCHKO0rW1DAHkyb1A0OHWABOJfB+TvzOa0bZlxLuc4Uxt9I7TgGerb88EBqg==",
+      "path": "microsoft.aspnetcore.mvc.newtonsoftjson/3.0.0-preview7.19365.7",
+      "hashPath": "microsoft.aspnetcore.mvc.newtonsoftjson.3.0.0-preview7.19365.7.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.SignalR.Client/3.0.0-preview7.19365.7": {
       "type": "package",
       "serviceable": true,
@@ -337,6 +308,20 @@
       "sha512": "sha512-qDnj5NzsdfJfSYq8E6FXoQIYIJq2b7D3BKE+RuTiKlfahIObJgzX3o2Y0uqKBAwg+IoR5G3Ev+9WznLJ8fWH/Q==",
       "path": "microsoft.aspnetcore.signalr.protocols.json/3.0.0-preview7.19365.7",
       "hashPath": "microsoft.aspnetcore.signalr.protocols.json.3.0.0-preview7.19365.7.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson/3.0.0-preview7.19365.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TgY4vu6WaU2JTQ4hHxuj0DJ9yI8F+kkRvpWZpzId4qmgs/OumN94ICo2OWaDCbTQQC6FrOarw85s8dAR399K4w==",
+      "path": "microsoft.aspnetcore.signalr.protocols.newtonsoftjson/3.0.0-preview7.19365.7",
+      "hashPath": "microsoft.aspnetcore.signalr.protocols.newtonsoftjson.3.0.0-preview7.19365.7.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.6.0-preview7.19362.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Td4bst1H9AN3fIX2DQva04yppzbKLSH1yWnKAo5gh4EkGXKoVXHlDVdyRJ/ExcPD4lJE2jI52FEFeB56ps3Lkg==",
+      "path": "microsoft.csharp/4.6.0-preview7.19362.9",
+      "hashPath": "microsoft.csharp.4.6.0-preview7.19362.9.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/3.0.0-preview7.19362.4": {
       "type": "package",
@@ -415,12 +400,19 @@
       "path": "microsoft.netcore.platforms/3.0.0-preview7.19362.9",
       "hashPath": "microsoft.netcore.platforms.3.0.0-preview7.19362.9.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/12.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.6.0-preview7.19362.9": {
       "type": "package",
