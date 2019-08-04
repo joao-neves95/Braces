@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using Braces.UI.WPF.EventArguments;
 
 namespace Braces_JSONBeautifier
 {
