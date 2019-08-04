@@ -1,7 +1,9 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Linq.Expressions;
+using System.Diagnostics;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,7 +13,6 @@ using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using System.Diagnostics;
 using Braces.Core.EventArguments;
 
 namespace Braces.PluginHost
@@ -21,7 +22,7 @@ namespace Braces.PluginHost
         private static List<Plugin> Plugins = new List<Plugin>();
 
         public const string PROTOCOL = "http";
-        public const string HOST = "10.0.75.1"; // "172.19.226.97"; // "192.168.1.4";// "172.29.208.1"; // "docker.for.win.localhost"; //"host.docker.internal";
+        public static readonly string HOST = Dns.GetHostAddresses(new Uri("http://host.docker.internal").Host)[0].ToString();
         public const string HOST_PORT = "5000";
         public const string CONTAINER_PORT = "69";
 
@@ -51,7 +52,8 @@ namespace Braces.PluginHost
                 }
                 else
                 {
-                    Console.WriteLine( "Successfull connection with the ApiServer." );
+                    Console.WriteLine( "Successfull connection with the ApiServer.\nResponse:" );
+                    Console.WriteLine(await res.Content.ReadAsStringAsync());
                     httpClient.Dispose();
                 }
 
@@ -61,6 +63,9 @@ namespace Braces.PluginHost
                 Console.WriteLine( e.Message );
                 Console.WriteLine( e.StackTrace );
                 Console.WriteLine( "The connection with the server failed. Exiting..." );
+
+                Console.ReadKey();
+
                 Process.GetCurrentProcess().Kill( true );
             }
 

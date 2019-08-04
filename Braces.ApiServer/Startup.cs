@@ -19,6 +19,9 @@ namespace Braces.ApiServer
 {
     public class Startup
     {
+        /// <summary>
+        /// The port from which the host connects to the Docker container service.
+        /// </summary>
         public const string HOST_PORT = "5002";
         public const string CONTAINER_PORT = "69";
 
@@ -32,7 +35,8 @@ namespace Braces.ApiServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices( IServiceCollection services )
         {
-            services.AddSignalR();
+            services.AddSignalR()
+                .AddJsonProtocol();
 
             services.AddMvc( options => options.EnableEndpointRouting = false )
                 .AddNewtonsoftJson()
@@ -77,7 +81,7 @@ namespace Braces.ApiServer
         {
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
-            Process.Start("docker", $"run --rm --sig-proxy=false -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
+            Process.Start("docker", $"run --rm -it --sig-proxy=false -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
             //Process.Start("docker", $"run --rm --sig-proxy=false --network=\"nat\" -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
             //Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }

@@ -23,6 +23,7 @@ namespace Braces.ApiServer
             Host.CreateDefaultBuilder( args )
                 .ConfigureWebHostDefaults( webBuilder =>
                 {
+                    webBuilder.UseUrls(new string[] { "http://0.0.0.0:5000/", "https://0.0.0.0:5001/", "http://localhost:5000/", "https://localhost:5001/" });
                     webBuilder.UseStartup<Startup>();
                 } );
     }
