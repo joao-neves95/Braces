@@ -1,19 +1,14 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Braces.ApiServer.Hubs;
-using System.Diagnostics;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 
 namespace Braces.ApiServer
 {
@@ -36,7 +31,7 @@ namespace Braces.ApiServer
         public void ConfigureServices( IServiceCollection services )
         {
             services.AddSignalR()
-                .AddJsonProtocol();
+                .AddNewtonsoftJsonProtocol();
 
             services.AddMvc( options => options.EnableEndpointRouting = false )
                 .AddNewtonsoftJson()
@@ -48,7 +43,7 @@ namespace Braces.ApiServer
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure( IApplicationBuilder app, IHostingEnvironment env )
+        public void Configure( IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime applicationLifetime )
         {
             if (env.IsDevelopment())
             {
@@ -74,16 +69,22 @@ namespace Braces.ApiServer
 
             app.Run( async req => await req.Response.WriteAsync( "The Braces ApiServer successfully started." ) );
 
+            applicationLifetime.ApplicationStopping.Register( this.StopPluginHost );
+            applicationLifetime.ApplicationStopped.Register( this.StopPluginHost );
+
             StartPluginHost();
         }
 
         private void StartPluginHost()
         {
             Console.WriteLine( "Starting the PluginHost..." );
-            // Hardcoded for now.
             Process.Start("docker", $"run --rm -it --sig-proxy=false -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
-            //Process.Start("docker", $"run --rm --sig-proxy=false --network=\"nat\" -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
-            //Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
+        }
+
+        private void StopPluginHost()
+        {
+            Console.WriteLine( "Stopping the PluginHost..." );
+            Process.Start("docker", "stop braces.plugin-host");
         }
     }
 }
