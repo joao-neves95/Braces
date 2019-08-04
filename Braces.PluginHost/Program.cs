@@ -11,8 +11,8 @@ using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using Braces.UI.WPF.EventArguments;
 using System.Diagnostics;
+using Braces.Core.EventArguments;
 
 namespace Braces.PluginHost
 {
@@ -21,7 +21,7 @@ namespace Braces.PluginHost
         private static List<Plugin> Plugins = new List<Plugin>();
 
         public const string PROTOCOL = "http";
-        public const string HOST = "10.0.75.1";
+        public const string HOST = "10.0.75.1"; // "172.19.226.97"; // "192.168.1.4";// "172.29.208.1"; // "docker.for.win.localhost"; //"host.docker.internal";
         public const string HOST_PORT = "5000";
         public const string CONTAINER_PORT = "69";
 
@@ -42,8 +42,7 @@ namespace Braces.PluginHost
                 HttpClient httpClient = new HttpClient();
                 // For testing the connection.
                 HttpResponseMessage res = await httpClient.GetAsync(
-                    //$"{PROTOCOL}://localhost:{PORT}/api/text-editor/This+is+a+test+message+from+the+Plugin-Host."
-                    $"{PROTOCOL}://{HOST}:{HOST_PORT}/api/text-editor/It+is+all+OK+with+the+PluginHost!"
+                    $"{PROTOCOL}://{HOST}:{HOST_PORT}/api/text-editor/This+is+a+test+message+from+PluginHost!"
                 );
 
                 if (!res.IsSuccessStatusCode)
@@ -75,10 +74,7 @@ namespace Braces.PluginHost
         public static async Task StartClient()
         {
             Connection = new HubConnectionBuilder()
-                .WithUrl( $"{PROTOCOL}://127.0.0.1:{HOST_PORT}/ws/text-editor" )
-                //.WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
-                //.WithUrl( $"{PROTOCOL}://host.docker.internal:{PORT}/ws/text-editor" )
-                //.WithUrl( $"{PROTOCOL}://172.17.160.1:{PORT}/ws/text-editor" )
+                .WithUrl( $"{PROTOCOL}://{HOST}:{HOST_PORT}/ws/text-editor" )
                 .Build();
 
             Connection.On<string, object>( EventName.OnFileOpen, async (fileTypeName, args) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );

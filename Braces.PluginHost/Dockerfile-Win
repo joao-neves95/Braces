@@ -10,4 +10,3 @@ COPY . .
 # RUN dir .
 
 ENTRYPOINT [ "Braces.PluginHost/bin/debug/netcoreapp3.0/Braces.PluginHost.exe" ] 
-

@@ -48,6 +48,150 @@
           "lib/netcoreapp2.0/Terminal.Gui.dll": {}
         }
       }
+    },
+    ".NETCoreApp,Version=v3.0/linux-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    },
+    ".NETCoreApp,Version=v3.0/osx-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    },
+    ".NETCoreApp,Version=v3.0/win10-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -165,7 +309,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "0.0.0.1",
     "restore": {
       "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.Curses\\Braces.UI.Curses.csproj",
       "projectName": "Braces.UI.Curses",
@@ -223,11 +367,60 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.osx-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         }
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      },
+      "osx-x64": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
       }
     }
   }

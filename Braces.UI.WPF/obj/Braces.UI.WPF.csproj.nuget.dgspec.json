@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-      "version": "0.1.0",
+      "version": "0.0.0.1",
       "restore": {
         "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
         "projectName": "Braces.Core",
@@ -44,7 +44,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
-              "version": "[1.1.0, )"
+              "version": "[3.0.0-preview7.19365.7, )"
             },
             "Microsoft.NETCore.App": {
               "include": "None",
@@ -55,7 +55,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[11.0.2, )"
+              "version": "[12.0.2, )"
             },
             "ini-parser": {
               "target": "Package",
@@ -81,7 +81,7 @@
       }
     },
     "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.0.1",
       "restore": {
         "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.WPF\\Braces.UI.WPF.csproj",
         "projectName": "Braces.UI.WPF",

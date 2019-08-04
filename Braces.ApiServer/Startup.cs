@@ -77,7 +77,8 @@ namespace Braces.ApiServer
         {
             Console.WriteLine( "Starting the PluginHost..." );
             // Hardcoded for now.
-            Process.Start("docker", $"run --rm --network=\"nat\" -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
+            Process.Start("docker", $"run --rm --sig-proxy=false -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
+            //Process.Start("docker", $"run --rm --sig-proxy=false --network=\"nat\" -p {HOST_PORT}:{CONTAINER_PORT} --name braces.plugin-host braces.plugin-host");
             //Process.Start( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.PluginHost\\bin\\Debug\\netcoreapp3.0\\Braces.PluginHost.exe" );
         }
     }

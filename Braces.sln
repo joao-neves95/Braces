@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DA503C8-EF15-4A73-A9A6-F16B1D7CEEE1}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		scripts\docker-build-container-win.bat = scripts\docker-build-container-win.bat
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 		TODO.md = TODO.md
@@ -25,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesterPlugin", "Plugins\Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces_JSONBeautifier", "Plugins\Braces_JSONBeautifier\Braces_JSONBeautifier.csproj", "{27ED5926-0410-4132-96EC-349A9B4EEAF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces.UI.Curses", "Braces.UI.Curses\Braces.UI.Curses.csproj", "{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.UI.Curses", "Braces.UI.Curses\Braces.UI.Curses.csproj", "{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
