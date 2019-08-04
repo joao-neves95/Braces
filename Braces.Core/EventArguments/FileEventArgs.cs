@@ -1,6 +1,6 @@
 ﻿using Braces.Core.Models;
 
-namespace Braces.UI.WPF.EventArguments
+namespace Braces.Core.EventArguments
 {
     public class FileEventArgs
     {
