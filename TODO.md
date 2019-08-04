@@ -26,15 +26,13 @@
     - VSCode Extensions to Braces API (use VSCode extensions on any Braces UI)
     - Vim plugins to Braces API (use Vim plugins on any Braces UI) - (???)
 
-- Sandbox the plugins (Docker).
-
-- Migrate from .NET Core Preview 4 to .NET Core Preview 7.
-
 - Move all hardcoded path strings to a resources file.
 
 - Remove unnecessary references and target frameworks.
 
 - Use interfaces as method parameters instead of object.
+
+- Automate docker install (if it is not already installed) and the braces.plugin-host docker container build.
 
 - Refactor all the XAML (Braces.UI.WPF).
 
