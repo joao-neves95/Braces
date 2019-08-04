@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.0.1",
       "restore": {
         "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.ApiServer\\Braces.ApiServer.csproj",
         "projectName": "Braces.ApiServer",
@@ -47,7 +47,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.0.0-preview4-19216-03, )"
+              "version": "[3.0.0-preview7.19365.7, )"
             },
             "Microsoft.NETCore.App": {
               "include": "None",
@@ -58,19 +58,15 @@
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.5.4, )"
+              "version": "[1.7.12, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[3.0.0-preview7-19378-04, )"
             },
             "Microsoft.Windows.Compatibility": {
               "target": "Package",
-              "version": "[3.0.0-preview4.19212.13, )"
-            },
-            "Microsoft.WindowsDesktop.App": {
-              "target": "Package",
-              "version": "[3.0.0-preview4-27613-28, )"
+              "version": "[3.0.0-preview7.19362.9, )"
             }
           },
           "imports": [
@@ -83,22 +79,68 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
+              "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.osx-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WPF": {
-              "privateAssets": "none"
             }
           }
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        },
+        "osx-x64": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
         }
       }
     },
     "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj": {
-      "version": "0.1.0",
+      "version": "0.0.0.1",
       "restore": {
         "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.Core\\Braces.Core.csproj",
         "projectName": "Braces.Core",
@@ -137,7 +179,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.SignalR.Client": {
               "target": "Package",
-              "version": "[1.1.0, )"
+              "version": "[3.0.0-preview7.19365.7, )"
             },
             "Microsoft.NETCore.App": {
               "include": "None",
@@ -148,7 +190,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[11.0.2, )"
+              "version": "[12.0.2, )"
             },
             "ini-parser": {
               "target": "Package",
