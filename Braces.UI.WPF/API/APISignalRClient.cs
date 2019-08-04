@@ -59,7 +59,7 @@ namespace Braces.UI.WPF.API
         {
             Connection = new HubConnectionBuilder()
                 .WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
-               .Build();
+                .Build();
 
             SetAPIEventHandlers();
 

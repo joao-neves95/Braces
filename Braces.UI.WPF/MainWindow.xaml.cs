@@ -20,9 +20,9 @@ using Microsoft.Win32;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.Models;
-using Braces.UI.WPF.EventArguments;
 using Braces.UI.WPF.UserControls;
 using IniParser.Model;
+using Braces.Core.EventArguments;
 
 namespace Braces.UI.WPF
 {

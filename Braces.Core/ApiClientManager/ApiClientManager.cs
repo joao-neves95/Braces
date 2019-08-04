@@ -48,9 +48,7 @@ namespace Braces.Core.ApiClientManager
 
         public void StartApiServer()
         {
-            // The path is hardcoded for now.
-            string apiServerPath = Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Braces.ApiServer\\bin\\Debug\\netcoreapp3.0\\Braces.ApiServer.dll" );
-            Process.Start( "dotnet", apiServerPath );
+            Process.Start( "dotnet", Path.GetFullPath( "..\\..\\..\\..\\Braces.ApiServer\\bin\\Debug\\netcoreapp3.0\\Braces.ApiServer.dll" ) );
         }
 
         /// <summary>

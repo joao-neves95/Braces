@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.Core", "Braces.Core\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DA503C8-EF15-4A73-A9A6-F16B1D7CEEE1}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 		TODO.md = TODO.md
@@ -22,7 +23,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.UI.WPF", "Braces.UI.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesterPlugin", "Plugins\TesterPlugin\TesterPlugin.csproj", "{2C4A1C7D-1E43-4CE2-927B-C21ADA7F86D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Braces_JSONBeautifier", "Plugins\Braces_JSONBeautifier\Braces_JSONBeautifier.csproj", "{27ED5926-0410-4132-96EC-349A9B4EEAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces_JSONBeautifier", "Plugins\Braces_JSONBeautifier\Braces_JSONBeautifier.csproj", "{27ED5926-0410-4132-96EC-349A9B4EEAF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Braces.UI.Curses", "Braces.UI.Curses\Braces.UI.Curses.csproj", "{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{43E824CF-5627-4013-BEE6-F115AF91D9BF}"
+	ProjectSection(SolutionItems) = preProject
+		add-firewall-rule-win-admin.bat = add-firewall-rule-win-admin.bat
+		scripts\docker-build-container-win.bat = scripts\docker-build-container-win.bat
+		scripts\docker-rm-pluginhost.bat = scripts\docker-rm-pluginhost.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +64,10 @@ Global
 		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27ED5926-0410-4132-96EC-349A9B4EEAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEF98B4-2884-4A59-8223-391D1F7E2CC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

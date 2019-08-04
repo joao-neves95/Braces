@@ -1,16 +1,19 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Linq.Expressions;
+using System.Diagnostics;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Microsoft.AspNetCore.SignalR.Client;
 using Newtonsoft.Json;
 using Braces.Core;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using Braces.UI.WPF.EventArguments;
+using Braces.Core.EventArguments;
 
 namespace Braces.PluginHost
 {
@@ -19,11 +22,13 @@ namespace Braces.PluginHost
         private static List<Plugin> Plugins = new List<Plugin>();
 
         public const string PROTOCOL = "http";
-        public const string PORT = "5000";
+        public static readonly string HOST = Dns.GetHostAddresses(new Uri("http://host.docker.internal").Host)[0].ToString();
+        public const string HOST_PORT = "5000";
+        public const string CONTAINER_PORT = "69";
 
         public static HubConnection Connection { get; private set; }
 
-        static async Task Main( string[] args )
+        static async Task Main(string[] args)
         {
             // TODO: Load plugin assembly and sandbox it in a new domain (Docker?).
             // TODO: Load plugins and order them by language and only load them when necessary.
@@ -31,31 +36,63 @@ namespace Braces.PluginHost
             // The path is hardcoded for now.
             await LoadPlugin( "../../../Plugins/TesterPlugin/bin/Debug/TestPlugin.dll" );
 
+            try
+            {
+                Console.WriteLine( "Testing the connection to the ApiServer..." );
+                Console.WriteLine( $"Sending message to - {PROTOCOL}://{HOST}:{HOST_PORT}" );
+                HttpClient httpClient = new HttpClient();
+                // For testing the connection.
+                HttpResponseMessage res = await httpClient.GetAsync(
+                    $"{PROTOCOL}://{HOST}:{HOST_PORT}/api/text-editor/This+is+a+test+message+from+PluginHost!"
+                );
+
+                if (!res.IsSuccessStatusCode)
+                {
+                    throw new Exception( res.ReasonPhrase );
+                }
+                else
+                {
+                    Console.WriteLine( "Successfull connection with the ApiServer." );
+                    httpClient.Dispose();
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine( e.Message );
+                Console.WriteLine( e.StackTrace );
+                Console.WriteLine( "The connection with the server failed. Exiting..." );
+
+                Console.ReadKey();
+
+                Process.GetCurrentProcess().Kill( true );
+            }
+
             Console.WriteLine( "Initializing PluginHosts's SignalR Client connection..." );
-            await StartClient( null );
+            await StartClient();
 
             Console.ReadLine();
             Console.WriteLine( "Exit" );
         }
 
-        public static async Task StartClient( Plugin plugin )
+        public static async Task StartClient()
         {
             Connection = new HubConnectionBuilder()
-                .WithUrl( $"{PROTOCOL}://localhost:{PORT}/ws/text-editor" )
+                .WithUrl( $"{PROTOCOL}://{HOST}:{HOST_PORT}/ws/text-editor" )
                 .Build();
 
-            Connection.On<string, object>( EventName.OnFileOpen, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
-            Connection.On<string, object>( EventName.OnFileSave, async ( fileTypeName, args ) => await Program.FireEventOnPlugins( EventName.OnFileSave, fileTypeName, args ) );
-            Connection.On<string, string>( APIMethods.ReceiveAllText, async ( fileTypeName, content ) => await Program.FireEventOnPlugins( APIMethods.ReceiveAllText, fileTypeName, content ) );
+            Connection.On<string, object>( EventName.OnFileOpen, async (fileTypeName, args) => await Program.FireEventOnPlugins( EventName.OnFileOpen, fileTypeName, args ) );
+            Connection.On<string, object>( EventName.OnFileSave, async (fileTypeName, args) => await Program.FireEventOnPlugins( EventName.OnFileSave, fileTypeName, args ) );
+            Connection.On<string, string>( APIMethods.ReceiveAllText, async (fileTypeName, content) => await Program.FireEventOnPlugins( APIMethods.ReceiveAllText, fileTypeName, content ) );
 
-            Connection.Closed += async ( error ) =>
+            Connection.Closed += async (error) =>
             {
                 Console.WriteLine( "Connection lost. Trying to reconnect..." );
                 await Task.Delay( new Random().Next( 0, 5 ) * 1000 );
                 await Connection.StartAsync();
             };
 
-            Console.WriteLine( "Starting the connection..." );
+            Console.WriteLine( "Starting the PluginHost connection..." );
             await Connection.StartAsync();
             await Connection.InvokeAsync( "BindPluginHost" );
             Console.ReadLine();
@@ -64,18 +101,18 @@ namespace Braces.PluginHost
         #region PRIVATE METHODS
 
         // TEMPORARY.
-        private static async Task LoadPlugin( string path )
+        private static async Task LoadPlugin(string path)
         {
             Console.WriteLine( Path.GetFullPath( path ) );
 
             try
             {
-                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\TesterPlugin\\bin\\Debug\\netcoreapp3.0\\TesterPlugin.dll" ) );
+                Assembly thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "Plugins\\TesterPlugin\\bin\\Debug\\netcoreapp3.0\\TesterPlugin.dll" ) );
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 Type thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );
 
-                thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "C:\\Users\\jpedrone\\DEV\\Braces\\Plugins\\Braces_JSONBeautifier\\bin\\Debug\\netcoreapp3.0\\Braces_JSONBeautifier.dll" ) );
+                thisPluginAsm = Assembly.LoadFile( Path.GetFullPath( "Plugins\\Braces_JSONBeautifier\\bin\\Debug\\netcoreapp3.0\\Braces_JSONBeautifier.dll" ) );
                 // TODO: (Optimize) Use the name of the Plugin as the type for the assembly.
                 thisPluginType = thisPluginAsm.GetTypes().First( type => type.BaseType.Name == "Plugin" );
                 Plugins.Add( (Plugin)thisPluginAsm.CreateInstance( thisPluginType.ToString() ) );
@@ -88,7 +125,6 @@ namespace Braces.PluginHost
 
         private static async Task FireEventOnPlugins( string eventName, string fileTypeName, object args )
         {
-            Console.WriteLine( "FireEvent" );
             FileEventArgs eventArgs = new FileEventArgs( new Braces.Core.Models.FileModel( Path.Combine( FileStorage.GetHOMEPATH(), "_braces" ) ) );
 
             try

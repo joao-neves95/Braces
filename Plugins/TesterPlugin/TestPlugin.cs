@@ -9,7 +9,7 @@ using Braces.Core;
 using Braces.Core.Models;
 using Braces.Core.Enums;
 using Braces.Core.ExtensionSystem;
-using Braces.UI.WPF.EventArguments;
+using Braces.Core.EventArguments;
 
 namespace TestPlugin
 {

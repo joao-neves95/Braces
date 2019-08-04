@@ -4,16 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Version>0.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="TextEditorControl.xaml" />
-    <None Remove="UserControls\ExplorerControl.xaml" />
-    <None Remove="UserControls\SearchControl.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ini-parser" Version="2.5.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview7.19365.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +19,7 @@
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
   </ItemGroup>
 
@@ -42,15 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="UserControls\ExplorerControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\SearchControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TextEditorControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Update="UserControls\ExplorerControl.xaml.cs" />
+    <Compile Update="UserControls\SearchControl.xaml.cs" />
+    <Compile Update="UserControls\TextEditorControl.xaml.cs" />
   </ItemGroup>
 
 </Project>

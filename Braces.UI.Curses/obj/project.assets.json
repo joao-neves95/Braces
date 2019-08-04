@@ -1,0 +1,427 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    },
+    ".NETCoreApp,Version=v3.0/linux-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    },
+    ".NETCoreApp,Version=v3.0/osx-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    },
+    ".NETCoreApp,Version=v3.0/win10-x64": {
+      "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview7.19362.9"
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "NStack.Core/0.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.5/NStack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/NStack.dll": {}
+        }
+      },
+      "System.ValueTuple/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "Terminal.Gui/0.24.0": {
+        "type": "package",
+        "dependencies": {
+          "NStack.Core": "0.11.0",
+          "System.ValueTuple": "4.4.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Terminal.Gui.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.NETCore.App/3.0.0-preview7-27912-14": {
+      "sha512": "TNDdHAcfUqEaWXXJoCMUGZnsIP53jlShQV4Ccw8Nqbl8SWkkz1llq4ckfoRl7QrHoq328JhEyCSnPaaYHAB5Xg==",
+      "type": "package",
+      "path": "microsoft.netcore.app/3.0.0-preview7-27912-14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "microsoft.netcore.app.3.0.0-preview7-27912-14.nupkg.sha512",
+        "microsoft.netcore.app.nuspec"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview7.19362.9": {
+      "sha512": "gc5/X1m73JO8ETxOHC3IbgM7JRa7LPsSY+/lVs88YGwKn0QYuU568EmpC8yPk9UKaAOq+82PWG61vFcXdNfsvQ==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.0.0-preview7.19362.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.3.0.0-preview7.19362.9.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "NStack.Core/0.11.0": {
+      "sha512": "LQrIt/ZS1+CXAXDN/1nEZuoyOEyrAqQVD9r5sWce22JkwMOHc3NUq1FmBkKdCjZzWJcooupMPvc8IQuQqADSRg==",
+      "type": "package",
+      "path": "nstack.core/0.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.5/NStack.dll",
+        "nstack.core.0.11.0.nupkg.sha512",
+        "nstack.core.nuspec"
+      ]
+    },
+    "System.ValueTuple/4.4.0": {
+      "sha512": "BahUww/+mdP4ARCAh2RQhQTg13wYLVrBb9SYVgW8ZlrwjraGCXHGjo0oIiUfZ34LUZkMMR+RAzR7dEY4S1HeQQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net461/System.ValueTuple.xml",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.4.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Terminal.Gui/0.24.0": {
+      "sha512": "uGiSOFDnQh4ujlEln2j2Jl8FKwZftbRiYHY2JF3d31GSVx/7JmOK2ptCxPIHbUVf+JcfhsMUPceGatjSBRH5ug==",
+      "type": "package",
+      "path": "terminal.gui/0.24.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Terminal.Gui.dll",
+        "lib/net461/Terminal.Gui.xml",
+        "lib/netcoreapp2.0/Terminal.Gui.dll",
+        "lib/netcoreapp2.0/Terminal.Gui.xml",
+        "terminal.gui.0.24.0.nupkg.sha512",
+        "terminal.gui.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "Microsoft.NETCore.App >= 3.0.0-preview7-27912-14",
+      "Terminal.Gui >= 0.24.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\joao9\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "0.0.0.1",
+    "restore": {
+      "projectUniqueName": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.Curses\\Braces.UI.Curses.csproj",
+      "projectName": "Braces.UI.Curses",
+      "projectPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.Curses\\Braces.UI.Curses.csproj",
+      "packagesPath": "C:\\Users\\joao9\\.nuget\\packages\\",
+      "outputPath": "D:\\joao9\\odrive\\ISTEC\\DEV\\Braces\\Braces.UI.Curses\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\joao9\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.App": {
+            "include": "None",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.0.0-preview7-27912-14, )",
+            "autoReferenced": true
+          },
+          "Terminal.Gui": {
+            "target": "Package",
+            "version": "[0.24.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.osx-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7.19365.7, 3.0.0-preview7.19365.7]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.osx-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[3.0.0-preview7-27912-14, 3.0.0-preview7-27912-14]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      },
+      "osx-x64": {
+        "#import": []
+      },
+      "win10-x64": {
+        "#import": []
+      }
+    }
+  }
+}
