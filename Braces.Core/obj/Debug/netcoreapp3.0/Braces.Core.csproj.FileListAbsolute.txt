@@ -11,3 +11,4 @@ D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.csproj.CopyComplete
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.pdb
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.Core\obj\Debug\netcoreapp3.0\Braces.Core.csprojAssemblyReference.cache
