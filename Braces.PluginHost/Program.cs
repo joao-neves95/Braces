@@ -52,8 +52,7 @@ namespace Braces.PluginHost
                 }
                 else
                 {
-                    Console.WriteLine( "Successfull connection with the ApiServer.\nResponse:" );
-                    Console.WriteLine(await res.Content.ReadAsStringAsync());
+                    Console.WriteLine( "Successfull connection with the ApiServer." );
                     httpClient.Dispose();
                 }
 
@@ -126,7 +125,6 @@ namespace Braces.PluginHost
 
         private static async Task FireEventOnPlugins( string eventName, string fileTypeName, object args )
         {
-            Console.WriteLine( "FireEvent" );
             FileEventArgs eventArgs = new FileEventArgs( new Braces.Core.Models.FileModel( Path.Combine( FileStorage.GetHOMEPATH(), "_braces" ) ) );
 
             try

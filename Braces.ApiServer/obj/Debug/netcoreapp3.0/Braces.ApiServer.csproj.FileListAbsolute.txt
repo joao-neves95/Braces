@@ -14,6 +14,7 @@ D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Micros
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Client.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.dll
 D:\joao9\odrive\ISTEC\DEV\Braces\Braces.ApiServer\bin\Debug\netcoreapp3.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
