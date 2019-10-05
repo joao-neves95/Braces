@@ -12,7 +12,7 @@ This is a work in progress. It is not even an alpha version.
 
 - Braces.ApiServer: The bridge between the plugins and the UI. .NET Core 3. SignalR + WebAPI Controller.
 
-- Braces.PluginHost: The domain that loads and manages the plugins. It has a SignalR Client that communicates with the ApiServer.
+- Braces.PluginHost: The domain that loads and manages the plugins. It has a SignalR Client that communicates with the ApiServer and it runs inside a Docker container.
 
 - Braces.Core: The class library. .NET Core 3 (E.g.: Models, ExtensionSystem, etc.).
 
