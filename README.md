@@ -2,6 +2,11 @@
 
 The code editor where everything is a plugin.
 
+---
+
+# This repository was archived, as the architecture is garbage and it would be necessary a complete redo.
+
+---
 
 ## Note
 
